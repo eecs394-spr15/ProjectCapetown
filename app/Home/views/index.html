@@ -14,17 +14,19 @@
 
       <div class="item item-avatar">
         <img src="/imags/Sonic.jpg">
-        <h2>Marty McFly</h2>
-        <p>November 05, 1955</p>
-        <p>{{ product.name }}</p>
+        <h2>{{ product.title }}</h2>
+        <p>{{ product.study }}, Duration:{{ product.duration }}</p>
+        <p>Compenstation: {{ product.compensation }}, {{ product.location }} </p>
       </div>
 
       <div class="item item-body">
         <img target="_self" class="full-image" ng-src="{{product.cover}}" onclick="window.location.href='showPoster.html'">
+        <!--
         <p>
           This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
           and the content is from a card-body consisting of an image and paragraph text.
         </p>
+      -->
         <p>
           <a href="#" class="subdued">1 Like</a>
           <a href="#" class="subdued">5 Comments</a>
