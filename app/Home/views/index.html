@@ -7,6 +7,14 @@
     </super-navbar-title>
   </super-navbar>
 
+<div class = container>
+    <button
+        id="M-button" class = "button button-block button-positive" ng-click="toggleMusic()">Music
+    </button>
+    <button
+        id="R-button" class = "button button-block button-positive" ng-click="toggleResearch()">Research
+    </button>
+</div>
 
   <div class="list card" ng-repeat="product in products" ng-controller="IndexController">
 
@@ -91,3 +99,26 @@
 </div>
 
 -->
+
+</div>
+
+<style>
+    #container
+    {
+        width:100%
+    }
+    #M-button
+    {
+        width:50%
+    }
+    #R-button
+    {
+        width:50% 100%;
+    }
+</style>
+
+<script src="/app/Home/scripts/IndexController.js" type="text/javascript"></script>
+</body>
+</html>
+>>>>>>> 0e26f15f0edf45a84dde36825ff328a26375ec2a
+>>>>>>> origin/HomePage_dev
