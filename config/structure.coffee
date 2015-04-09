@@ -11,13 +11,13 @@ module.exports =
     }
     {
       title: "Search"
-      id: "internet"
-      location: "http://google.com" # URLs are supported!
-    }
-    {
-      title: "Search"
       id: "search"
       location: "example#search"
+    }
+    {
+      title: "Settings"
+      id: "settings"
+      location: "example#settings" # URLs are supported!
     }
   ]
 
