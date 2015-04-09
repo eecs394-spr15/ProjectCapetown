@@ -6,14 +6,14 @@
   	{
       lab: 'Visual Cognition Lab',
       study: 'Programmer needed',
-      duration: 'N/A',
+      duration: 'Spring Quarter',
       compensation: 'work study',
-      location: ' Cresap Hall 301',
+      location: 'Cresap Hall 301',
     	cover: '/imags/VisCogLabProgrammer.jpg'
   	},
   	{
       lab: 'Visual Cognition Lab',
-      study: 'Spatial Navigation study',
+      study: 'Spatial Navigation',
       duration: '45 mins',
       compensation: '$10',
       location: '112 Cresap Hall',
@@ -21,7 +21,7 @@
   	},
     {
       lab: 'Infant Cognition Lab',
-      study: 'Object Perception study',
+      study: 'Object Perception',
       duration: '60 mins',
       compensation: '$20',
       location: '110 Cresap Hall',
