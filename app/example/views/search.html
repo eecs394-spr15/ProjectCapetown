@@ -1,0 +1,62 @@
+<div class="padding" ng-controller="SearchController">
+
+  <super-navbar>
+    <super-navbar-title>
+      Search
+    </super-navbar-title>
+  </super-navbar>
+
+<script type='text/javascript' ></script>
+<SCRIPT language=JavaScript>
+var n = (document.layers);    
+var i = (document.all);
+var win = window;    
+var k   = 0;
+function findInPage(str) {
+  var txt, i, found;
+  if (str == "")
+    return false;
+  if (n) {
+    if (!win.find(str))
+      while(win.find(str, false, true))
+        k++;
+    else
+      k++;
+    if (k == 0)
+      alert("Not found.");
+  }
+  if (i) {
+    txt = win.document.body.createTextRange();
+    for (i = 0; i <= k && (found = txt.findText(str)) != false; i++) {
+      txt.moveStart("character", 1);
+      txt.moveEnd("textedit");
+    }
+    if (found) {
+      txt.moveStart("character", -1);
+      txt.findText(str);
+      txt.select();
+      txt.scrollIntoView();
+      n++;
+    }
+    else {
+      if (k > 0) {
+        k = 0;
+        findInPage(str);
+      }
+      else
+        alert("Sorry, no documents could be found. Try again.");
+   }
+  }
+  return false;
+}
+</SCRIPT>
+
+<FORM name=search onsubmit="return findInPage(this.string.value);">
+<P align=center><FONT size=4>
+<INPUT 
+style="BORDER-RIGHT: #666666 2px solid; BORDER-TOP: #666666 2px solid; FONT-SIZE: 10pt; BORDER-LEFT: #666666 2px solid; BORDER-BOTTOM: #666666 2px solid" 
+onchange="n = 0;" size=16 name=string></FONT><BR><INPUT style="BORDER-RIGHT: #ffffff 1px solid; BORDER-TOP: #ffffff 1px solid; FONT-SIZE: 8pt; BORDER-LEFT: #ffffff 1px solid; BORDER-BOTTOM: #ffffff 1px solid; FONT-FAMILY: Tahoma; BACKGROUND-COLOR: #aaaaaa" type=submit value=Search in page ><center><font size=2pt;><font family=Times New Roman;><b>
+<a target="_blank" style="text-decoration:none;bottom:0;left:10px;font-size:5pt;color:gray;position:absolute"/a><a target="_blank" style="font-size: 8pt; text-decoration: none"/a>
+
+
+ </div>
