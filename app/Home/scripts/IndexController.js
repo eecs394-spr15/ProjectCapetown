@@ -4,7 +4,7 @@
     // Controller functionality here
     $scope.products = [
   	{
-      lab: 'Visual Attention and Cognition Lab',
+      lab: 'Visual Cognition Lab',
       study: 'Programmer needed',
       duration: 'N/A',
       compensation: 'work study',
