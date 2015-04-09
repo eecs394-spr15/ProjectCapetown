@@ -22,7 +22,7 @@ module.exports =
   ]
 
   # rootView:
-  #   location: "test#index"
+  #   location: "testobject#index"
 
   preloads: [
     {

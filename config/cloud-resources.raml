@@ -16,8 +16,8 @@ traits:
           default: 55218
 
 schemas:
-  - test_collection: '{"$schema":"http://json-schema.org/schema","title":"test collection","type":"object","properties":{"results":{"type":"array","items":{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical test representation","properties":{"Name":{"type":"string"},"createdAt":{"type":"string"},"objectId":{"type":"string"},"updatedAt":{"type":"string"}},"required":[]}}}}'
-  - test_member: '{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical test representation","properties":{"Name":{"type":"string"},"createdAt":{"type":"string"},"objectId":{"type":"string"},"updatedAt":{"type":"string"}},"required":[]}'
+  - TestObject_collection: '{"$schema":"http://json-schema.org/schema","title":"TestObject collection","type":"object","properties":{"results":{"type":"array","items":{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical TestObject representation","properties":{"createdAt":{"type":"string"},"foo":{"type":"string"},"objectId":{"type":"string"},"updatedAt":{"type":"string"}},"required":[]}}}}'
+  - TestObject_member: '{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical TestObject representation","properties":{"createdAt":{"type":"string"},"foo":{"type":"string"},"objectId":{"type":"string"},"updatedAt":{"type":"string"}},"required":[]}'
 
 resourceTypes:
   - dolan_db_collection:
@@ -165,10 +165,10 @@ resourceTypes:
           200:
 
 
-/test:
+/TestObject:
   description: |
     {
-      "resourceName": "test",
+      "resourceName": "TestObject",
       "identifierKey": "objectId"
     }
   type: parse_collection
