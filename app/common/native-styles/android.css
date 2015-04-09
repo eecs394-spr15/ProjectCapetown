@@ -64,6 +64,10 @@ tab-bar-item#search {
   background-image: url(icons/search.svg);
 }
 
-tab-bar-item#index {
+tab-bar-item#home {
   background-image: url(icons/home.svg);
+}
+
+tab-bar-item#settings {
+  background-image: url(icons/cog.svg);
 }

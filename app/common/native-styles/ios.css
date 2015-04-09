@@ -41,3 +41,7 @@ tab-bar-item#search {
 tab-bar-item#home {
   background-image: url(icons/home.svg);
 }
+
+tab-bar-item#settings {
+ background-image: url(icons/cog.svg);
+}
