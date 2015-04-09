@@ -1,10 +1,25 @@
 
 <div ng-controller="IndexController">
+<!--
     <button
         id="M-button" class = "button button-block button-positive" ng-click="toggleMusic()">Music
     </button><button
         id="R-button" class = "button button-block button-positive" ng-click="toggleResearch()">Research
     </button>
+    -->
+<div class="list">
+
+ <label class="item item-input item-select">
+   <div class="input-label">
+     Type:
+   </div>
+   <select>
+     <option>Research</option>
+     <option selected>Music</option>
+   </select>
+ </label>
+
+</div>
 
 
   <div class="list card" ng-repeat="product in products" ng-controller="IndexController">
