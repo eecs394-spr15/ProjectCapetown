@@ -1,3 +1,6 @@
+<!doctype html>
+<html ng-controller="IndexController">
+<body>
 <div ng-controller="IndexController">
 
   <super-navbar>
@@ -7,17 +10,17 @@
   </super-navbar>
 
 
-  <div class="list card" ng-repeat="product in products">
+  <div class="list card" ng-repeat="product in products" ng-controller="IndexController">
 
       <div class="item item-avatar">
         <img src="/imags/Sonic.jpg">
         <h2>Marty McFly</h2>
         <p>November 05, 1955</p>
-        <p>{{product.name}}</p>
+        <p>{{ product.name }}</p>
       </div>
 
       <div class="item item-body">
-        <img target="_self" class="full-image" src="/imags/Sonic.jpg" onclick="window.location.href='showPoster.html'">
+        <img target="_self" class="full-image" ng-src="{{product.cover}}" onclick="window.location.href='showPoster.html'">
         <p>
           This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
           and the content is from a card-body consisting of an image and paragraph text.
@@ -77,3 +80,6 @@
 
 -->
 </div>
+<script src="/app/Home/scripts/IndexController.js" type="text/javascript"></script>
+</body>
+</html>
