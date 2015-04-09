@@ -17,7 +17,7 @@ module.exports =
     {
       title: "Settings"
       id: "settings"
-      location: "example#settings" # URLs are supported!
+      location: "Home#settings" # URLs are supported!
     }
   ]
 
