@@ -1,12 +1,32 @@
 angular
-.module('Home')
-.controller('NewPosterController', 'angularFire',function MyCtrl($scope,angularFire, supersonic) {
-  // Controller functionality here
-  var url = 'https://inviter-dev.firebaseio.com/posts';
-  $scope.items = angularFire(url, $scope, 'posts',  [] );
+  .module('event')
+  .controller("NewPosterController", function ($scope, Event, supersonic) {
+    $scope.event = {};
 
-  $scope.addComment = function(post,comment) {
-      post.comments.push({body:comment});
-  }
+    $scope.submitForm = function () {
+      $scope.showSpinner = true;
+      newevent = new Event($scope.event);
 
-});
+      var TestObject = Parse.Object.extend("Events");
+      var testObject = new TestObject();
+      testObject.save($scope.event, {
+      success: function(object) {
+        supersonic.ui.modal.hide();
+      },
+      error: function(model, error) {
+        steroids.logger.log(error);
+      }
+      });
+
+
+
+      // newevent.save().then( function () {
+      //   supersonic.ui.modal.hide();
+      // });
+    };
+
+    $scope.cancel = function () {
+      supersonic.ui.modal.hide();
+    }
+
+  });
