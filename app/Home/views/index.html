@@ -6,38 +6,54 @@
 
   <script type="text/javascript">
 
-  Parse.initialize("susDpNWLgi3QqeprNxBKeQ7uIJK0srYlde52neVb", "OMWpK5Oa17fiNcDyTkqvbKz2HHL6szH4jPYXlhz0");
-
-    var TestObject = Parse.Object.extend("TestObject");
-    var testObject = new TestObject();
-    testObject.save({foo: "test"}).then(function(object) {
-    });
+  
 
     </script>
 
 <script type="text/javascript">
   var TestObject = Parse.Object.extend("event");
   var query = new Parse.Query(TestObject);
-  query.get("0zaZL8VkqM", {
-    success: function(test) {
-
-      var name = test.get("location");
-      document.getElementById("2").innerHTML = name;
-
-      
-
-
-      //document.write("success");
-    // The object was retrieved successfully.
-    document.getElementById("1").innerHTML = "success";
+query.limit(10);
+query.find({
+  success: function(results) {
+      document.getElementById("1").innerHTML = "Successfully retrieved " + results.length + " events.";
+    for (var i = 0; i < results.length; i++) { 
+      var object = results[i];
+        document.getElementById("2").innerHTML = document.getElementById("2").innerHTML + '<br>' + object.get('location') + ' - ' + object.get('study')+' - ' + object.get('cover');
+//        document.getElementById("study").innerHTML = object.get('study');
+//        document.getElementById("lab").innerHTML = object.get('lab');
+//        document.getElementById("details").innerHTML = object.get('duration') + ', ' + object.get('compenstion') + ', ' + object.get('location');
+    }
   },
-    error: function(object, error) {
-      //document.write("failure");
-    // The object was not retrieved successfully.
-    // error is a Parse.Error with an error code and message.
-     document.getElementById("1").innerHTML = "error";
+  error: function(error) {
+    alert("Error: " + "can't fetch data");
+    document.getElementById("1").innerHTML = "error";
   }
 });
+    
+    
+//  var TestObject = Parse.Object.extend("event");
+//  var query = new Parse.Query(TestObject);
+//  query.get("0zaZL8VkqM", {
+//    success: function(test) {
+//
+//      var name = test.get("location");
+//      document.getElementById("2").innerHTML = name;
+//
+//      
+//
+//
+//      //document.write("success");
+//    // The object was retrieved successfully.
+//    document.getElementById("1").innerHTML = "success";
+//  },
+//    error: function(object, error) {
+//      //document.write("failure");
+//    // The object was not retrieved successfully.
+//    // error is a Parse.Error with an error code and message.
+//     document.getElementById("1").innerHTML = "error";
+//  }
+//});
 
 
 
@@ -68,6 +84,7 @@
         <h2>{{ product.study }}</h2>
         <p>{{ product.lab }}</p>
         <p>{{ product.duration }}, {{ product.compensation }}, {{ product.location }} </p>
+
       </div>
 
       <div class="item item-body">
