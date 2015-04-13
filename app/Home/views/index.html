@@ -1,0 +1,89 @@
+
+<div ng-controller="IndexController">
+
+  <div class="list">
+
+  <label class="item item-input item-select">
+
+      <img src="/imags/NUwildcats.png" width="50px"; height="40px">
+      <div style="margin-left:20px; color:#9933ff; font-weight:bold; font-size:120%">
+        NU Bulletin Board
+      </div>
+    <select>
+      <option>Research</option>
+      <option selected>Music</option>
+
+    </select>
+  </label>
+
+</div>
+
+<div class="list" ng-repeat="poster in posters" ng-controller="IndexController">
+
+    <a class="item item-thumbnail-left" href="#">
+      <img src="{{poster.cover}}" onclick="window.location.href='showPoster.html'">
+      <h2>{{ poster.study }}</h2>
+      <p>{{ poster.location }}</p>
+      <p>{{ poster.compensation }},      Duration:{{ poster.duration }}</p>
+    </a>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+<!--
+  <div class="list card" ng-repeat="poster in posters" ng-controller="IndexController">
+
+      <div class="item item-avatar">
+        <img src="/imags/NUwildcats.png">
+        <h2>{{ poster.study }}</h2>
+        <p>{{ poster.lab }}</p>
+        <p>{{ poster.duration }}, {{ poster.compensation }}, {{ poster.location }} </p>
+      </div>
+
+      <div class="item item-body">
+        <img target="_self" class="full-image" ng-src="{{poster.cover}}" onclick="window.location.href='showPoster.html'">
+
+        <p>
+          <a href="#" class="subdued">1 Like</a>
+          <a href="#" class="subdued">5 Comments</a>
+          <i class = "icon super-email" style="font-size: 25px; float: right" onclick="sendEmail()" ></i>
+        </p>
+      </div>
+    </div>
+
+    <script >
+    function sendEmail()
+    {
+      var EMAIL_ADDRESS = "";
+      window.open("mailto:" + EMAIL_ADDRESS);
+    }
+    </script>
+-->
+
+<style>
+    .container
+    {
+        width:100%;
+    }
+    #M-button
+    {
+        width:50%;
+        display: inline !important;
+    }
+    #R-button
+    {
+        width:50%;
+        display: inline !important;
+    }
+</style>
+
+<script src="/app/Home/scripts/IndexController.js" type="text/javascript"></script>
+</body>
+</html>
