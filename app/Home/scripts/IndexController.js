@@ -2,7 +2,7 @@
   .module('Home')
   .controller('IndexController', function($scope, supersonic) {
     // Controller functionality here
-    $scope.products = [
+    $scope.posters = [
   	{
       lab: 'Visual Cognition Lab',
       study: 'Programmer needed',
@@ -44,7 +44,7 @@
     .module('Home', [])
     .controller('IndexController', function($scope, supersonic) {
       // Controller functionality here
-      $scope.products = [
+      $scope.posters = [
     	{
       	name: 'The Book of Trees',
       	price: 19,

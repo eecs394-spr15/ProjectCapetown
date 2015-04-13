@@ -1,0 +1,22 @@
+<div id='posts' ng-controller="NewPosterController">
+
+      <ul>
+          <div id='post' ng-repeat="post in posts track by post.id">
+              <div id='postMedia'>
+              <img ng-click="" ng-src={{post.attachment}} />
+              </div>
+              <div ng-click="">
+                  <div ng-click="">{{post.message}}</div>
+                  <div ng-click="">{{post.created_at}}</div>
+              </div>
+          <h1>Comments</h1>
+          <div id='comment' ng-repeat="comment in post.comments track by post.comment.id">
+              <div ng-click="">{{comment.body}}</div>
+          </div>
+          <form ng-submit="addComment()">
+            <input id="body" type="text" placeholder="Reply…" ng-model="post.comment.body">
+            <input type="submit" value="Add">
+          </form>
+          </div>
+      </ul>
+    </div>
