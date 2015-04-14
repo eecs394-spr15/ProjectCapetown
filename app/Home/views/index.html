@@ -18,13 +18,98 @@
 
 </div>
 
+
+
+
 <div class="list" ng-repeat="poster in posters" ng-controller="IndexController">
 
     <a class="item item-thumbnail-left" href="#">
       <img src="{{poster.cover}}" onclick="window.location.href='showPoster.html'">
-      <h2>{{ poster.study }}</h2>
-      <p>{{ poster.location }}</p>
-      <p>{{ poster.compensation }},      Duration:{{ poster.duration }}</p>
+
+
+
+  <script type="text/javascript">
+
+  Parse.initialize("susDpNWLgi3QqeprNxBKeQ7uIJK0srYlde52neVb", "OMWpK5Oa17fiNcDyTkqvbKz2HHL6szH4jPYXlhz0");
+
+    var TestObject = Parse.Object.extend("TestObject");
+    var testObject = new TestObject();
+    testObject.save({foo: "Frank100"}).then(function(object) {
+    });
+
+    </script>
+    <script type="text/javascript">
+  var TestObject = Parse.Object.extend("event");
+  var query = new Parse.Query(TestObject);
+  query.limit(10);
+  query.find({
+     success: function(results) {
+
+      for (var i = 0; i<results.length; i++)
+      {
+        var object = results[i]
+        var study = object.get("study");
+        var location = object.get("location")
+        var compensation = object.get("compensation")
+        var duration = object.get("duration")
+
+
+        document.write("<h2>"+study+"</h2>");
+        document.write("<p>"+location+"</p>");
+        document.write("<p>"+compensation+"</p>");
+        document.write("<p>"+duration+"</p>");
+      }
+
+      
+      //document.getElementById("2").innerHTML = study;
+      //document.getElementById("3").innerHTML = location;
+      //document.getElementById("4").innerHTML = compensation;
+      //document.getElementById("5").innerHTML = duration;
+
+
+
+      //<p id = "3"></p>
+      //<p id = "4"></p> 
+      //<p id = "5"></p>
+
+
+
+      //document.write("success");
+    // The object was retrieved successfully.
+    document.getElementById("1").innerHTML = "success";
+  },
+    error: function(object, error) {
+      //document.write("failure");
+    // The object was not retrieved successfully.
+    // error is a Parse.Error with an error code and message.
+     document.getElementById("1").innerHTML = "error";
+  }
+});
+
+
+/*
+  var lab = TestObject.get("lab");
+  var study = TestObject.get("study");
+  var duration = TestObject.get("duration");
+  var compensation = TestObject.get("compensation");
+  var location = TestObject.get("location");
+
+  var objectId = TestObject.id;
+  var updatedAt = TestObject.updatedAt;
+  var createdAt = TestObject.createdAt;
+  var test = 5;
+  document.getElementById("output").innerHTML=test;
+*/
+
+  </script>
+
+
+<!--
+      <h2 id = "2"></h2>
+      <p id = "3"></p>
+      <p id = "4"></p> 
+      <p id = "5"></p>
+    -->
     </a>
 
 </div>
