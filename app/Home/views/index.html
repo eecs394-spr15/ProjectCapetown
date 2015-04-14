@@ -1,4 +1,31 @@
 
+<div ng-controller="IndexController">
+
+  <div class="list">
+
+  <label class="item item-input item-select">
+
+      <img src="/imags/NUwildcats.png" width="50px"; height="40px">
+      <div style="margin-left:20px; color:#9933ff; font-weight:bold; font-size:120%">
+        NU Bulletin Board
+      </div>
+    <select>
+      <option>Research</option>
+      <option selected>Music</option>
+
+    </select>
+  </label>
+
+</div>
+
+
+
+
+<div class="list" ng-repeat="poster in posters" ng-controller="IndexController">
+
+    <a class="item item-thumbnail-left" href="#">
+      <img src="{{poster.cover}}" onclick="window.location.href='showPoster.html'">
+
 
 
   <script type="text/javascript">
