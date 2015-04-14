@@ -49,15 +49,20 @@
       {
         var object = results[i]
         var study = object.get("study");
-        var location = object.get("location")
-        var compensation = object.get("compensation")
-        var duration = object.get("duration")
+        var location = object.get("location");
+        var compensation = object.get("compensation");
+        var duration = object.get("duration");
+        var file = object.get("cover");
+        var imageURL = file.url();
+
+
 
 
         document.write("<h2>"+study+"</h2>");
         document.write("<p>"+location+"</p>");
         document.write("<p>"+compensation+"</p>");
         document.write("<p>"+duration+"</p>");
+        document.write("<img src= imageURL" height ="80" width ="60" "</img>");
       }
 
       
