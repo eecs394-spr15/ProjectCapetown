@@ -2,6 +2,25 @@
   .module('Home')
   .controller('IndexController', function($scope, supersonic) {
     // Controller functionality here
+            
+        var TestObject = Parse.Object.extend("event");
+        var query = new Parse.Query(TestObject);
+        query.limit(10);
+        query.find({
+                success: function(results) {
+      document.getElementById("1").innerHTML = "Successfully retrieved " + results.length + " events.";
+    for (var i = 0; i < results.length; i++) { 
+      var object = results[i];
+        document.getElementById("2").innerHTML = document.getElementById("2").innerHTML + '<br>' + object.get('location') + ' - ' + object.get('study')+' - ' + object.get('cover');
+
+    }
+  },
+  error: function(error) {
+    alert("Error: " + "can't fetch data");
+    document.getElementById("1").innerHTML = "error";
+  }
+});
+      
     $scope.posters = [
   	{
       lab: 'Visual Cognition Lab',
