@@ -1,5 +1,5 @@
 angular
-  .module('event')
+  .module('Home')
   .controller("NewPosterController", function ($scope, Event, supersonic) {
     $scope.event = {};
 
