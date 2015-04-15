@@ -1,51 +1,61 @@
-<<<<<<< HEAD
-<html>
+<script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+  <div id = "events">
+  </div>
+
+  <script type = "foo/bar" id = "eventTemplate">
+     <h2><%=study%></h2>
+     <p><%=compensation%></p>
+     <p><%=duration%></p>
+     <p><%=location%></p>
+     <p><%=duration%></p>
+     <img src = "<%=iconURL%>" height= "80" width = "60"></img>
+
+  </script> 
 
   <script type="text/javascript">
     Parse.initialize("susDpNWLgi3QqeprNxBKeQ7uIJK0srYlde52neVb", "OMWpK5Oa17fiNcDyTkqvbKz2HHL6szH4jPYXlhz0");
+     var template = $("#eventTemplate").html();
+     us_template = _.template(template);
+     var createEvent = function(a) {
+         $("#events").append(us_template(a));
+      }
      var TestObject = Parse.Object.extend("TestObject");
      var testObject = new TestObject();
-     testObject.save({foo: "Frank5000"}).then(function(object) {
+     testObject.save({foo: "Frank123"}).then(function(object) {
      });
-   </script>
 
+     var EventObject = Parse.Object.extend("event");
+     var query = new Parse.Query(EventObject);
+     query.include('lab');
 
-   <script type="text/javascript">
-     var TestObject = Parse.Object.extend("event");
-     var query = new Parse.Query(TestObject);
-     query.limit(10);
      query.find({
         success: function(results) {
 
-         for (var i = 0; i<results.length; i++)
+         for (var i = 0; i<9; i++)
          {
-           var object = results[i]
-           var study = object.get("study");
-           var location = object.get("location");
-           var compensation = object.get("compensation");
-           var duration = object.get("duration");
-           var file = object.get("cover");
-           var imageURL = file.url();
 
-           document.write("<h2>"+study+"</h2>");
-           document.write("<p>"+location+"</p>");
-           document.write("<p>"+compensation+"</p>");
-           document.write("<p>"+duration+"</p>");
-           document.write("<img src= imageURL" height ="80" width ="60" "</img>");
+           var object = results[i].attributes;
+           object.iconURL = object.lab.attributes.Icon._url;
+           createEvent(object);
          }
-
          //document.write("success");
        // The object was retrieved successfully.
        document.getElementById("1").innerHTML = "success";
      },
        error: function(object, error) {
+
          //document.write("failure");
        // The object was not retrieved successfully.
        // error is a Parse.Error with an error code and message.
         document.getElementById("1").innerHTML = "error";
      }
     });
-  </script>
+
+   </script>
+
+
 
 <!--
 =======
@@ -173,7 +183,6 @@
 </div>
 
 </div>
--->
 
 
 <style>
