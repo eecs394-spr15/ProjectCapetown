@@ -58,7 +58,7 @@
      query.find({
         success: function(results) {
 
-         for (var i = 0; i<9; i++)  //The length of data should be mutable
+         for (var i = 0; i<results.length; i++)  //The length of data should be mutable
          {
 
            var object = results[i].attributes;
