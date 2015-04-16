@@ -29,6 +29,7 @@
           <h2><%=study%></h2>
           <p><%=compensation%>, <%=duration%></p>
           <p><%=location%></p>
+          <p>  <i class = "icon super-email" style="font-size: 25px; float: right; padding: 10px" onclick="sendEmail()" ></i></p>
         </a>
 
     </div>
@@ -77,6 +78,14 @@
 
    </script>
 
+
+   <script >
+   function sendEmail()
+   {
+     var EMAIL_ADDRESS = "";
+     window.open("mailto:" + EMAIL_ADDRESS);
+   }
+   </script>
 
 
 
