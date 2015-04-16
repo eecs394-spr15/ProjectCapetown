@@ -22,13 +22,15 @@
 
   <script type = "foo/bar" id = "eventTemplate">
 
-    <div class="list">
+    <div class="list" ng-controller="IndexController">
 
         <a class="item item-thumbnail-left" href="#">
           <img src = "<%=iconURL%>"  ></img>
           <h2><%=study%></h2>
           <p><%=compensation%>, <%=duration%></p>
           <p><%=location%></p>
+          <p><%="Start date: " +startdate_str%></p>
+          <p><%="End date: " + enddate_str%></p>
           <p>  <i class = "icon super-email" style="font-size: 25px; float: right; padding: 10px" onclick="sendEmail()" ></i></p>
         </a>
 
@@ -82,7 +84,7 @@
    <script >
    function sendEmail()
    {
-     var EMAIL_ADDRESS = "bbernstein13@gmail.com";
+     var EMAIL_ADDRESS = "";
      window.open("mailto:" + EMAIL_ADDRESS);
    }
    </script>
