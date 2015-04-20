@@ -27,10 +27,11 @@
         <a class="item item-thumbnail-left" href="#">
           <img src = "<%=iconURL%>"  ></img>
           <h2><%=study%></h2>
-          <p><%=compensation%>, <%=duration%></p>
+          <p><%="$" + compensation%>, <%=duration%></p>
           <p><%=location%></p>
           <p><%="Start date: " +startdate_str%></p>
           <p><%="End date: " + enddate_str%></p>
+          <p><%=email%></p>
           <p>  <i class = "icon super-email" style="font-size: 25px; float: right; padding: 10px" onclick="sendEmail()" ></i></p>
         </a>
 
@@ -48,11 +49,12 @@
       }
      var TestObject = Parse.Object.extend("TestObject");
      var testObject = new TestObject();
-     testObject.save({foo: "Frank123"}).then(function(object) {
+     testObject.save({foo: "Frank124"}).then(function(object) {
      });
 
      var EventObject = Parse.Object.extend("event");
      var query = new Parse.Query(EventObject);
+     
      query.include('lab');
 
      query.find({
@@ -65,15 +67,11 @@
            object.iconURL = object.lab.attributes.Icon._url;
            createEvent(object);
          }
-         //document.write("success");
-       // The object was retrieved successfully.
+
        document.getElementById("1").innerHTML = "success";
      },
        error: function(object, error) {
 
-         //document.write("failure");
-       // The object was not retrieved successfully.
-       // error is a Parse.Error with an error code and message.
         document.getElementById("1").innerHTML = "error";
      }
     });
