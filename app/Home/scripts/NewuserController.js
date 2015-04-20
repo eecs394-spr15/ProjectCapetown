@@ -17,13 +17,11 @@ angular
  
         user.signUp(null, {
             success: function(user) {
-                document.write("2");
                 alert("A new user Created!");
                 // Hooray! Let them use the app now.
                 window.location.href='settings.html';
             },
             error: function(user, error) {
-                document.write("3");
                 // Show the error message somewhere and let the user try again.
                 alert("Error: " + error.code + " " + error.message);
                 window.location.href='settings.html';
