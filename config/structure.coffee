@@ -3,6 +3,9 @@
 module.exports =
 
   # See styling options for tabs and other native components in app/common/native-styles/ios.css or app/common/native-styles/android.css
+initialView:
+    id: "initialView"
+    location: "login#index"
   tabs: [
     {
       title: "Home"
