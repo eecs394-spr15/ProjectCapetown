@@ -6,7 +6,7 @@
 
     <div class="list">
     <label class="item item-input item-select">
-        <img src="/imags/NUwildcats.png" width="50px"; height="40px">
+        <img src="/imags/NUwildcats.png" width="50px"; height="40px"> <!-- Add the refresh function when click the WildCat-->
         <div style="margin-left:20px; color:#9933ff; font-weight:bold; font-size:120%">
           NU Bulletin Board
         </div>
@@ -53,7 +53,7 @@
 
      var EventObject = Parse.Object.extend("event");
      var query = new Parse.Query(EventObject);
-     
+
      query.find({
         success: function(results) {
 
@@ -64,11 +64,11 @@
            createEvent(object);
          }
 
-       //document.getElementById("1").innerHTML = "success";
+       document.getElementById("1").innerHTML = "success";
      },
        error: function(object, error) {
 
-        //document.getElementById("1").innerHTML = "error";
+        document.getElementById("1").innerHTML = "error";
      }
     });
 

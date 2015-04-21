@@ -37,6 +37,20 @@
   </label>
 
   <label class="item item-input item-floating-label">
+    <span class="input-label">StartTime</span>
+    <form name="formStartTime">
+    <input type="text" name="startTime" placeholder="startTime">
+    </form>
+  </label>
+
+  <label class="item item-input item-floating-label">
+    <span class="input-label">EndTime</span>
+    <form name="formEndTime">
+    <input type="text" name="endTime" placeholder="endTime">
+    </form>
+  </label>
+
+  <label class="item item-input item-floating-label">
     <span class="input-label">Email</span>
     <form name="formEmail">
     <input type="text" name="email" placeholder="Email">
@@ -86,6 +100,8 @@
      var location = document.forms["formLocation"]["location"].value;
      var duration = document.forms["formDuration"]["duration"].value;
      var compensation = document.forms["formCompensation"]["compensation"].value;
+     var startTime = document.forms["formStartTime"]["startTime"].value;
+     var endTime = document.forms["formEndTime"]["endTime"].value;
      var email = document.forms["formEmail"]["email"].value;
 
 
@@ -98,9 +114,13 @@
      });
      testObject.save({compensation: compensation}).then(function(object) {
      });
+     testObject.save({startdate_str: startTime}).then(function(object) {
+     });
+     testObject.save({enddate_str: endTime}).then(function(object) {
+     });
      testObject.save({email: email}).then(function(object) {
      });
-     //testObject.save({lab: 'mqrHjoW8AE'}).then(function(object) {
+     //testObject.save({lab: new Parse.User.(xhxPKSiqMW)}).then(function(object) {
      //});
 
 
