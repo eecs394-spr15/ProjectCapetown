@@ -1,25 +1,29 @@
 angular
-  .module('Home',[])
+  .module('login',[])
   .controller("loginUserController", ['$scope', function ($scope) {
     $scope.login = { Username: "", Password: ""};
-      
+//    $scope.continue = function($scope) {
+//        supersonic.ui.initialView.dismiss();
+//    }
     $scope.loginUser = function($scope) {
-        var user = new Parse.User();
-        user.set("username", this.login.Username);
-        user.set("password", this.login.Password);
+        var name = this.user.Username;
+        var password = this.user.Password;
         
-        Parse.User.logIn(this.login.Username, this.login.Password, {
+        Parse.User.logIn(name, password, {
             success: function(user) {
                 alert("Login successfully!");
-                window.location.href='settings.html';
+//                $scope.dismissInitial();
+                supersonic.ui.initialView.dismiss();
                 // Do stuff after successful login.
             },
             error: function(user, error) {
     // The login failed. Check error to see why.
                 alert("Error: " + error.code + " " + error.message);
-                window.location.href='settings.html';
+                window.location.href='index.html';
             }
-        });
-               
+        });          
     };
+//    $scope.continue = function($scope) {
+//        $scope.dismissInitial();
+//    }
   }]);

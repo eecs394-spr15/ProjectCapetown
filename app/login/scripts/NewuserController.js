@@ -1,14 +1,13 @@
 angular
-  .module('Home',[])
+  .module('login',[])
   .controller("NewuserController", ['$scope', function ($scope) {
-    $scope.user = { Username: "", Password: "", Email: ""};
+    $scope.user = { Username: "", Password: ""};
       
     $scope.addUser = function($scope) {
      
         var user = new Parse.User();
         user.set("username", this.user.Username);
         user.set("password", this.user.Password);
-        user.set("email", this.user.Email);
         
 //        var user = new Parse.User();
 //        user.set("username", "name");
@@ -19,12 +18,12 @@ angular
             success: function(user) {
                 alert("A new user Created!");
                 // Hooray! Let them use the app now.
-                window.location.href='settings.html';
+                supersonic.ui.initialView.dismiss();
             },
             error: function(user, error) {
                 // Show the error message somewhere and let the user try again.
                 alert("Error: " + error.code + " " + error.message);
-                window.location.href='settings.html';
+                window.location.href='index.html';
             }
         });
     };
