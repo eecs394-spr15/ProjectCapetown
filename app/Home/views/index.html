@@ -31,8 +31,8 @@
           <p><%="Start date: " +startdate_str%></p>
           <p><%="End date: " + enddate_str%></p>
           <p>
-          <i class = "icon super-heart-broken" style="font-size: 25px; float: right; padding-right: 10px" onclick="addDislikeNum()"></i>
-          <i class = "icon super-heart" style="font-size: 25px; float: right; padding-right: 20px" onclick="addLikeNum(testForId)"></i>
+          <i class = "icon super-heart-broken" style="font-size: 25px; float: right; padding-right: 10px" onclick="addDislikeNum('<%=testId%>')"></i>
+          <i class = "icon super-heart" style="font-size: 25px; float: right; padding-right: 20px" onclick="addLikeNum('<%=testId%>')"></i>
           <i class = "icon super-email" style="font-size: 25px; float: right; padding-right: 20px" onclick="sendEmail()"></i>
           <%=likeNum + " Like"%> <%=dislikeNum + " Dislike"%>
           </p>
@@ -71,7 +71,7 @@
            //test ID retrieval
            object.testId = results[i].id;
 
-           testForId = object.testId;
+           //testForId = object.testId;
 
            createEvent(object);
          }
@@ -86,7 +86,7 @@
 
 
     function addLikeNum(id) {
-      alert("testForLike");
+      //alert("testForLike");
       var EventForVote = Parse.Object.extend("event");
       var query = new Parse.Query(EventForVote);
       query.get(id,{
@@ -94,7 +94,7 @@
           results.increment('likeNum');
           results.save();
           alert(results.get('likeNum'));
-          alert(id);
+          //alert(id);
           location.reload();
      },
        error: function(object, error) {
@@ -103,16 +103,16 @@
     });
     };
 
-    function addDislikeNum() {
-      alert("testForDislike");
+    function addDislikeNum(id) {
+      //alert("testForDislike");
       var EventForVote = Parse.Object.extend("event");
       var query = new Parse.Query(EventForVote);
-      query.get(testForId,{
+      query.get(id,{
         success: function(results) {
           results.increment('dislikeNum');
           results.save();
           alert(results.get('dislikeNum'));
-          alert(testForId);
+          //alert(id);
           location.reload();
      },
        error: function(object, error) {
