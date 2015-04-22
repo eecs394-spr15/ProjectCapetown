@@ -6,7 +6,7 @@
 
     <div class="list">
     <label class="item item-input item-select">
-        <img src="/imags/NUwildcats.png" width="50px"; height="40px"> <!-- Add the refresh function when click the WildCat-->
+        <img src="/imags/NUwildcats.png" onclick="location.reload()" width="50px"; height="40px"> <!-- Add the refresh function when click the WildCat-->
         <div style="margin-left:20px; color:#9933ff; font-weight:bold; font-size:120%">
           NU Bulletin Board
         </div>
@@ -24,19 +24,26 @@
 
     <div class="list" ng-controller="IndexController">
           <a class="item item-thumbnail-left" href="#">
-          <img src = "<%=posterIcon._url%>" height = "80" width="80" </img>
+          <img src = "<%=posterIcon._url%>" height = "80" width="80" style="top: 40px"></img>
           <h2><%=study%></h2>
           <p><%="$" + compensation%>, <%=duration%></p>
           <p><%=location%></p>
           <p><%="Start date: " +startdate_str%></p>
           <p><%="End date: " + enddate_str%></p>
-          <p><%=email%></p>
-          <p>  <i class = "icon super-email" style="font-size: 25px; float: right; padding: 10px" onclick="sendEmail()" ></i></p>
+          <p>
+          <i class = "icon super-heart-broken" style="font-size: 25px; float: right; padding-right: 10px" onclick="addDislikeNum()"></i>
+          <i class = "icon super-heart" style="font-size: 25px; float: right; padding-right: 20px" onclick="addLikeNum(testForId)"></i>
+          <i class = "icon super-email" style="font-size: 25px; float: right; padding-right: 20px" onclick="sendEmail()"></i>
+          <%=likeNum + " Like"%> <%=dislikeNum + " Dislike"%>
+          </p>
         </a>
 
     </div>
 
   </script>
+
+
+
 
 
   <script type="text/javascript">
@@ -61,6 +68,11 @@
          {
 
            var object = results[i].attributes;
+           //test ID retrieval
+           object.testId = results[i].id;
+
+           testForId = object.testId;
+
            createEvent(object);
          }
 
@@ -72,16 +84,61 @@
      }
     });
 
+
+    function addLikeNum(id) {
+      alert("testForLike");
+      var EventForVote = Parse.Object.extend("event");
+      var query = new Parse.Query(EventForVote);
+      query.get(id,{
+        success: function(results) {
+          results.increment('likeNum');
+          results.save();
+          alert(results.get('likeNum'));
+          alert(id);
+          location.reload();
+     },
+       error: function(object, error) {
+         alert("Error");
+     }
+    });
+    };
+
+    function addDislikeNum() {
+      alert("testForDislike");
+      var EventForVote = Parse.Object.extend("event");
+      var query = new Parse.Query(EventForVote);
+      query.get(testForId,{
+        success: function(results) {
+          results.increment('dislikeNum');
+          results.save();
+          alert(results.get('dislikeNum'));
+          alert(testForId);
+          location.reload();
+     },
+       error: function(object, error) {
+         alert("Error");
+     }
+    });
+    };
+
+
+
    </script>
 
 
-   <script >
+   <script>
    function sendEmail()
    {
      var EMAIL_ADDRESS = "";
      window.open("mailto:" + EMAIL_ADDRESS);
-   }
+   };
+
+
    </script>
+
+
+
+
 
 
 

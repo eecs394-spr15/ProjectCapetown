@@ -120,10 +120,11 @@
      });
      testObject.save({email: email}).then(function(object) {
      });
-     //testObject.save({lab: new Parse.User.(xhxPKSiqMW)}).then(function(object) {
-     //});
-
-
+     testObject.save({likeNum: "0"}).then(function(object) {
+     });
+     testObject.save({dislikeNum: "0"}).then(function(object) {
+     });
+     location.reload();
 
 
 
@@ -134,12 +135,12 @@
 
      var EventObject = Parse.Object.extend("event");
      var query = new Parse.Query(EventObject);
-     query.include('lab');
+     //query.include('lab');
 
      query.find({
         success: function(results) {
 
-         for (var i = 0; i<9; i++)  //The length of data should be mutable
+         for (var i = 0; i<results.length; i++)  //The length of data should be mutable
          {
 
            var object = results[i].attributes;
