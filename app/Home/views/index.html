@@ -23,8 +23,11 @@
   <script type = "foo/bar" id = "eventTemplate">
 
     <div class="list" ng-controller="IndexController">
-          <a class="item item-thumbnail-left" href="#">
-          <img src = "<%=posterIcon._url%>" height = "80" width="80" style="top: 40px"></img>
+
+        <a class="item item-thumbnail-left" href="#studyInfo?objectId">
+        <super-navigate location="studyInfo#studyInfo?id=objectId">
+          <img src = "<%=posterIcon._url%>" height = "80" width="80" style="top: 40px"</img>
+          </super-navigate>
           <h2><%=study%></h2>
           <p><%="$" + compensation%>, <%=duration%></p>
           <p><%=location%></p>
@@ -37,14 +40,10 @@
           <%=likeNum + " Like"%> <%=dislikeNum + " Dislike"%>
           </p>
         </a>
-
+     
     </div>
 
   </script>
-
-
-
-
 
   <script type="text/javascript">
     Parse.initialize("susDpNWLgi3QqeprNxBKeQ7uIJK0srYlde52neVb", "OMWpK5Oa17fiNcDyTkqvbKz2HHL6szH4jPYXlhz0");
