@@ -5,17 +5,26 @@
   <div ng-controller="IndexController">
 
     <div class="list">
-    <label class="item item-input item-select">
-        <img src="/imags/NUwildcats.png" onclick="location.reload()" width="50px"; height="40px"> <!-- Add the refresh function when click the WildCat-->
-        <div style="margin-left:20px; color:#9933ff; font-weight:bold; font-size:120%">
+      <!--<label class="item item-input">-->
+          <img src="/imags/NUwildcats.png" width="50px"; height="40px" style="float:left;">
+          <div style="margin-left:50px; margin-top:10px; color:#9933ff; font-weight:bold; font-size:150%;">
           NU Bulletin Board
+          </div>
+      <!--</label>-->
+    </div>
+    <div class="list">
+      <label class="item item-input item-select">
+        <div class="input-label">
+        Sort By:
         </div>
-      <select>
-        <option selected>Research</option>
-        <option>Music</option>
-      </select>
-    </label>
-  </div>
+        <select id="sortSelect">
+          <option value="createdAt" selected>Most Recent</option>
+          <option value="compensation">Compensation</option>
+          <option value="duration">Duration</option>
+          <option value="rating">Rating</option>
+        </select>
+      </label>
+    </div>
   </div>
 
     <div id = "events"></div>
@@ -59,6 +68,8 @@
 
      var EventObject = Parse.Object.extend("event");
      var query = new Parse.Query(EventObject);
+
+     query.descending(sort);
 
      query.find({
         success: function(results) {
