@@ -24,23 +24,23 @@
 
     <div class="list" ng-controller="IndexController">
 
-        <a class="item item-thumbnail-left" href="#studyInfo?objectId">
-        <super-navigate location="studyInfo#studyInfo?id=objectId">
-          <img src = "<%=posterIcon._url%>" height = "80" width="80" style="top: 40px"</img>
-          </super-navigate>
+    <super-navigate location="studyInfo#studyInfo?id=objectId">
+        <div class="item item-thumbnail-left" href="#studyInfo?objectId">
+          <img src = "<%=posterIcon._url%>" height = "80" width="80" style="top: 40px; padding-right:30"</img>
+    </super-navigate>
           <h2><%=study%></h2>
           <p><%="$" + compensation%>, <%=duration%></p>
           <p><%=location%></p>
           <p><%="Start date: " +startdate_str%></p>
           <p><%="End date: " + enddate_str%></p>
           <p>
+          <%=likeNum + " Like"%> <%=dislikeNum + " Dislike"%>
+          </p>
           <i class = "icon super-heart-broken" style="font-size: 25px; float: right; padding-right: 10px" onclick="addDislikeNum('<%=testId%>')"></i>
           <i class = "icon super-heart" style="font-size: 25px; float: right; padding-right: 20px" onclick="addLikeNum('<%=testId%>')"></i>
           <i class = "icon super-email" style="font-size: 25px; float: right; padding-right: 20px" onclick="sendEmail()"></i>
-          <%=likeNum + " Like"%> <%=dislikeNum + " Dislike"%>
-          </p>
-        </a>
-     
+        </div>
+
     </div>
 
   </script>
