@@ -32,6 +32,19 @@
   <script type = "foo/bar" id = "eventTemplate">
 
       <ul class="list" ng-hide="events.length == 0">
+     <div class="list" ng-controller="IndexController">
+          <a class="item item-thumbnail-left" href="#">
+          <img src = "<%=posterIcon._url%>" height = "80" width="80" </img>
+          <h2><%=study%></h2>
+          <p><%="$" + compensation%>, <%=duration%></p>
+          <p><%=location%></p>
+          <p><%="Start date: " +startdate_str%></p>
+          <p><%="End date: " + enddate_str%></p>
+          <p><%=email%></p>
+          <p>  
+          <span type = "button" id = "envelope" class = "icon super-email" style="font-size: 25px; float: right; padding: 10px" onclick = "test()"></span>
+          </p>
+        </a>
 
       <div  >
         <li>
@@ -62,6 +75,9 @@
       </ul>
 
   </script>
+ <script >
+   src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+   </script>
 
   <script type="text/javascript">
     Parse.initialize("susDpNWLgi3QqeprNxBKeQ7uIJK0srYlde52neVb", "OMWpK5Oa17fiNcDyTkqvbKz2HHL6szH4jPYXlhz0");
@@ -157,10 +173,100 @@
    };
 
 
+
+alert('a');
+
+function test()
+{
+  if(confirm("Are you sure you want to send the email?"))
+  {
+  $.ajax(
+  {
+     type: "POST",
+     url: "https://mandrillapp.com/api/1.0/messages/send.json",
+      data: {
+        "key": "qgQsrDwIdACZ55h8AzrqIA",
+        "message": {
+            "html": "<p>Example HTML content</p>",
+            "text": "Example text content",
+            "subject": "Research about " 
+            "from_email": "varunk93@hotmail.com",
+            "from_name": "Student",
+            "to": [
+                {
+                    "email": "varunk93@hotmail.com",
+                    "name": "Professor",
+                    "type": "to"
+                }
+                  ],
+                  "autotext": 'true',
+                  "subject": "Research",
+                  "html": "Hello, I am interested in this research. Please contact me."
+                  /*
+            "images": [
+              {
+              }
+
+                    ]
+          */
+              }
+        }
+  }).done(function(response) {
+   console.log(response); // if you're into that sorta thing
+ });
+  alert("SENT");
+}
+  
+
+}
+  //$(function() {
+   //$("#envelope").click(test);
+    /* $.ajax({
+     type: "POST",
+     url: "https://mandrillapp.com/api/1.0/messages/send.json",
+  data: {
+    {
+    "key": "qgQsrDwIdACZ55h8AzrqIA",
+    "message": {
+        "html": "<p>Example HTML content</p>",
+        "text": "Example text content",
+        "subject": "example subject",
+        "from_email": "varunk93@hotmail.com",
+        "from_name": "Example Name",
+        "to": [
+            {
+                "email": "varunk93@hotmail.com",
+                "name": "Recipient Name",
+                "type": "to"
+            }
+        ],
+        "images": [
+            {
+            }
+        ]
+    },
+    "send_at": "4/22/15"
+}
+  }
+ }).done(function(response) {
+   console.log(response); // if you're into that sorta thing
+ });
+});
+ }); */
    </script>
 
 
+  
 
+<script>
+var setEmail(emBool)
+{
+  if (emBool == false)
+  {
+
+  }
+}
+</script>
 
 
 
