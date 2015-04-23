@@ -37,7 +37,9 @@
   <script type = "foo/bar" id = "eventTemplate">
 
   <ul class="list" ng-hide="events.length == 0">
+
      <div class="list" ng-controller="IndexController">
+     <!--
         <a class="item item-thumbnail-left" href="#">
           <img src = "<%=posterIcon._url%>" height = "80" width="80" </img>
           <h2><%=study%></h2>
@@ -51,7 +53,7 @@
               <span type = "button" id = "envelope" class = "icon super-email" style="font-size: 25px; float: right; padding: 10px" onclick = "test()"></span>
           </p>
         </a>
-
+-->
       <div>
         <li>
           <div class="item">
@@ -110,6 +112,8 @@
          var ss = document.getElementById("sortSelect");  //Sorting select obj
          var sort_id = ss.options[ss.selectedIndex].value;   //Value of sorting selected
 
+         alert(sort_id);
+
          //Sort events by sort_id option
          eventList.sort(function(a, b) {
               return (a[sort_id] < b[sort_id]) ? -1 : ((a[sort_id] > b[sort_id]) ? 1 : 0);
@@ -140,7 +144,7 @@
        query.find({
           success: function(results) {
 
-            alert("Found " + results.length + " items.")
+            //alert("Found " + results.length + " items.")
 
            for(var i = 0; i < results.length; i++)  //The length of data should be mutable
            {
@@ -154,12 +158,12 @@
            }
 
          document.getElementById("1").innerHTML = "success";
-       },
+          },
          error: function(object, error) {
 
           document.getElementById("1").innerHTML = "error";
-       }
-      });
+          }
+        });
      }
 
      getData();
@@ -184,7 +188,7 @@
      }
     });
 
-    };
+    }
 
     function addDislikeNum(id)
     {
@@ -205,7 +209,7 @@
      }
     });
 
-    };
+    }
 
 
 
@@ -317,10 +321,6 @@ var setEmail(emBool)
   }
 }
 </script>
-
-
-
-
 
 <style>
     .container
