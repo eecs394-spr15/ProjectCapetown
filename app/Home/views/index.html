@@ -72,8 +72,6 @@
      //Get sort order
      var ss = document.getElementById("sortSelect");  //Sorting select obj
      var sort = ss.options[ss.selectedIndex].value;   //Value of sorting selected
-
-     document.write(sort);
          
      //query.include('event');
      query.descending(sort);  //Get items sorted
@@ -83,7 +81,6 @@
 
          for (var i = 0; i<results.length; i++)  //The length of data should be mutable
          {
-
            var object = results[i].attributes;
            //test ID retrieval
            object.testId = results[i].id;
