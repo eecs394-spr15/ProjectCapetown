@@ -1,18 +1,39 @@
 <div class="padding" ng-controller="SettingsController">
 
+<div class="list">
+
   <!-- <i class = "icon super-person-add" style="font-size: 25px; margin-left: 10px"></i> -->
-  <i class = "icon super-gear-a" style="font-size: 25px; float: right; margin-right: 10px" ></i>
-<!--
+  <!--<i class = "icon super-gear-a" style="font-size: 25px; float: right; margin-right: 10px" ></i>-->
+  <!--
   <i class = "icon super-search" style="font-size: 25px; float: right; margin-right: 15px"></i>
--->
-  <i class = "icon super-plus-round" style="font-size: 25px; float: right; margin-right: 15px" onclick="window.location.href='newPoster.html'"></i>
+  -->
+  <!--<i class = "icon super-plus-round" style="font-size: 25px; float: right; margin-right: 15px" onclick="window.location.href='newPoster.html'"></i>-->
+<!--
     <p id = "Greeting"></p>
     <p>You can:</p>
-  <button id = "logbutton" onclick="supersonic.ui.initialView.show()"></button>
-<!--
+  <button id = "logbutton" onclick="supersonic.ui.initialView.show()">login</button>
+-->
+  <!--
   <button onclick="window.location.href='loginUser.html'">Sign in</button>
   <button onclick="window.location.href='newUser.html'">Log in with Facebook</button>
--->
+  -->
+  <p id = "Greeting"></p>
+<a class="item item-icon-left" onclick="window.location.href='newPoster.html'" href="#">
+  <i class="icon super-plus-circled" ></i>
+  New Poster
+</a>
+
+<a class="item item-icon-left" id = "logbutton" onclick="supersonic.ui.initialView.show()" href="#">
+  <i class="icon super-person-add"  ></i>
+  Log in
+</a>
+
+<a class="item item-icon-left" href="#">
+  <i class="icon super-person"  ></i>
+  Profile
+</a>
+
+</div>
 
 
 
