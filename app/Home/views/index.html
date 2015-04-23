@@ -36,26 +36,48 @@
 
   <script type = "foo/bar" id = "eventTemplate">
 
-    <div class="list" ng-controller="IndexController">
-
-    <super-navigate location="studyInfo#studyInfo?id=objectId">
-        <div class="item item-thumbnail-left" href="#studyInfo?objectId">
-          <img src = "<%=posterIcon._url%>" height = "80" width="80" style="top: 40px; padding-right:30"</img>
-    </super-navigate>
+  <ul class="list" ng-hide="events.length == 0">
+     <div class="list" ng-controller="IndexController">
+        <a class="item item-thumbnail-left" href="#">
+          <img src = "<%=posterIcon._url%>" height = "80" width="80" </img>
           <h2><%=study%></h2>
           <p><%="$" + compensation%>, <%=duration%></p>
           <p><%=location%></p>
           <p><%="Start date: " +startdate_str%></p>
           <p><%="End date: " + enddate_str%></p>
+          <p><%=likeNum + " Likes"%> <%=dislikeNum + " Dislikes"%></p>
+          <p><%=email%></p>
           <p>
-          <%=likeNum + " Likes"%> <%=dislikeNum + " Dislikes"%>
+              <span type = "button" id = "envelope" class = "icon super-email" style="font-size: 25px; float: right; padding: 10px" onclick = "test()"></span>
           </p>
-          <i class = "icon super-heart-broken" style="font-size: 25px; float: right; padding-right: 10px" onclick="addDislikeNum('<%=testId%>')"></i>
-          <i class = "icon super-heart" style="font-size: 25px; float: right; padding-right: 20px" onclick="addLikeNum('<%=testId%>')"></i>
-          <i class = "icon super-email" style="font-size: 25px; float: right; padding-right: 20px" onclick="sendEmail()"></i>
-        </div>
+        </a>
 
-    </div>
+      <div>
+        <li>
+          <div class="item">
+
+            <super-navigate location="studyInfo#studyInfo" data-params-id='<%=testId%>'>
+              <div class="item-thumbnail-left">
+              <img style= "position:absolute; top:35px;  border-width: 4px" height:80px; width: 80px; src = "<%=posterIcon._url%>" </img>
+                <div style="width:180px;word-break:break-word;">
+                <h2 style="position:relative; right:20px;"><%=study%></h2>
+                <p style= "position:relative; right:20px;"><span><%="$" + compensation%>, <%=duration%></span></p>
+                <p style= "position:relative; right:20px;"><span><%=location%></span></p>
+                <p style= "position:relative; right:20px;"><span><%="Start date: " +startdate_str%></span></p>
+                <p style= "position:relative; right:20px;"><span><%="End date: " + enddate_str%></span></p>
+                <p style= "position:relative; right:20px;"><span><%=likeNum + " Like"%> <%=dislikeNum + " Dislike"%></span></p>
+                </div>
+              </div>
+            </super-navigate>
+            <i class = "icon super-heart-broken" style="font-size: 25px; float: right; padding-right: 10px" onclick="addDislikeNum('<%=testId%>')"></i>
+            <i class = "icon super-heart" style="font-size: 25px; float: right; padding-right: 20px" onclick="addLikeNum('<%=testId%>')"></i>
+            <i class = "icon super-email" style="font-size: 25px; float: right; padding-right: 20px" onclick="sendEmail()"></i>
+          </div>
+        </li>
+      </div>
+
+
+    </ul>
 
   </script>
 
@@ -198,10 +220,103 @@
    };
 
 
+
+alert('a');
+
+function test()
+{
+  if(confirm("Are you sure you want to send the email?"))
+  {
+  $.ajax(
+  {
+     type: "POST",
+     url: "https://mandrillapp.com/api/1.0/messages/send.json",
+      data: {
+        "key": "qgQsrDwIdACZ55h8AzrqIA",
+        "message": {
+            "html": "<p>Example HTML content</p>",
+            "text": "Example text content",
+            "subject": "Research about " 
+            "from_email": "varunk93@hotmail.com",
+            "from_name": "Student",
+            "to": [
+                {
+                    "email": "varunk93@hotmail.com",
+                    "name": "Professor",
+                    "type": "to"
+                }
+                  ],
+                  "autotext": 'true',
+                  "subject": "Research",
+                  "html": "Hello, I am interested in this research. Please contact me."
+                  /*
+            "images": [
+              {
+              }
+
+                    ]
+          */
+              }
+        }
+  }).done(function(response) {
+   console.log(response); // if you're into that sorta thing
+ });
+  alert("SENT");
+}
+  
+
+}
+  //$(function() {
+   //$("#envelope").click(test);
+    /* $.ajax({
+     type: "POST",
+     url: "https://mandrillapp.com/api/1.0/messages/send.json",
+  data: {
+    {
+    "key": "qgQsrDwIdACZ55h8AzrqIA",
+    "message": {
+        "html": "<p>Example HTML content</p>",
+        "text": "Example text content",
+        "subject": "example subject",
+        "from_email": "varunk93@hotmail.com",
+        "from_name": "Example Name",
+        "to": [
+            {
+                "email": "varunk93@hotmail.com",
+                "name": "Recipient Name",
+                "type": "to"
+            }
+        ],
+        "images": [
+            {
+            }
+        ]
+    },
+    "send_at": "4/22/15"
+}
+  }
+ }).done(function(response) {
+   console.log(response); // if you're into that sorta thing
+ });
+});
+ }); */
    </script>
 
 
+ <script >
+   src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+   </script>
+  
 
+<script>
+var setEmail(emBool)
+{
+  if (emBool == false)
+  {
+
+  }
+}
+</script>
 
 
 
