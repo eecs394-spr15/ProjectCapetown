@@ -9,67 +9,164 @@
     </super-navbar-title>
   </super-navbar>
 
-  <div class="padding">
-    <h1>Study Info</h1>
-  </div>
-
-
-
+<<div id = "events"></div>
 
 <script type = "foo/bar" id = "eventTemplate">
-    
-    <div class="list" ng-controller="studyInfoController">
-    
-    <a class="item item-thumbnail-left" href="#studyInfo?objectId">
-        <h2><%=study%></h2>
+
+    <div class="list" ng-controller="IndexController">
+
+<a class="item" href="#studyInfo?objectId">
+<h1><%=study%></h1>
+    <h1>Number Quantity Prception</h1>
+    <img src = "<%=posterIcon._url%>" height = "80" width="80" style="top: 40px"</img>
+    <img src = "<%=posterIcon._url%>" height = "80" width="80" style="top: 40px"</img>
+    <h3>Lab: Visual Cognition Lab</h3>
+    <h3>Location: 112 Cresap</h3>
+    <h3>Dates: 4/20 - 6/15</h3>
+    <h3>Duration: 30 mins</h3>
+    <h3>Compensation: $10</h3>
+    <h3>Description: This study examines the different ways people encode locations of objects in a visuospatial environment. It involves performing a search task within grids of 16 objects.</h3>
+    </a>
+  </div>
+
+</div>
+
+ </div>
+
+   <<div id = "events"></div>
+
+    <script type = "foo/bar" id = "eventTemplate">
+
+        <div class="list" ng-controller="IndexController">
+
+        <a class="item item-thumbnail-left" href="#studyInfo?objectId">
         <img src = "<%=posterIcon._url%>" height = "80" width="80" style="top: 40px"</img>
+        <h2><%=study%></h2>
         <p><%="$" + compensation%>, <%=duration%></p>
         <p><%=location%></p>
         <p><%="Start date: " +startdate_str%></p>
         <p><%="End date: " + enddate_str%></p>
-    </a>
-    
-    </div>
+        <p>
+        <i class = "icon super-heart-broken" style="font-size: 25px; float: right; padding-right: 10px" onclick="addDislikeNum('<%=testId%>')"></i>
+        <i class = "icon super-heart" style="font-size: 25px; float: right; padding-right: 20px" onclick="addLikeNum('<%=testId%>')"></i>
+        <i class = "icon super-email" style="font-size: 25px; float: right; padding-right: 20px" onclick="sendEmail()"></i>
+        <%=likeNum + " Like"%> <%=dislikeNum + " Dislike"%>
+        </p>
+        </a>
 
-  </script>
+        </div>
 
+        </script>
 
-<script type="text/javascript">
-    Parse.initialize("susDpNWLgi3QqeprNxBKeQ7uIJK0srYlde52neVb", "OMWpK5Oa17fiNcDyTkqvbKz2HHL6szH4jPYXlhz0");
-    var template = $("#eventTemplate").html();
-    us_template = _.template(template);
-    var createEvent = function(a) {
-        $("#events").append(us_template(a));
-    }
+    <script type="text/javascript">
+        Parse.initialize("susDpNWLgi3QqeprNxBKeQ7uIJK0srYlde52neVb", "OMWpK5Oa17fiNcDyTkqvbKz2HHL6szH4jPYXlhz0");
+        var template = $("#eventTemplate").html();
+        us_template = _.template(template);
+        var createEvent = function(a) {
+            $("#events").append(us_template(a));
+        }
     var TestObject = Parse.Object.extend("TestObject");
     var testObject = new TestObject();
     testObject.save({foo: "Frank124"}).then(function(object) {
-    });
+                                            });
 
-    var EventObject = Parse.Object.extend("event");
-    var query = new Parse.Query(EventObject);
+                                            var EventObject = Parse.Object.extend("event");
+                                            var query = new Parse.Query(EventObject);
 
-    query.find({
-           success: function(results) {
-           
-           for (var i = 0; i<results.length; i++)  //The length of data should be mutable
-           {
-           
-               var object = results[i].attributes;
-               //test ID retrieval
-               object.testId = results[i].id;
-           
-               //testForId = object.testId;
-               createEvent(object);
-               }
-           
-           document.getElementById("1").innerHTML = "success";
-        },
-           error: function(object, error) {
-           
-               document.getElementById("1").innerHTML = "error";
-           }
-           });
-         </script>
+                                            query.find({
+                                                       success: function(results) {
 
-</div>
+                                                       for (var i = 0; i<results.length; i++)  //The length of data should be mutable
+                                                       {
+
+                                                       var object = results[i].attributes;
+                                                       //test ID retrieval
+                                                       object.testId = results[i].id;
+
+                                                       //testForId = object.testId;
+
+                                                       createEvent(object);
+                                                       }
+
+                                                       document.getElementById("1").innerHTML = "success";
+                                                       },
+                                                       error: function(object, error) {
+
+                                                       document.getElementById("1").innerHTML = "error";
+                                                       }
+                                                       });
+
+
+                                                      function addLikeNum(id) {
+                                                           //alert("testForLike");
+                                                           var EventForVote = Parse.Object.extend("event");
+                                                           var query = new Parse.Query(EventForVote);
+                                                           query.get(id,{
+                                                                     success: function(results) {
+                                                                     results.increment('likeNum');
+                                                                     results.save();
+                                                                     alert(results.get('likeNum'));
+                                                                     alert(id);
+                                                                     location.reload();
+                                                                     },
+                                                                     error: function(object, error) {
+                                                                     //alert("Error");
+                                                                     }
+                                                                     });
+                                                       };
+
+    function addDislikeNum(id) {
+        //alert("testForDislike");
+        var EventForVote = Parse.Object.extend("event");
+        var query = new Parse.Query(EventForVote);
+        query.get(id,{
+                  success: function(results) {
+                  results.increment('dislikeNum');
+                  results.save();
+                  alert(results.get('dislikeNum'));
+                  //alert(id);
+                  location.reload();
+                  },
+                  error: function(object, error) {
+                  alert("Error");
+                  }
+                  });
+    };
+
+        </script>
+
+
+    <script>
+        function sendEmail()
+        {
+            var EMAIL_ADDRESS = "";
+            window.open("mailto:" + EMAIL_ADDRESS);
+        };
+
+
+        </script>
+
+
+
+
+
+
+
+
+    <style>
+        .container
+        {
+            width:100%;
+        }
+    #M-button
+    {
+        width:50%;
+        display: inline !important;
+    }
+    #R-button
+    {
+        width:50%;
+        display: inline !important;
+    }
+    </style>
+</html>

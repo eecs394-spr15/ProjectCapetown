@@ -31,26 +31,35 @@
 
   <script type = "foo/bar" id = "eventTemplate">
 
-    <div class="list" ng-controller="IndexController">
+      <ul class="list" ng-hide="events.length == 0">
 
-    <super-navigate location="studyInfo#studyInfo?id=objectId">
-        <div class="item item-thumbnail-left" href="#studyInfo?objectId">
-          <img src = "<%=posterIcon._url%>" height = "80" width="80" style="top: 40px; padding-right:30"</img>
-    </super-navigate>
-          <h2><%=study%></h2>
-          <p><%="$" + compensation%>, <%=duration%></p>
-          <p><%=location%></p>
-          <p><%="Start date: " +startdate_str%></p>
-          <p><%="End date: " + enddate_str%></p>
-          <p>
-          <%=likeNum + " Like"%> <%=dislikeNum + " Dislike"%>
-          </p>
-          <i class = "icon super-heart-broken" style="font-size: 25px; float: right; padding-right: 10px" onclick="addDislikeNum('<%=testId%>')"></i>
-          <i class = "icon super-heart" style="font-size: 25px; float: right; padding-right: 20px" onclick="addLikeNum('<%=testId%>')"></i>
-          <i class = "icon super-email" style="font-size: 25px; float: right; padding-right: 20px" onclick="sendEmail()"></i>
-        </div>
+      <div  >
+        <li>
+          <div class="item">
 
-    </div>
+
+            <super-navigate location="studyInfo#studyInfo" data-params-id='<%=testId%>'>
+              <div class="item-thumbnail-left">
+              <img style= "position:absolute; top:35px;  border-width: 4px" height:80px; width: 80px; src = "<%=posterIcon._url%>" </img>
+                <div style="width:180px;word-break:break-word;">
+                <h2 style="position:relative; right:20px;"><%=study%></h2>
+                <p style= "position:relative; right:20px;"><span><%="$" + compensation%>, <%=duration%></span></p>
+                <p style= "position:relative; right:20px;"><span><%=location%></span></p>
+                <p style= "position:relative; right:20px;"><span><%="Start date: " +startdate_str%></span></p>
+                <p style= "position:relative; right:20px;"><span><%="End date: " + enddate_str%></span></p>
+                <p style= "position:relative; right:20px;"><span><%=likeNum + " Like"%> <%=dislikeNum + " Dislike"%></span></p>
+                </div>
+              </div>
+            </super-navigate>
+            <i class = "icon super-heart-broken" style="font-size: 25px; float: right; padding-right: 10px" onclick="addDislikeNum('<%=testId%>')"></i>
+            <i class = "icon super-heart" style="font-size: 25px; float: right; padding-right: 20px" onclick="addLikeNum('<%=testId%>')"></i>
+            <i class = "icon super-email" style="font-size: 25px; float: right; padding-right: 20px" onclick="sendEmail()"></i>
+          </div>
+        </li>
+      </div>
+
+
+      </ul>
 
   </script>
 
