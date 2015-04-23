@@ -21,7 +21,7 @@
           <option value="createdAt" selected>Most Recent</option>
           <option value="compensation">Compensation</option>
           <option value="duration">Duration</option>
-          <option value="rating">Rating</option>
+          <!--<option value="rating">Rating</option>-->
         </select>
       </label>
     </div>
@@ -69,7 +69,14 @@
      var EventObject = Parse.Object.extend("event");
      var query = new Parse.Query(EventObject);
 
-     query.descending(sort);
+     //Get sort order
+     var ss = document.getElementById("sortSelect");  //Sorting select obj
+     var sort = ss.options[ss.selectedIndex].value;   //Value of sorting selected
+
+     document.write(sort);
+         
+     //query.include('event');
+     query.descending(sort);  //Get items sorted
 
      query.find({
         success: function(results) {
