@@ -1,0 +1,59 @@
+<head>
+<script type="text/javascript">
+    Parse.initialize("susDpNWLgi3QqeprNxBKeQ7uIJK0srYlde52neVb", "OMWpK5Oa17fiNcDyTkqvbKz2HHL6szH4jPYXlhz0");
+    function codeAddress() {
+    var currentUser = Parse.User.current();
+      if (currentUser) {
+          document.getElementById("Greeting").innerHTML = "Hello, " + currentUser.get("username");
+          document.getElementById("logbutton").innerHTML = "Log off";
+    // do stuff with the user
+      } else {
+    // show the signup or login page
+          document.getElementById("Greeting").innerHTML = "Hello, Guest";
+          document.getElementById("logbutton").innerHTML =  "<i class='icon super-person-add'></i>" + "Login or Signup";
+          document.getElementById("profile").style.visibility = 'hidden';
+      }}
+      function log(){
+        var currentUser = Parse.User.current();
+        if (currentUser) {
+          Parse.User.logOut();
+          alert("You have logged off");
+          codeAddress();
+    // do stuff with the user
+        } else {
+    // show the signup or login page
+          supersonic.ui.initialView.show();
+      
+      }}
+      window.onload = codeAddress;
+</script>
+</head>
+
+
+<div class="padding" ng-controller="SettingsController" onload="codeAddress()">
+<h3 id = "Greeting" >Hello, Guest</h3>
+ 
+
+<div class="list Card">
+
+<a class="item item-icon-left" href='newPoster.html'>
+  <i class="icon super-plus-circled" ></i>
+  New Poster
+</a>
+
+ 
+
+<a class="item item-icon-left" id = "logbutton" onclick="log()" href="#">
+  <i class="icon super-person-add" ></i> 
+  
+</a>
+
+<!-- <a class="item item-icon-left" id = "profile"href="#">
+  <i class="icon super-person"  ></i>
+  Profile
+</a> -->
+</div>
+</div>
+
+
+
