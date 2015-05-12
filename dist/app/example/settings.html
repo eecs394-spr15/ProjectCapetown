@@ -31,126 +31,37 @@
 </head>
 <body ng-app="example">
 
-<div class="padding" ng-controller="SettingsController">
-
-  <super-navbar>
-    <super-navbar-title>
-      Settings
-    </super-navbar-title>
-  </super-navbar>
-
-  <h3>Supersonic CSS Components</h3>
-
-  <p>Below are some example Supersonic CSS components for you to study and play around with.</p>
-
-  <h2>I <span class="assertive">&lt;3</span>...</h2>
-
-  <ul class="list">
-    <li class="item item-toggle">
-       HTML5
-       <label class="toggle toggle-assertive">
-         <input type="checkbox">
-         <div class="track">
-           <div class="handle"></div>
-         </div>
-       </label>
-    </li>
-
-    <li class="item item-toggle">
-       CoffeeScript
-       <label class="toggle toggle-royal">
-         <input type="checkbox">
-         <div class="track">
-           <div class="handle"></div>
-         </div>
-       </label>
-    </li>
-
-    <li class="item item-toggle">
-       SASS
-       <label class="toggle toggle-balanced">
-         <input type="checkbox">
-         <div class="track">
-           <div class="handle"></div>
-         </div>
-       </label>
-    </li>
-
-    <li class="item item-toggle">
-       Native performance
-       <label class="toggle toggle-calm">
-         <input type="checkbox">
-         <div class="track">
-           <div class="handle"></div>
-         </div>
-       </label>
-    </li>
-  </ul>
-
-  <h2>Drag some sliders</h2>
-
-  <div class="list">
-    <div class="item range range-positive">
-      <i class="icon super-ios7-sunny-outline"></i>
-      <input type="range" name="volume" min="0" max="100" value="33">
-      <i class="icon super-ios7-sunny"></i>
+<!DOCTYPE html>
+<html>
+  <head>
+  <script>
+  window.addEventListener('WebComponentsReady', function() {
+    supersonic.app.splashscreen.hide();
+  });
+  </script>
+  <!-- Cloud resource definition file for Supersonic Data -->
+  <script src="/cloud-resources.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <link rel='stylesheet' href='res/css/style.css'>
+  <script src="res/js/jquery-1.11.2.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <title> IMCI </title>
+  </head>
+  <body>
+    <div class='content'>
+      <p><img style="width:100%;" src='res/img/training.jpg'/></p>
+      <ul class='horizontal-list'>
+        <li><a href='pre-test-introduction.html'><img src='res/img/pre-test.jpg'/></a></li>
+        <li><a href='learning-home.html'><img src='res/img/learn.jpg'/></a></li>
+        <li><a href='cases.html'><img src='res/img/case-study.jpg'/></a></li>
+        <li><a href='post-test-introduction.html'><img src='res/img/post-test.jpg'/></a></li>
+      </ul>
+      </ul>
+      <h2><a href='main.html'>Back</a></h2>
     </div>
-
-    <div class="item range range-assertive">
-      <i class="icon super-ios7-star-outline"></i>
-      <input type="range" name="bass" min="0" max="100" value="90">
-      <i class="icon super-ios7-star"></i>
-    </div>
-
-    <div class="item range range-energized">
-      <i class="icon super-ios7-heart-outline"></i>
-      <input type="range" name="treble" min="0" max="100" value="66">
-      <i class="icon super-ios7-heart"></i>
-    </div>
-
-    <div class="item range range-balanced">
-      <i class="icon super-ios7-bolt-outline"></i>
-      <input type="range" name="awesomeness" min="0" max="100" value="50">
-      <i class="icon super-ios7-bolt"></i>
-    </div>
-
-    <div class="item range range-royal">
-      <i class="icon super-ios7-wineglass-outline"></i>
-      <input type="range" name="unicorns" min="0" max="100" value="10">
-      <i class="icon super-ios7-wineglass"></i>
-    </div>
-  </div>
-
-  <h2>Check some checkboxes</h2>
-
-  <ul class="list">
-    <li class="item item-checkbox">
-       <label class="checkbox">
-         <input type="checkbox">
-       </label>
-       X-Wing
-    </li>
-
-    <li class="item item-checkbox">
-       <label class="checkbox checkbox-assertive">
-         <input type="checkbox">
-       </label>
-       TIE Fighter
-    </li>
-
-    <li class="item item-checkbox">
-       <label class="checkbox checkbox-calm">
-         <input type="checkbox">
-       </label>
-       A-Wing
-    </li>
-  </ul>
-
-  <p>
-    Discover more CSS components and Supersonic awesomeness at <a onclick="supersonic.app.openURL('http://docs.appgyver.com')" href="#">http://docs.appgyver.com</a>
-  </p>
-
-</div>
+  </body>
+</html>
 
 
 </body>
