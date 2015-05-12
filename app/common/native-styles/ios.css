@@ -35,7 +35,7 @@ tab-bar tab-bar-item:selected {
 }
 
 tab-bar-item#settings {
-  background-image: url(icons/train.svg);
+  background-image: url(icons/training.svg);
 }
 
 tab-bar-item#index {
@@ -43,5 +43,5 @@ tab-bar-item#index {
 }
 
 tab-bar-item#internet {
-  background-image: url(icons/search.svg);
+  background-image: url(icons/gameIcon.svg);
 }
