@@ -1,7 +1,7 @@
 /**
  * supersonic
- * Version: 1.5.1
- * Published: 2015-05-07
+ * Version: 1.5.2
+ * Published: 2015-05-08
  * Homepage: https://github.com/AppGyver/supersonic
  * License: MIT
  */
@@ -24697,9 +24697,11 @@ module.exports = function(logger, window, data, env) {
 
 
 },{"./users":209}],209:[function(require,module,exports){
-var data;
+var Promise, data;
 
 data = require('ag-data');
+
+Promise = require('bluebird');
 
 module.exports = function(logger, window, session, env) {
   var resourceBundle, userModel, usersResourceBundle, _ref;
@@ -24742,14 +24744,19 @@ module.exports = function(logger, window, session, env) {
   resourceBundle = data.loadResourceBundle(usersResourceBundle);
   userModel = resourceBundle.createModel("users");
   userModel.getCurrentUser = function() {
-    return userModel.find(session.getUserId());
+    var userId;
+    if (userId = session.getUserId()) {
+      return userModel.find(userId);
+    } else {
+      return Promise.reject(new Error("Cannot access current user without a valid session"));
+    }
   };
   return userModel;
 };
 
 
 
-},{"ag-data":3}],210:[function(require,module,exports){
+},{"ag-data":3,"bluebird":166}],210:[function(require,module,exports){
 var Bacon, deepEqual,
   __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
