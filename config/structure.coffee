@@ -11,7 +11,7 @@ module.exports =
     }
     {
       title: "Training"
-      id: "settings"
+      id: "training"
       location: "example#training"
     }
     {
