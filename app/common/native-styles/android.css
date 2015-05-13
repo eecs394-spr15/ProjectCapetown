@@ -60,8 +60,8 @@ tab-bar tab-bar-item marker-top:selected {
   background-color: #1596f7;
 }
 
-tab-bar-item#settings {
-  background-image: url(icons/train.svg);
+tab-bar-item#training {
+  background-image: url(icons/training.svg);
 }
 
 tab-bar-item#index {
