@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="res/css/bootstrap.min.css">
+    <link rel="stylesheet" href="res/css/bootstrap-theme.min.css">
+    <link rel='stylesheet' href='res/css/style.css'>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="res/js/jquery-1.11.2.min.js"></script>
+    <script src="res/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='res/js/prototype.js'></script>
+    <script type='text/javascript' src='res/js/flowchart.js'></script>
+    <style>
+
+      .wrapper {
+        width: 800px;
+        margin-left: -400px;
+      }
+
+      .flowchart-choice div {
+        width: 130px;
+      }
+
+    </style>
+    <title> IMCI </title>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <span class="navbar-brand"> IMCI </a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-align-justify" aria-hidden="false"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="main.html">Main</a></li>
+                <li><a href="introduction.html">Introduction</a></li>
+                <li><a href="training.html">Training</a></li>
+                <li><a href="#">Games</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </head>
+  <body>
+    <h1>Learn</h1>
+    <div class='content'>
+      <div class='flowchart'>
+        <div class='flowchart-start flowchart-component' data-next='label-1' id='start'>
+          start
+        </div>
+        <div id='label-1' class='flowchart-group' style='top: -10px; position: relative;'>
+          <div class='arrow'>
+            &#8595;
+          </div>
+          <div class='flowchart-box'>
+            <p>Is the child unable to breastfeed or drink?</p>
+            <p>Is the child vomiting?</p>
+            <p>Is the child having convulsions?</p>
+            <p>Is the child lethargic or unconscious?</p>
+            <div class='flowchart-choice'>
+              <div class='flowchart-component' data-next='label-3'>Yes to any</div>
+              <div class='flowchart-component' data-next='label-2'>No to all</div>
+            </div>
+          </div>
+        </div>
+        <div id='label-2' class='flowchart-group' style='top: -10px; position: relative;'>
+          <div class='arrow'>
+            &#8595;
+          </div>
+          <div class='flowchart-box'>
+            <div style="padding: 10px">
+              <a href='linear-respiratory.html'>Move on to next module</a>
+            </div>
+          </div>
+        </div>
+        <div id='label-3' class='flowchart-group' style='top: -10px; position: relative;'>
+          <div class='arrow'>
+            &#8595;
+          </div>
+          <div class='flowchart-triangle flowchart-component' data-next='label-4'>
+            <img src='res/img/triangle.png'/>
+            <div class='flowchart-triangle-content'>
+              <p>Classification:</p>
+              <p>General Danger Sign</p>
+            </div>
+          </div>
+        </div>
+        <div id='label-4' class='flowchart-group' style='top: -10px; position: relative;'>
+          <div class='arrow'>
+            &#8595;
+          </div>
+          <div class='flowchart-box flowchart-component' data-next='label-5'>
+            <div style="padding: 10px">
+              <p>Treat General Danger Sign:</p>
+              <p>Test for low blood sugar and treat if present.</p>
+              <p>Give Oxygen if the child is lethargic or unconscious.</p>
+            </div>
+          </div>
+        </div>
+        <div id='label-5' class='flowchart-group' style='top: -10px; position: relative;'>
+          <div class='arrow'>
+            &#8595;
+          </div>
+          <div class='flowchart-triangle flowchart-component' data-next='label-6' style='height: 350px;'>
+            <img src='res/img/triangle.png' style='width: 400px'/>
+            <div class='flowchart-triangle-content' style='width: 250px; top: 150px;'>
+              <p> GDS means </p>
+              <p>also classify as:</p>
+              <p>Severe Pnemonia,</p>
+              <p>Suspected Meningitis,</p>
+              <p>Suspected Severe Malaria,</p>
+              <p>Suspected Complicated Measles.</p>
+            </div>
+          </div>
+        </div>
+        <div id='label-6' class='flowchart-group' style='top: -10px; position: relative;'>
+          <div class='arrow'>
+            &#8595;
+          </div>
+          <div class='flowchart-box'>
+            <div style="padding: 10px">
+              <a href='linear-res.html'>Treat all above classifications. Complete assesment by advancing to next module.</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href='linear-home.html' class='btn-primary btn'>Back</a>
+    </div>
+  </body>
+</html>
+
+

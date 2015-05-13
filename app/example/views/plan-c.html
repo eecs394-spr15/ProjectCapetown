@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="res/css/bootstrap.min.css">
+    <link rel="stylesheet" href="res/css/bootstrap-theme.min.css">
+    <link rel='stylesheet' href='res/css/style.css'>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="res/js/jquery-1.11.2.min.js"></script>
+    <script src="res/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='res/js/prototype.js'></script>
+    <script type='text/javascript' src='res/js/flowchart.js'></script>
+    <style>
+
+      .wrapper {
+        width: 800px;
+        margin-left: -400px;
+      }
+
+      .flowchart-choice div {
+        width: 130px;
+      }
+
+    </style>
+    <title> IMCI </title>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <span class="navbar-brand"> IMCI </a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-align-justify" aria-hidden="false"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="main.html">Main</a></li>
+                <li><a href="introduction.html">Introduction</a></li>
+                <li><a href="training.html">Training</a></li>
+                <li><a href="#">Games</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </head>
+  <body>
+    <h1>Learn</h1>
+    <div class='flowchart' style='position: fixed'>
+      <div class='flowchart-box' style='display: block'>
+        <p>Note: if possible, observe the child for at least 6 hours after rehydration, to be</p>
+        <p>sure the mother can maintain hydration giving the child ORS by mouth.</p>
+      </div>
+      <div class='flowchart-box' style='display: block'>
+        <p>Exception: Another severe classification(suspected meningitis, etc.) - </p>
+        <p>*Too much IV fluids is dangerous in very sick children. Treatment should be</p>
+        <p>supervised very closely in hospital</p>
+        <p>*Setup a drip for severe dehydration, but give normal saline only 10 ml per kg</p>
+        <p>of body weight each hour.</p>
+        <p>*Then give sips of ORS while awaiting urgent referral.</p>
+      </div>
+    </div>
+    <div class='content'>
+      <div class='flowchart'>
+        <div class='flowchart-start flowchart-component' data-next='label-1' id='start'>
+          start
+        </div>
+        <div id='label-1' class='flowchart-group' style='top: -10px; position: relative;'>
+          <div class='arrow'>
+            &#8595;
+          </div>
+          <div class='flowchart-box'>
+            <p>Can you give IV fluids immediately?</p>
+            <div class='flowchart-choice'>
+              <div class='flowchart-component' data-next='label-5'>Yes</div>
+              <div class='flowchart-component' data-next='label-2'>No</div>
+            </div>
+          </div>
+        </div>
+        <div id='label-2' class='flowchart-group' style='top: -10px; position: relative;'>
+          <div class='arrow'>
+            &#8595;
+          </div>
+          <div class='flowchart-box'>
+            <p>Is IV treatment available nearby(within 30 minutes)?</p>
+            <div class='flowchart-choice'>
+              <div class='flowchart-component' data-next='label-3'>Yes</div>
+              <div class='flowchart-component' data-next='label-4'>No</div>
+            </div>
+          </div>
+        </div>
+        <div id='label-3' class='flowchart-group' style='top: -10px; position: relative;'>
+          <div class='arrow'>
+            &#8595;
+          </div>
+          <div class='flowchart-box'>
+            <p>*Refer URGENTLY to hospital for IV</p>
+            <p>treatment.</p>
+            <p>*If the child can drink, provide the mother</p>
+            <p>with ORS solution and show her how to</p>
+            <p>give frequent sips during the trip or give</p>
+            <p>ORS by nasogastric tube.</p>
+          </div>
+        </div>
+        <div id='label-5' class='flowchart-group' style='top: -10px; position: relative;'>
+          <div class='arrow'>
+            &#8595;
+          </div>
+          <div class='flowchart-box'>
+            <p>*Start IV fluid immediately.</p>
+            <p>*If the child can drink, give ORS by</p>
+            <p>mouth while the drip is set up.</p>
+            <p>*Weigh or estimate the weight of the child</p>
+            <p>*Give normal saline IV</p>
+          </div>
+          <div class='flowchart-box'>
+            <p>*Within the first half hour:</p>
+            <p>*Rapidly give 20ml of IV per kg body</p>
+            <p>weight before referral.</p>
+            <p>*Repeat this amount up to twice if the</p>
+            <p>radial pulse is weak or not detectable</p>
+          </div>
+          <div class='flowchart-box'>
+            <p>Plan for the next 5 hours:</p>
+            <p>*More slowly, give 20ml of IV per kg of</p>
+            <p>body weight every hour during referral.</p>
+            <p>*Ensure the IV continues running, but</p>
+            <p>does not run too fast.</p>
+          </div>
+          <br/>
+          <div class='flowchart-box' style="max-width: 500px">
+            <p>*Refer URGENTLY for further management.</p>
+            <p>*Release the child every 1-2 hours while awaiting transfer - if</p>
+            <p>hydration status is not improving, give the IV drip more rapidly.</p>
+            <p>*Give ORS as soon as the child can drink(5 ml per kg body weight</p>
+            <p>each hour).</p>
+            <p>*Reassess the child after 3 hours if he/she is still at the clinic - </p>
+            <p>Classify hydration and then choose the appropriate plan(A/B/C) to </p>
+            <p>continue treatment. Refer to hopital no matter the re-classification.</p>
+            <p>If mother refuse referral or you cannot refer, observe child in clinic</p>
+            <p>for at least 6 hours after he/she has been fully rehydrated.</p>
+          </div>
+        </div>
+        <div id='label-4' class='flowchart-group' style='top: -10px; position: relative;'>
+          <div class='arrow'>
+            &#8595;
+          </div>
+          <div class='flowchart-box'>
+            <p>Are you trained to use a</p>
+            <p>nasogastric tube(NG) for </p>
+            <p>rehydration.</p>
+            <div class='flowchart-choice'>
+              <div class='flowchart-component' data-next='label-7'>Yes</div>
+              <div class='flowchart-component' data-next='label-8'>No</div>
+            </div>
+          </div>
+        </div>
+        <div id='label-7' class='flowchart-group' style='top: -10px; position: relative;'>
+          <div class='arrow'>
+            &#8595;
+          </div>
+          <div class='flowchart-box' style='max-width: 600px'>
+            <p>*Start rehydration with ORS solution by tube. Give 20 ml per kg body weight each hour for up to 6 hours.</p>
+            <p>*Refer URGENTLY for further management.</p>
+            <p>*Reassess the child every 1-2 hours while awaiting transfer-</p>
+            <p>If there is repeated vomiting, give the fluid more slowly.</p>
+            <p>If there is abdominal distension, stop fluids and refer URGENTLY,</p>
+            <p>After 6 hours, reassess the child if he/she is stall at the clinic. Classify dehydration, then choose and follow</p>
+            <p>appropriate plan(A/B/C) to continue treatmenet.</p>
+          </div>
+        </div>
+        <div id='label-8' class='flowchart-group' style='top: -10px; position: relative;'>
+          <div class='arrow'>
+            &#8595;
+          </div>
+          <div class='flowchart-box'>
+            <p>Can the child drink?</p>
+            <div class='flowchart-choice'>
+              <div class='flowchart-component' data-next='label-9'>Yes</div>
+              <div class='flowchart-component' data-next='label-10'>No</div>
+            </div>
+          </div>
+        </div>
+        <div id='label-9' class='flowchart-group' style='top: -10px; position: relative;'>
+          <div class='arrow'>
+            &#8595;
+          </div>
+          <div class='flowchart-box' style="max-width: 500px;">
+            <p>*Start rehydration with ORS solution by tube. Give 20 ml per kg body weight each hour for up to 6 hours</p>
+            <p>*Refer URGENTLY for further management.</p>
+            <p>*Reassess the child every 1-2 hours while awaiting transfer - </p>
+            <p>If there is repeated vomiting, give the fluid more slowly,</p>
+            <p>If there is abdominal distension, stop fluid and refer URGENTLY,</p>
+            <p>After 6 hours, reassess the child if he/she is still at the clinic. Classify dehydration, then choose and follow</p>
+            <p>appropriate plan(A/B/C) to continue treatment</p>
+          </div>
+        </div>
+        <div id='label-10' class='flowchart-group' style='top: -10px; position: relative;'>
+          <div class='arrow'>
+            &#8595;
+          </div>
+          <div class='flowchart-box'>
+            <p>*Refer URGENTLY to a</p>
+            <p>hospital for IV or NG</p>
+            <p>treatment.</p>
+          </div>
+        </div>
+      </div>
+      <a href='linear-home.html' class='btn-primary btn'>Back</a>
+    </div>
+  </body>
+</html>

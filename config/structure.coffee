@@ -12,7 +12,7 @@ module.exports =
     {
       title: "Training"
       id: "settings"
-      location: "example#settings"
+      location: "example#training"
     }
     {
       title: "Game"
