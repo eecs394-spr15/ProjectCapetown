@@ -1,17 +1,34 @@
-
 <!DOCTYPE html>
 <html>
  <head>
-
-   <title> IMCI </title>
+  <title> IMCI </title>
+  <style>
+	body  {
+    	background-image: url("/img/IMCI.jpg");
+        background-repeat:no-repeat;
+		background-size: 100%;
+        	}
+	#logIn {
+		position:absolute;
+		top:80%;
+	    
+	}    	
+  </style>
  </head>
- <body>
-   <div >
-     <div>
-       <img style="width:370px; height:450px; " src='/img/IMCI.jpg'/>
-     </div>
-     <button onclick="supersonic.ui.initialView.dismiss()" class="button button-large button-block button-positive">Tap to Begin</button>
-   </div>
- </body>
-</html>
+<body>
 
+<script>
+alert("yay");
+
+steroids.view.setBackgroundImage({
+  image: "/img/IMCI.jpg"
+}, {
+  onSuccess: function() { alert("Background image set succesfully!"); }
+  onFailure: function() { alert("Could not set background image."); }
+});
+</script>
+ <div >
+  <button id="logIn" onclick="supersonic.ui.initialView.dismiss()" class="button button-block button-royal">Tap to Begin</button>
+ </div>
+</body>
+</html>
