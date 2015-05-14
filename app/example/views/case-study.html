@@ -1,47 +1,78 @@
+
+<input type="checkbox" />Checkbox<br/>
+<span id="result"></span>
+<script type="text/javascript">
+window.onload = function () {
+    var input = document.querySelector('input[type=checkbox]');
+
+    function check() {
+        var a = input.checked ? "checked" : "not checked";
+        document.getElementById('result').innerHTML = 'result ' + a;
+    }
+    input.onchange = check;
+    check();
+}
+</script>
+
+
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="res/css/bootstrap.min.css">
-    <link rel="stylesheet" href="res/css/bootstrap-theme.min.css">
-    <link rel='stylesheet' href='res/css/style.css'>
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-    <script type="text/javascript" src="cordova.js"></script>
-    <script src="res/js/jquery-1.11.2.min.js"></script>
-    <script src="res/js/bootstrap.min.js"></script>
-    <script type='text/javascript' src='res/js/prototype.js'></script>
-    <script type='text/javascript' src='res/js/case-study.js'></script>
-    <title> IMCI </title>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <span class="navbar-brand"> IMCI </a>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-align-justify" aria-hidden="false"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="main.html">Main</a></li>
-                <li><a href="introduction.html">Introduction</a></li>
-                <li><a href="training.html">Training</a></li>
-                <li><a href="#">Games</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </head>
-  <body>
-    <div class='content'>
-      <div id='question' style="max-width: 500px;white-space: pre-wrap;"> Here is question </div>
-      <p>Please check all the right answers</p>
-      <p id='hint' class='red'>One or more answers are not right</p>
-      <div id='choices' style="max-width:500px">
-      </div>
-      <br/>
-      <h2 id='next' class='btn btn-primary'>Next</h2>
-    </div>
-  </body>
-</html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#hide").click(function(){
+        $("p").hide();
+    });
+    $("#show").click(function(){
+        $("p").show();
+    });
+});
+</script>
+</head>
+<body>
+<h3> Which of the following is the most different from the others?</h3>
+<ul class="list">
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox">
+     </label>
+     A Ph.D. in Mathematical Biology
+  </li>
+  <p> Wrong </p>
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox">
+     </label>
+     A Ph.D. in Theoretical Mathematics
+  </li>
+  <p> Wrong </p>
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox">
+     </label>
+     A Ph.D. in Statistics
+  </li>
+  <p> Wrong </p>
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox">
+     </label>
+     A large pepperoni pizza
+  </li>
+  <p> Wrong </p>
+  <a id= "show" class="button button-block button-calm icon-left super-document" href="#">Submit</a>
+  <a id= "hide" class="button button-block button-calm icon-left super-document" href="#">Hide</a>
 
+
+  
+</ul>
+
+
+<script> 
+$("p").hide();
+</script>
+
+</body>
+</html>
