@@ -10,15 +10,37 @@
         	}
 	#logIn {
 		position:absolute;
-		top:80%;
+		top:60%;
 	    
 	}    	
+    #SignUp {
+    position:absolute;
+    top:70%;
+      
+  }  
+    #Skip {
+    position:absolute;
+    top:80%;
+      
+  }  
   </style>
  </head>
 <body>
 
-<div >
-  <button id="logIn" onclick="supersonic.ui.initialView.dismiss()" class="button button-block button-royal">Tap to Begin</button>
+<script>
+alert("yay");
+
+steroids.view.setBackgroundImage({
+  image: "/img/IMCI.jpg"
+}, {
+  onSuccess: function() { alert("Background image set succesfully!"); }
+  onFailure: function() { alert("Could not set background image."); }
+});
+</script>
+ <div >
+  <button id="logIn" onclick="window.location.href='login.html'" class="button button-block button-royal">Log In</button>
+  <button id="SignUp" onclick="window.location.href='signup.html'" class="button button-block button-royal">Sign Up</button>
+  <button id="Skip" onclick="supersonic.ui.initialView.dismiss()" class="button button-block button-royal">Skip</button>
  </div>
 </body>
 </html>

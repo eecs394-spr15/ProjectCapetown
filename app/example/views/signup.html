@@ -1,0 +1,23 @@
+<div class="list" ng-controller="loginUserController">
+  <a class="button icon-left super-chevron-left button-clear button-dark" onclick="window.location.href='initial-view.html'">Cancel</a>
+  <form  >
+  <label class="item item-input item-floating-label">
+    <span class="input-label">User Name</span>
+    <input type="text" name="Username" ng-model="user.Username" placeholder="User Name">
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Password</span>
+    <input type="text" name="Password" ng-model="user.Password" placeholder="Password">
+  </label>
+      
+    <div class="padding">
+        <button   class="button button-block button-royal" ng-click="addUser()">Register</button>
+
+    </div>
+
+  </form>
+<!--   <p>form = {{user}}</p> -->
+
+
+
+</div>
