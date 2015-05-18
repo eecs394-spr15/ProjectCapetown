@@ -32,6 +32,7 @@
 <body ng-app="example">
 
 
+<!--
 <input type="checkbox" />Checkbox<br/>
 <span id="result"></span>
 <script type="text/javascript">
@@ -46,7 +47,7 @@ window.onload = function () {
     check();
 }
 </script>
-
+-->
 
 
 <!DOCTYPE html>
@@ -61,18 +62,69 @@ window.onload = function () {
   <script src="/cloud-resources.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
+/*
 $(document).ready(function(){
-    $("#hide").click(function(){
-        $("p").hide();
+    $("#hide").click(function()
+    {
+        $(".answer").hide();
     });
-    $("#show").click(function(){
-        $("p").show();
+
+    $("#submit").click(function()
+    {
+        //Check answers
+        var is_correct = isCorrect();
+
+        //$(".answer").show();
+
+        if(is_correct)
+        {
+          //$("#submit").setValue("Next -->");
+          alert("CORRECT");
+        }
+        else
+        {
+          alert("INCORRECT");
+        }
     });
 });
+*/
 </script>
 </head>
-<body>
-<h3> Which of the following is the most different from the others?</h3>
+
+<div ng-controller="caseController">
+
+<h3> {{question}} </h3>
+
+  <ul class="list"> 
+    <div  ng-repeat="a in answers">
+      <li class="item item-checkbox"; style="word-wrap: break-word">
+         <label class="checkbox">
+           <input type="checkbox" ng-model="a.val" ng-disabled="!answers_enabled">
+         </label>
+         {{a.label}}
+      </li>
+      <div ng-show="showAnswers && a.correct"> {{a.correct_str}} </div>
+      <div ng-show="showAnswers && !a.correct"> {{a.incorrect_str}} </div>
+    </div>
+  </ul>
+
+  <div ng-show="showAnswers"> {{incorrect_feedback}} </div>
+
+    <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()"> {{submitText}} </a>
+    <a id= "hide" class="button button-block button-calm icon-left super-document">Hide</a>
+
+
+<!--
+  <ul class = "list">
+    <li ng-repeat="a in answers" class="item item-checkbox"> {{a}} </li>
+
+    <a id= "submit" class="button button-block button-calm icon-left super-document" href="#" onclick="alert(\"TEST\");">Submit</a>
+    <a id= "hide" class="button button-block button-calm icon-left super-document" href="#">Hide</a>
+  </ul>
+-->
+</div>
+
+<!--
 <ul class="list">
   <li class="item item-checkbox">
      <label class="checkbox">
@@ -80,42 +132,136 @@ $(document).ready(function(){
      </label>
      A Ph.D. in Mathematical Biology
   </li>
-  <p> Wrong </p>
+  <p class="answer" id="answer1"> Wrong </p>
   <li class="item item-checkbox">
      <label class="checkbox">
        <input type="checkbox">
      </label>
      A Ph.D. in Theoretical Mathematics
   </li>
-  <p> Wrong </p>
+  <p class="answer" id="answer2"> Wrong </p>
   <li class="item item-checkbox">
      <label class="checkbox">
        <input type="checkbox">
      </label>
      A Ph.D. in Statistics
   </li>
-  <p> Wrong </p>
+  <p class="answer" id="answer3"> Wrong </p>
   <li class="item item-checkbox">
      <label class="checkbox">
        <input type="checkbox">
      </label>
      A large pepperoni pizza
   </li>
-  <p> Wrong </p>
-  <a id= "show" class="button button-block button-calm icon-left super-document" href="#">Submit</a>
-  <a id= "hide" class="button button-block button-calm icon-left super-document" href="#">Hide</a>
+  <p class="answer" id="answer4"> Wrong </p>
+
 
 
   
 </ul>
+-->
+
+<script>
+
+angular
+  .module('example')
+  .controller('caseController', function ($scope, $filter)
+  {
+    $scope.answers = [{label:"1.  Ask if the child has had diarrhoea for longer than 14 days?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"You must first address dehydration, as it is a more serious condition, before moving on to the diarrhoea."},
+                      {label:"2.  Check to see if the child is unable to or is drinking poorly?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"WRONG!!"},
+                      {label:"3.  Check to see if the child is irritable or restless?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must first determine if the child is unconscious or lethargic, as those are more serious issues."},
+                      {label:"4.  Check to see if the child is unconscious or lethargic?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"WRONG!!"},
+                      {label:"5.  Check to see if the child has sunken eyes?", val:false, correct_val:true, correct:false, correct_str:"",                 incorrect_str:"WRONG!!"},
+                      {label:"6.  Determine the age of the child?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"The age of the child doesn’t matter until you are addressing dysentery."},
+                      {label:"7.  Check to see if the skin pinch goes back very slowly (>2 seconds)?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"WRONG!!"},
+                      {label:"8.  Ask if the child has been coughing at night?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"Coughing is not relevant here."}];
+
+    $scope.showAnswers = false;
+
+    $scope.question = "A mother brings her daughter into your clinic. She tells you that she has diarrhoea. Based on this information, what are your next steps?  Check all that apply.";
+
+    $scope.submitText = "Submit";
+    $scope.nextPage = "#";
+    //$scope.selection = ['a1', 'a4'];
+
+    $scope.answers_enabled = true;
+
+    $scope.feedback = "Correct!";
 
 
-<script> 
-$("p").hide();
+    $scope.isCorrect = function()
+    {
+      var selected = $filter("filter")($scope.answers, {correct:true});
+
+      for(i = 0; i < $scope.answers.length; i++)
+      {
+        if(selected.indexOf($scope.answers[i]) < 0)
+          return false;
+      }
+
+      return true;
+    };
+
+    $scope.onSubmit = function()
+    {
+        for(i = 0; i < $scope.answers.length; i++)
+        {
+          $scope.answers[i].correct = $scope.answers[i].val == $scope.answers[i].correct_val;
+        }
+
+        //Check answers
+        var is_correct = $scope.isCorrect();
+
+        //$(".answer").show();
+
+
+        if(is_correct)
+        {
+          $scope.submitText = "Next -->";
+          $scope.answers_enabled = false;
+
+         // $scope.nextPage = 
+          alert("CORRECT");
+          $scope.feedback = "Correct!";
+        }
+        else
+        {
+          alert("INCORRECT");
+
+          $scope.feedback = "Incorrect!"
+        }
+
+        $scope.showAnswers = true;
+        $scope.nextPage = "#";
+    }
+
+
+
+/*
+    $scope.toggleSelecton = function toggleSelection(answer)
+    {
+      var index = $scope.selection.indexOf(answer);
+
+
+      if(index > -1)
+        $scope.selection.splice(index, 1);
+      else
+        $scope.selection.push(answer);
+
+    };
+*/
+  });
 </script>
 
-</body>
+<!-- /*<style>
+
+test{
+  word-wrap: break-word;
+}
+</style>*/ -->
 </html>
+
+
 
 
 </body>
