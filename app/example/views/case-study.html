@@ -68,7 +68,7 @@ $(document).ready(function(){
     </div>
   </ul>
 
-  <div ng-show="testFunc()"> SELECTED </div>
+  <div ng-show="showAnswers"> {{incorrect_feedback}} </div>
 
     <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()"> {{submitText}} </a>
     <a id= "hide" class="button button-block button-calm icon-left super-document">Hide</a>
@@ -142,6 +142,9 @@ angular
 
     $scope.answers_enabled = true;
 
+    $scope.feedback = "Correct!";
+
+
     $scope.isCorrect = function()
     {
       var selected = $filter("filter")($scope.answers, {correct:true});
@@ -175,10 +178,13 @@ angular
 
          // $scope.nextPage = 
           alert("CORRECT");
+          $scope.feedback = "Correct!";
         }
         else
         {
           alert("INCORRECT");
+
+          $scope.feedback = "Incorrect!"
         }
 
         $scope.showAnswers = true;
