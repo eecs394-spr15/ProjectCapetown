@@ -68,7 +68,7 @@ $(document).ready(function(){
     </div>
   </ul>
 
-  <div ng-show="showAnswers"> {{incorrect_feedback}} </div>
+  <div ng-show="showAnswers"> <p> {{feedback}} </p></div>
 
     <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()"> {{submitText}} </a>
     <a id= "hide" class="button button-block button-calm icon-left super-document">Hide</a>
@@ -177,20 +177,33 @@ angular
 
         if(is_correct)
         {
-          $scope.submitText = "Next -->";
-          $scope.answers_enabled = false;
+          // $scope.submitText = "Next -->";
+          // $scope.answers_enabled = false;
 
-         // $scope.nextPage = 
-          alert("CORRECT");
-          $scope.feedback = "Correct!";
+          // $scope.nextPage = "case11-2.html";
+          // //alert("CORRECT");
+          // $scope.feedback = "Correct! The next steps are:
+          //                   Unable/drinking poorly?
+          //                   Unconscious/Lethargic?
+          //                   Sunken Eyes?
+          //                   Skin pinch goes back very slowly?
+          //                   ";
+
         }
         else
         {
-          alert("INCORRECT");
+          //alert("INCORRECT");  
+          $scope.feedback = "There are more correct answers. Please review the choices and choose again. ";        
+          // var selected = $filter("filter")($scope.answers, {correct:true&&correct_val:true});
+          var selected = $filter("filter")($scope.answers, {correct:true, correct_val:true});
 
-          $scope.feedback = "Incorrect!"
+          for(i = 0; i < $scope.answers.length; i++)
+            {
+              if(selected.indexOf($scope.answers[i]) < 0)
+                $scope.feedback = "At least one of your answers is incorrect. Please review the choices and choose again.";
+            }
+          
         }
-
         $scope.showAnswers = true;
         $scope.nextPage = "#";
     }
