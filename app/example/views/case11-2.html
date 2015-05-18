@@ -1,54 +1,7 @@
-
-<!--
-<input type="checkbox" />Checkbox<br/>
-<span id="result"></span>
-<script type="text/javascript">
-window.onload = function () {
-    var input = document.querySelector('input[type=checkbox]');
-
-    function check() {
-        var a = input.checked ? "checked" : "not checked";
-        document.getElementById('result').innerHTML = 'result ' + a;
-    }
-    input.onchange = check;
-    check();
-}
-</script>
--->
-
-
 <!DOCTYPE html>
 <html>
 <head>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script>
-/*
-$(document).ready(function(){
-    $("#hide").click(function()
-    {
-        $(".answer").hide();
-    });
-
-    $("#submit").click(function()
-    {
-        //Check answers
-        var is_correct = isCorrect();
-
-        //$(".answer").show();
-
-        if(is_correct)
-        {
-          //$("#submit").setValue("Next -->");
-          alert("CORRECT");
-        }
-        else
-        {
-          alert("INCORRECT");
-        }
-    });
-});
-*/
-</script>
 </head>
 
 <div ng-controller="caseController">
@@ -57,7 +10,7 @@ $(document).ready(function(){
 
   <ul class="list"> 
     <div  ng-repeat="a in answers">
-      <li class="item item-checkbox"; style="word-wrap: break-word">
+      <li class="item item-checkbox item-text-wrap">
          <label class="checkbox">
            <input type="checkbox" ng-model="a.val" ng-disabled="!answers_enabled">
          </label>
@@ -77,54 +30,8 @@ $(document).ready(function(){
 
     <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()"> {{submitText}} </a>
     <a id= "hide" class="button button-block button-calm icon-left super-document">Hide</a>
-
-
-<!--
-  <ul class = "list">
-    <li ng-repeat="a in answers" class="item item-checkbox"> {{a}} </li>
-
-    <a id= "submit" class="button button-block button-calm icon-left super-document" href="#" onclick="alert(\"TEST\");">Submit</a>
-    <a id= "hide" class="button button-block button-calm icon-left super-document" href="#">Hide</a>
-  </ul>
--->
 </div>
 
-<!--
-<ul class="list">
-  <li class="item item-checkbox">
-     <label class="checkbox">
-       <input type="checkbox">
-     </label>
-     A Ph.D. in Mathematical Biology
-  </li>
-  <p class="answer" id="answer1"> Wrong </p>
-  <li class="item item-checkbox">
-     <label class="checkbox">
-       <input type="checkbox">
-     </label>
-     A Ph.D. in Theoretical Mathematics
-  </li>
-  <p class="answer" id="answer2"> Wrong </p>
-  <li class="item item-checkbox">
-     <label class="checkbox">
-       <input type="checkbox">
-     </label>
-     A Ph.D. in Statistics
-  </li>
-  <p class="answer" id="answer3"> Wrong </p>
-  <li class="item item-checkbox">
-     <label class="checkbox">
-       <input type="checkbox">
-     </label>
-     A large pepperoni pizza
-  </li>
-  <p class="answer" id="answer4"> Wrong </p>
-
-
-
-  
-</ul>
--->
 
 <script>
 
@@ -231,13 +138,6 @@ angular
 */
   });
 </script>
-
-<!-- /*<style>
-
-test{
-  word-wrap: break-word;
-}
-</style>*/ -->
 </html>
 
 
