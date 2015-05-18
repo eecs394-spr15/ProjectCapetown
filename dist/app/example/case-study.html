@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+  window.addEventListener('WebComponentsReady', function() {
+    supersonic.app.splashscreen.hide();
+  });
+  </script>
+  <!-- Cloud resource definition file for Supersonic Data -->
+  <script src="/cloud-resources.js"></script>
+  <meta charset="utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <title>case-study</title>
+
+  <link rel="stylesheet" href="/components/supersonic/css/supersonic.css" />
+  <link rel="stylesheet" href="/app/common/stylesheets/application.css" />
+  <link rel="import" href="/components/supersonic/components/import.html">
+
+  <script src="http://localhost/cordova.js"></script>
+  <script src="/components/steroids-js/steroids.js"></script>
+  <script src="/components/angular/angular.js"></script>
+  <script src="/components/supersonic/supersonic.js"></script>
+  <script src="/components/webcomponentsjs/webcomponents.js"></script>
+
+  
+  <script src="/app/common.js"></script>
+  
+  <script src="/app/example.js"></script>
+  
+</head>
+<body ng-app="example">
+
+
+<input type="checkbox" />Checkbox<br/>
+<span id="result"></span>
+<script type="text/javascript">
+window.onload = function () {
+    var input = document.querySelector('input[type=checkbox]');
+
+    function check() {
+        var a = input.checked ? "checked" : "not checked";
+        document.getElementById('result').innerHTML = 'result ' + a;
+    }
+    input.onchange = check;
+    check();
+}
+</script>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+  window.addEventListener('WebComponentsReady', function() {
+    supersonic.app.splashscreen.hide();
+  });
+  </script>
+  <!-- Cloud resource definition file for Supersonic Data -->
+  <script src="/cloud-resources.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#hide").click(function(){
+        $("p").hide();
+    });
+    $("#show").click(function(){
+        $("p").show();
+    });
+});
+</script>
+</head>
+<body>
+<h3> Which of the following is the most different from the others?</h3>
+<ul class="list">
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox">
+     </label>
+     A Ph.D. in Mathematical Biology
+  </li>
+  <p> Wrong </p>
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox">
+     </label>
+     A Ph.D. in Theoretical Mathematics
+  </li>
+  <p> Wrong </p>
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox">
+     </label>
+     A Ph.D. in Statistics
+  </li>
+  <p> Wrong </p>
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox">
+     </label>
+     A large pepperoni pizza
+  </li>
+  <p> Wrong </p>
+  <a id= "show" class="button button-block button-calm icon-left super-document" href="#">Submit</a>
+  <a id= "hide" class="button button-block button-calm icon-left super-document" href="#">Hide</a>
+
+
+  
+</ul>
+
+
+<script> 
+$("p").hide();
+</script>
+
+</body>
+</html>
+
+
+</body>
+</html>

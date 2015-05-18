@@ -1,0 +1,223 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.content {
+  text-align: center;
+}
+
+.introduction-content {
+  text-align: left;
+}
+
+.introduction-content img {
+  max-width: 100%;
+}
+
+.image-container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+.horizontal-list {
+  display: inline;
+  list-style-type: none;
+}
+
+.horizontal-list li {
+  display: inline-block;
+  margin: 50px 10px 10px 10px;
+}
+
+#question, #choices {
+  max-width: 300px;
+  text-align: left;
+  display: inline-block;
+}
+
+#choices {
+  margin: 10px;
+}
+
+#choices input {
+  margin-right: 10px;
+}
+
+h2 {
+  display: block;
+}
+
+#log-form {
+  height: 100px;
+  width: 200px;
+  top: 50%;
+  left: 50%;
+  margin-left: -100px;
+  position: absolute;
+  margin-top: -50px;
+}
+
+.introduction-table {
+  margin-left: 5px;
+}
+
+.introduction-table td {
+  border: 1px solid black;
+  text-indent: 2px;
+}
+
+.center {
+  text-align: center;
+}
+
+.blue {
+  color: blue;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.italic {
+ font-style: italic;
+}
+
+.yellow {
+  color: yellow;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  background: #7f9a00;
+  color: white;
+  border-radius: 100px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.wrapper {
+  width: 600px;
+  height: 400px;
+  border-spacing: 50px;
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -250px;
+  margin-top: -200px;
+}
+
+.wrapper .table-row {
+  display: table-row;
+}
+
+.wrapper .table-row .cell {
+  width: 200px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  color: black;
+}
+
+.circle a {
+  text-decoration: none;
+  color: white;
+}
+
+.flowchart-group * {
+  color: black;
+  position: relative;
+}
+
+.flowchart-box * {
+  color: black;
+}
+
+.flowchart-box {
+  border: 1px solid black;
+  display: inline-block;
+  min-width: 100px;
+  min-height: 40px;
+  max-width: 380px;
+}
+
+.flowchart-box * {
+  display: block;
+  padding: 0px 10px 0 10px;
+}
+
+.flowchart-group .arrow {
+  font-size: 48px;
+  display: block;
+}
+
+.flowchart-choice {
+  display: block;
+  border-top: 1px solid black;
+}
+
+.flowchart-choice * {
+  display: inline-block;
+  border-right: 1px solid black;
+  text-align: center;
+}
+
+.flowchart-choice *:last-child {
+  border: none;
+}
+
+.flowchart-choice div:hover {
+  cursor: pointer;
+}
+
+.flowchart-start {
+  border-radius: 15px;
+  border: 1px solid black;
+  display: inline-block;
+  padding: 10px;
+  color: black;
+  width: 80px;
+  height: 40px;
+}
+
+.flowchart-component:hover {
+  cursor: pointer;
+}
+
+.flowchart-triangle {
+  position: relative;
+  height: 200px;
+  display: inline-block;
+  margin-top: -30px;
+}
+
+.flowchart-triangle-content {
+  min-width: 200px;
+  position: absolute;
+  top: 150px;
+  left: 50%;
+}
+
+.flowchart-triangle img {
+  width: 250px;
+  left: 50%;
+  margin-left: -125px;
+  position: absolute;
+}

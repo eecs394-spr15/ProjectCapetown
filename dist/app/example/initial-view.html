@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+  window.addEventListener('WebComponentsReady', function() {
+    supersonic.app.splashscreen.hide();
+  });
+  </script>
+  <!-- Cloud resource definition file for Supersonic Data -->
+  <script src="/cloud-resources.js"></script>
+  <meta charset="utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <title>initial-view</title>
+
+  <link rel="stylesheet" href="/components/supersonic/css/supersonic.css" />
+  <link rel="stylesheet" href="/app/common/stylesheets/application.css" />
+  <link rel="import" href="/components/supersonic/components/import.html">
+
+  <script src="http://localhost/cordova.js"></script>
+  <script src="/components/steroids-js/steroids.js"></script>
+  <script src="/components/angular/angular.js"></script>
+  <script src="/components/supersonic/supersonic.js"></script>
+  <script src="/components/webcomponentsjs/webcomponents.js"></script>
+
+  
+  <script src="/app/common.js"></script>
+  
+  <script src="/app/example.js"></script>
+  
+</head>
+<body ng-app="example">
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <script>
+  window.addEventListener('WebComponentsReady', function() {
+    supersonic.app.splashscreen.hide();
+  });
+  </script>
+  <!-- Cloud resource definition file for Supersonic Data -->
+  <script src="/cloud-resources.js"></script>
+  <title> IMCI </title>
+  <style>
+	body  {
+    	background-image: url("/img/IMCI.jpg");
+        background-repeat:no-repeat;
+		background-size: 100%;
+        	}
+	#logIn {
+		position:absolute;
+		top:60%;
+	    
+	}    	
+    #SignUp {
+    position:absolute;
+    top:70%;
+      
+  }  
+    #Skip {
+    position:absolute;
+    top:80%;
+      
+  }  
+  </style>
+ </head>
+<body>
+
+<script>
+alert("yay");
+
+steroids.view.setBackgroundImage({
+  image: "/img/IMCI.jpg"
+}, {
+  onSuccess: function() { alert("Background image set succesfully!"); }
+  onFailure: function() { alert("Could not set background image."); }
+});
+</script>
+ <div >
+  <button id="logIn" onclick="window.location.href='login.html'" class="button button-block button-royal">Log In</button>
+  <button id="SignUp" onclick="window.location.href='signup.html'" class="button button-block button-royal">Sign Up</button>
+  <button id="Skip" onclick="supersonic.ui.initialView.dismiss()" class="button button-block button-royal">Skip</button>
+ </div>
+</body>
+</html>
+
+
+</body>
+</html>
