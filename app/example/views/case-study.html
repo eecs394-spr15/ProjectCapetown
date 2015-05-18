@@ -68,7 +68,12 @@ $(document).ready(function(){
     </div>
   </ul>
 
-  <div ng-show="showAnswers"> <p> {{feedback}} </p></div>
+  <div ng-show="showAnswers"> 
+    <p ng-show="showCorrect"> {{correct_feedback}} </p>
+    <p ng-show="showIncorrect1"> {{incorrect_feedback1}} </p>
+    <p ng-show="showIncorrect2"> {{incorrect_feedback2}} </p>
+
+  </div>
 
     <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()"> {{submitText}} </a>
     <a id= "hide" class="button button-block button-calm icon-left super-document">Hide</a>
@@ -141,12 +146,17 @@ angular
     $scope.question = "A mother brings her daughter into your clinic. She tells you that she has diarrhoea. Based on this information, what are your next steps?  Check all that apply.";
 
     $scope.submitText = "Submit";
-    $scope.nextPage = "#";
     //$scope.selection = ['a1', 'a4'];
 
     $scope.answers_enabled = true;
 
-    $scope.feedback = "Correct!";
+    $scope.showCorrect = false;
+    $scope.showIncorrect1 = false;
+    $scope.showIncorrect2 = false;
+
+    $scope.correct_feedback ="Correct! The next steps are: Unable/drinking poorly? Unconscious/Lethargic? Sunken Eyes? Skin pinch goes back very slowly?";
+    $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
+    $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
 
 
     $scope.isCorrect = function()
@@ -164,6 +174,9 @@ angular
 
     $scope.onSubmit = function()
     {
+      if($scope.submitText == "Next -->"){
+        window.location.href = "case11-2.html";
+      }
         for(i = 0; i < $scope.answers.length; i++)
         {
           $scope.answers[i].correct = $scope.answers[i].val == $scope.answers[i].correct_val;
@@ -177,35 +190,25 @@ angular
 
         if(is_correct)
         {
-          // $scope.submitText = "Next -->";
-          // $scope.answers_enabled = false;
-
-          // $scope.nextPage = "case11-2.html";
-          // //alert("CORRECT");
-          // $scope.feedback = "Correct! The next steps are:
-          //                   Unable/drinking poorly?
-          //                   Unconscious/Lethargic?
-          //                   Sunken Eyes?
-          //                   Skin pinch goes back very slowly?
-          //                   ";
+          $scope.submitText = "Next -->";
+          $scope.answers_enabled = false;
+          //alert("CORRECT");
+          $scope.showCorrect = true;
 
         }
         else
         {
           //alert("INCORRECT");  
-          $scope.feedback = "There are more correct answers. Please review the choices and choose again. ";        
-          // var selected = $filter("filter")($scope.answers, {correct:true&&correct_val:true});
-          var selected = $filter("filter")($scope.answers, {correct:true, correct_val:true});
-
           for(i = 0; i < $scope.answers.length; i++)
             {
-              if(selected.indexOf($scope.answers[i]) < 0)
-                $scope.feedback = "At least one of your answers is incorrect. Please review the choices and choose again.";
+              if($scope.answers[i].correct_val && !$scope.answers[i].val)
+                $scope.showIncorrect1 = true;
+              if($scope.answers[i].val  && !$scope.answers[i].correct_val )
+                $scope.showIncorrect2 = true;
             }
           
         }
         $scope.showAnswers = true;
-        $scope.nextPage = "#";
     }
 
 
