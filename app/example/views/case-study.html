@@ -16,15 +16,15 @@
          </label>
          {{a.label}}
       </li>
-      <div ng-show="showAnswers && a.correct"> {{a.correct_str}} </div>
-      <div ng-show="showAnswers && !a.correct"> {{a.incorrect_str}} </div>
+      <div ng-show="showAnswers && a.correct"> <font color="green">{{a.correct_str}}</font> </div>
+      <div ng-show="showAnswers && !a.correct"> <font color="red">{{a.incorrect_str}}</font> </div>
     </div>
   </ul>
 
   <div ng-show="showAnswers"> 
-    <p ng-show="showCorrect"> {{correct_feedback}} </p>
-    <p ng-show="showIncorrect1"> {{incorrect_feedback1}} </p>
-    <p ng-show="showIncorrect2"> {{incorrect_feedback2}} </p>
+    <p ng-show="showCorrect"> <font color="green">{{correct_feedback}}</font> </p>
+    <p ng-show="showIncorrect1"> <font color="red">{{incorrect_feedback1}}</font> </p>
+    <p ng-show="showIncorrect2"> <font color="red">{{incorrect_feedback2}}</font> </p>
 
   </div>
 
