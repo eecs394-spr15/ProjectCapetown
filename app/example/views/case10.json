@@ -1,0 +1,102 @@
+{
+    "case10": {
+        "case10-1": {
+            "question": "A father brings his daughter who is suffering from diarrhoea into the clinic. With this initial information, what are your next steps?\n ",
+            "answers": {
+                "label": [
+                    {
+                        "correct_val": "true",
+                        "incorrect_str": "",
+                        "__text": "\n            1.\tCheck to see if the child is unconscious or lethargic?\n                \n                \n\n                \n\n            "
+                    },
+                    {
+                        "correct_val": "false",
+                        "incorrect_str": "Respiratory symptoms and questions are reviewed later.\n                ",
+                        "__text": "\n            2.\tAsk if the child has a history of asthma?\n                \n                \n\n                \n\n            "
+                    },
+                    {
+                        "correct_val": "true",
+                        "incorrect_str": "",
+                        "__text": "\n            3.\tCheck to see if the child has sunken eyes?  \n                \n                \n\n                \n\n            "
+                    },
+                    {
+                        "correct_val": "false",
+                        "incorrect_str": "You must first determine if the child is dehydrated before addressing symptoms of dysentery.                   ",
+                        "__text": "\n            4.\tDetermine if the child is older than 1 year?\n                \n                \n\n                \n\n            "
+                    },
+                    {
+                        "correct_val": "true",
+                        "incorrect_str": "",
+                        "__text": "\n            5.\tCheck to see if the child is unable to drink or is drinking poorly?\n                \n                \n\n                \n\n            "
+                    },
+                    {
+                        "correct_val": "false",
+                        "incorrect_str": "\tYou must first determine if the child is dehydrated before addressing symptoms of diarrhoea.\n                ",
+                        "__text": "\n            6.\tAsk if the child has had diarrhoea for longer than 14 days?  \n                \n                \n\n                \n\n            "
+                    },
+                    {
+                        "correct_val": "false",
+                        "incorrect_str": "Respiratory symptoms and questions are reviewed later.\n                ",
+                        "__text": "\n            7.\tCheck to see if the child is breathing fast?\n                \n                \n\n                \n\n            "
+                    },
+                    {
+                        "correct_val": "true",
+                        "incorrect_str": "",
+                        "__text": "\n            8.\tCheck to see if the skin pinch goes back very slowly (>2 seconds)?\n                \n                \n\n                \n\n            "
+                    }
+                ]
+            },
+            "correct_feedback": "Correct! The next steps are: Unconscious/lethargic? Unable/drinking poorly? Sunken eyes?\n        "
+        },
+        "case10-2": {
+            "question": "You are given the answers to these questions as follows: No, No, No, and No. Based on this information, what are your next steps? Check all that apply\n        ",
+            "answers": {
+                "label": [
+                    {
+                        "correct_val": "true",
+                        "incorrect_str": "",
+                        "__text": "\n            1.\tCheck to see if the child is restless or irritable?\n                \n                \n\n                \n\n            "
+                    },
+                    {
+                        "correct_val": "true",
+                        "incorrect_str": "",
+                        "__text": "\n            2.\tCheck to see if the child drinks eagerly or is thirsty?\n                \n                \n\n                \n\n            "
+                    },
+                    {
+                        "correct_val": "false",
+                        "incorrect_str": "The child did not have at least 2 of the previous symptoms that you asked about. The child does not have severe dehydration.                  \n                ",
+                        "__text": "\n            3.\tDiagnose as severe dehydration?\n                \n                \n\n                \n\n            "
+                    },
+                    {
+                        "correct_val": "false",
+                        "incorrect_str": "You must determine if the child is dehydrated before assessing the symptoms of dysentery.                  \n                ",
+                        "__text": "\n            4.\tAsk if there is blood in the stool?\n                \n                \n\n                \n\n            "
+                    },
+                    {
+                        "incorrect_str": "You must determine if the child is dehydrated before assessing the symptoms of diarrhoea.                  \n                ",
+                        "__text": "\n            5.\tAsk if the child has had diarrhoea for longer than 14 days?\n                \n                \n\n            "
+                    },
+                    {
+                        "correct_val": [
+                            "false",
+                            "true"
+                        ],
+                        "incorrect_str": "",
+                        "__text": "\n            6.\tCheck to see if the child has sunken eyes? \n                \n                \n\n                \n\n                \n\n            "
+                    },
+                    {
+                        "correct_val": "false",
+                        "incorrect_str": "You do not have sufficient information to diagnose the child with dysentery.\n                ",
+                        "__text": "\n            7.\tDiagnose as dysentery?\n                \n                \n\n                \n\n            "
+                    },
+                    {
+                        "correct_val": "true",
+                        "incorrect_str": "",
+                        "__text": "\n            8.\tCheck to see if the skin pinch goes back slowly (2 seconds)?\n                \n                \n\n                \n\n            "
+                    }
+                ]
+            },
+            "correct_feedback": "Correct! The next steps are: Restless/Irritable? Thirsty/drinking eagerly? Sunken eyes? Skin pinch goes back slowly?\n        "
+        }
+    }
+}
