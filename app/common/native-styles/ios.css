@@ -34,14 +34,16 @@ tab-bar tab-bar-item:selected {
   color: #1596f7;
 }
 
-tab-bar-item#training {
-  background-image: url(icons/box.svg);
-}
+
 
 tab-bar-item#index {
-  background-image: url(icons/tab2.svg);
+  background-image: url(icons/written.svg);
+}
+
+tab-bar-item#training {
+  background-image: url(icons/iphonetab2.svg);
 }
 
 tab-bar-item#internet {
-  background-image: url(icons/tab3.svg);
+  background-image: url(icons/iphonetab3.svg);
 }
