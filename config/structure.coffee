@@ -17,7 +17,7 @@ module.exports =
     {
       title: "Game"
       id: "internet"
-      location: "http://google.com" # URLs are supported!
+      location: "example#test" # URLs are supported!
     }
   ]
 
