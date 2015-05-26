@@ -41,13 +41,13 @@
         .controller('caseController', function ($scope, $filter)
                     {
                     $scope.answers = [{label:"1.	Check to see if the child is restless or iritable", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:"WRONG!!"},
-                                      {label:"2.	Check to see if the child drinks eagerly or is thirsty", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"WRONG!!"},
-                                      {label:"3.    Diagnose as severe dehydration?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"The child did not have at least 2 of the previous symptoms that you asked about. The child does not have severe dehydration."},
-                                      {label:"4.	Ask if there is blood in the stool?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must determine if the child is dehydrated before assessing the symptoms of dysentery."},
+                                      {label:"2.	Check to see if the child drinks eagerly or is thirsty", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"WRONG!!"},
+                                      {label:"3.    Diagnose as severe dehydration?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"The child did not have at least 2 of the previous symptoms that you asked about. The child does not have severe dehydration."},
+                                      {label:"4.	Ask if there is blood in the stool?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"You must determine if the child is dehydrated before assessing the symptoms of dysentery."},
                                       {label:"5.	Ask if the child has had diarrhoea for longer than 14 days?", val:false, correct_val:false, correct:false, correct_str:"",                 incorrect_str:"You must determine if the child is dehydrated before assessing the symptoms of diarrhoea."},
                                       {label:"6.	Check to see if the child has sunken eyes?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"WRONG!!"},
                                       {label:"7.	Diagnose as dysentery?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You do not have sufficient information to diagnose the child with dysentery."},
-                                      {label:"8.	Check to see if the skin pinch goes back very slowly (>2 seconds)?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"WRONG!!"}];
+                                      {label:"8.	Check to see if the skin pinch goes back very slowly (>2 seconds)?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"WRONG!!"}];
                     
                     $scope.showAnswers = false;
                     
