@@ -40,14 +40,14 @@
         .module('example')
         .controller('caseController', function ($scope, $filter)
                     {
-                    $scope.answers = [{label:"1.	Check to see if the child is restless or iritable", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"WRONG!!"},
-                                      {label:"2.	Check to see if the child drinks eagerly or is thirsty", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"WRONG!!"},
-                                      {label:"3.    Diagnose as severe dehydration?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"The child did not have at least 2 of the previous symptoms that you asked about. The child does not have severe dehydration."},
-                                      {label:"4.	Ask if there is blood in the stool?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"You must determine if the child is dehydrated before assessing the symptoms of dysentery."}];
+                    $scope.answers = [{label:"1.	Diagnose as Severe Dehydration?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"The child has already been diagnosed with Some Dehydration."},
+                                      {label:"2.	Follow Plan B?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You have already treated the child with Plan B."},
+                                      {label:"3.    Refer urgently", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"This child has not been diagnosed with Severe Dehydration, so there is no need to refer urgently."},
+                                      {label:"4.	Do nothing. I have already given the child all the correct treatments?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"WRONG!!"}];
                     
                     $scope.showAnswers = false;
                     
-                    $scope.question = "You are given the answers to these questions as follows: No, No, No, and No. Based on this information, what are your next steps? Check all that apply";
+                    $scope.question = "You find the answers to all these questions are no. Based on this information, what are your next steps? ";
                     
                     $scope.submitText = "Submit";
                     //$scope.selection = ['a1', 'a4'];
