@@ -17,12 +17,22 @@
         $scope.$storage = $localStorage.$default({
           x: 42
         });
+        
+        $scope.deleteX = function() {
+          delete $scope.$storage.x;
+        };
+        
+        $scope.deleteY = function() {
+          delete $localStorage.y;
+        };
       });
     </script>
   </head>
-
+  
   <body ng-controller="Ctrl">
     <button ng-click="$storage.x = $storage.x + 1">{{$storage.x}}</button> + <button ng-click="$storage.y = $storage.y + 1">{{$storage.y}}</button> = {{$storage.x + $storage.y}}
+    <hr>
+    <button ng-click="deleteX()">Delete $scope.$storage.x</button> | <button ng-click="deleteY()">Delete $localStorage.y</button>
   </body>
 
 </html>
