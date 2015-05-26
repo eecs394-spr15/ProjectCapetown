@@ -30,8 +30,8 @@
 
     <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()"> {{submitText}} </a>
     <a id= "hide" class="button button-block button-calm icon-left super-document">Hide</a>
-    <a class="button button-block button-dark icon-left super-arrow-left-b" href="cases.html">Back</a>
-
+    <a class="button button-block button-dark icon-left super-arrow-left-b" href="case-study-13-2.html">Last Question</a>
+    <a class="button button-block button-dark icon-left super-arrow-left-b" href="cases.html">Back to Cases</a>
 </div>
 
 <script>
@@ -78,7 +78,7 @@ angular
 
     $scope.onSubmit = function()
     {
-      if($scope.submitText == "Next -->"){
+      if($scope.submitText == "FINISH"){
         window.location.href = "cases.html";
       }
         for(i = 0; i < $scope.answers.length; i++)
@@ -94,7 +94,7 @@ angular
 
         if(is_correct)
         {
-          $scope.submitText = "Next -->";
+          $scope.submitText = "FINISH";
           $scope.answers_enabled = false;
           //alert("CORRECT");
           $scope.showCorrect = true;
