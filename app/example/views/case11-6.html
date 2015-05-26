@@ -39,14 +39,14 @@ angular
   .module('example')
   .controller('caseController', function ($scope, $filter)
   {
-    $scope.answers = [{label:"1.  Counsel the parent of feeding, when to follow up, and when to return immediately?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:"You must have received a “Yes” on at least 2 of the above question to diagnose Severe Dehydration."},
-                      {label:"2.  Follow Plan C?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"a. This is only followed for Severe Persistent Diarrhoea or Severe Dehydration."},
-                      {label:"3.  Check to see if the skin pinch goes back slowly?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"a.  This is a treatment for dysentery."},
+    $scope.answers = [{label:"1.  Counsel the parent of feeding, when to follow up, and when to return immediately?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:"WRONG!!"},
+                      {label:"2.  Follow Plan C?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"This is only followed for Severe Persistent Diarrhoea or Severe Dehydration."},
+                      {label:"3.  Check to see if the skin pinch goes back slowly?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"a. This is a treatment for dysentery."},
                       {label:"4.  Check to see if the child is eager to or drinking poorly?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"WRONG!!"}];
 
     $scope.showAnswers = false;
 
-    $scope.question = "You are given the answers to these questions as follows: No, No, No, and No. Based on this information, what are your next steps? Check all that apply.";
+    $scope.question = "Based on this information, what are your next steps?Check all that apply.";
 
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
