@@ -40,10 +40,10 @@
         .module('example')
         .controller('caseController', function ($scope, $filter)
                     {
-                    $scope.answers = [{label:"1.	Check to see if the child is restless or iritable", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"WRONG!!"},
-                                      {label:"2.	Check to see if the child drinks eagerly or is thirsty", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"WRONG!!"},
-                                      {label:"3.    Diagnose as severe dehydration?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must treat the child for dehydration before assessing the symptoms of dysentery."},
-                                      {label:"4.	Ask if there is blood in the stool?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must determine if the child is dehydrated before assessing the symptoms of dysentery."}];
+                    $scope.answers = [{label:"1.	Diagnose as no dehydration?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"The child had more that 2 of the previous symptoms that you asked about."},
+                                      {label:"2.	Diagnose as some dehydration?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"WRONG!!"},
+                                      {label:"3.	Ask if there is blood in the stool?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must treat the child for dehydration before assessing the symptoms of dysentery."},
+                                      {label:"4.	Refer the child urgently?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"ßThe child is not severely dehydrated, so referring urgently is not necessary."}];
                     
                     $scope.showAnswers = false;
                     
@@ -58,7 +58,7 @@
                     $scope.showIncorrect1 = false;
                     $scope.showIncorrect2 = false;
                     
-                    $scope.correct_feedback ="Correct! The next steps are: Check to see if the child is urestless or irritable? Drinks eagerly or is thirsty? Has sunken eyes?  Skin pinch goes back very slowly?";
+                    $scope.correct_feedback ="Correct! The next steps are: Restless/Irritable? Thirsty/drinking eagerly? Sunken eyes? Skin pinch goes back slowly?";
                     $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
                     $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
                     
