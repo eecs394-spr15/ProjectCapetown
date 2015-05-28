@@ -39,6 +39,10 @@ angular
   .module('example')
   .controller('caseController', function ($scope, $filter)
   {
+
+    $scope.case13q1 = localStorage.getItem('case13q1');
+    localStorage.setItem('case13q1', "working");
+    
     $scope.answers = [{label:"1.  Check to see if he has sunken eyes?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"This should have been one of the steps taken to diagnose Some Dehydration."},
                       {label:"2.  Determine if the child is older than 1 year?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
                       {label:"3.  Give frequent sips of ORS?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"This is a treatment for Severe Dehydration, and should be conducted when referring urgently."},
@@ -79,9 +83,20 @@ angular
       return true;
     };
 
+    function addRandom() {
+    var num = Math.floor(Math.random() * 1000);
+    var items = localStorage.getItem('items');
+    if (items) {
+        items += ",";
+    }
+    localStorage.setItem('items', items + num);
+    console.log(localStorage.getItem('items'), items, num);
+}
+
     $scope.onSubmit = function()
     {
       if($scope.submitText == "Next Question -->"){
+        localStorage.setItem('case13q1', true);
         window.location.href = "case-study-13-2.html";
       }
         for(i = 0; i < $scope.answers.length; i++)

@@ -40,6 +40,9 @@ angular
   .module('example')
   .controller('caseController', function ($scope, $filter)
   {
+
+    $scope.case12q4 = localStorage.getItem('case12q4');
+    localStorage.setItem('case12q4', "working");
     $scope.answers = [{label:"1.  Start pre-referral treatment and refer urgently.", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"This course of action is taken when the child presents with genral danger signs."},
                       {label:"2.  Check to see if the child is restless?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str: "This should be done when the child has diarrhoea."},
                       {label:"3.  Give oxygen?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"Oxygen is given when the child has been diagnosed with Severe Pneumonia or Very Severe Disease."},
@@ -80,6 +83,7 @@ angular
     $scope.onSubmit = function()
     {
       if($scope.submitText == "Next -->"){
+           localStorage.setItem('case12q4', true);
         window.location.href = "case-study-12-5.html";
       }
         for(i = 0; i < $scope.answers.length; i++)

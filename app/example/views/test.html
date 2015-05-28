@@ -1,95 +1,321 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body>
 
-  <head>
-    <script data-require="angular.js@1.1.5" data-semver="1.1.5" src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
-    <script src="https://rawgithub.com/gsklee/ngStorage/master/ngStorage.js"></script>
-    
-  </head>
-
-  <body ng-controller="local">
-    <p>case10</p>
-    <button ng-click="$storage.case10 = true">{{$storage.case10}}</button>
-    <button ng-click="$storage.case10q1 = true">{{$storage.case10q1}}</button> 
-    <button ng-click="$storage.case10q2 = true">{{$storage.case10q2}}</button> 
-    <button ng-click="$storage.case10q3 = true">{{$storage.case10q3}}</button> 
-    <button ng-click="$storage.case10q4 = true">{{$storage.case10q4}}</button> 
-    <button ng-click="$storage.case10q5 = true">{{$storage.case10q5}}</button> 
-    <button ng-click="$storage.case10q6 = true">{{$storage.case10q6}}</button> 
-    <button ng-click="$storage.case10q7 = true">{{$storage.case10q7}}</button> 
-    <hr>
-    
-    <p>case11</p>
-    <button ng-click="$storage.case11 = true">{{$storage.case11}}</button>
-    <button ng-click="$storage.case11q1 = true">{{$storage.case11q1}}</button>
-    <button ng-click="$storage.case11q2 = true">{{$storage.case11q2}}</button>
-    <button ng-click="$storage.case11q3 = true">{{$storage.case11q3}}</button>
-    <button ng-click="$storage.case11q4 = true">{{$storage.case11q4}}</button>
-    <button ng-click="$storage.case11q5 = true">{{$storage.case11q5}}</button>
-    <button ng-click="$storage.case11q6 = true">{{$storage.case11q6}}</button>
-    <button ng-click="$storage.case11q7 = true">{{$storage.case11q7}}</button>
-
-    <hr>
-
-    <p>case12</p>
-    <button ng-click="$storage.case12 = true">{{$storage.case12}}</button>
-    <button ng-click="$storage.case12q1 = true">{{$storage.case12q1}}</button>
-    <button ng-click="$storage.case12q2 = true">{{$storage.case12q2}}</button>
-    <button ng-click="$storage.case12q3 = true">{{$storage.case12q3}}</button>
-    <button ng-click="$storage.case12q4 = true">{{$storage.case12q4}}</button>
-    <button ng-click="$storage.case12q5 = true">{{$storage.case12q5}}</button>
-    <button ng-click="$storage.case12q6 = true">{{$storage.case12q6}}</button>
-    <button ng-click="$storage.case12q7 = true">{{$storage.case12q7}}</button> 
-    <button ng-click="$storage.case12q8 = true">{{$storage.case12q8}}</button> 
-
-    <hr>
-
-    <p>case13</p>
-    <button ng-click="$storage.case13 = true">{{$storage.case13}}</button>
-    <button ng-click="$storage.case13q1 = true">{{$storage.case13q1}}</button>
-    <button ng-click="$storage.case13q2 = true">{{$storage.case13q2}}</button>
-    <button ng-click="$storage.case13q3 = true">{{$storage.case13q3}}</button>
-    <button ng-click="$storage.case13q4 = true">{{$storage.case13q4}}</button>
+  <p style="color:blue"> case10q1 :</p>
+  <p id="case10q1id"></p>
+  <p style="color:blue"> case10q2 :</p>
+  <p id="case10q2id"></p>
+  <p style="color:blue"> case10q3 :</p>
+  <p id="case10q3id"></p>
+  <p style="color:blue"> case10q4 :</p>
+  <p id="case10q4id"></p>
+  <p style="color:blue"> case10q5 :</p>
+  <p id="case10q5id"></p>
+  <p style="color:blue"> case10q6 :</p>
+  <p id="case10q6id"></p>
 
 
-    <hr>
-    <hr>
-    <button ng-click="deleteCase10()">Delete $scope.$storage.case10</button> 
-    <button ng-click="deleteCase11()">Delete $localStorage.case11</button>
-    <hr>
-    <hr>
-    <button ng-click="$storage.$reset({
-      case10: false,
-      case10q1: false,
-      case10q2: false,
-      case10q3: false,
-      case10q4: false,
-      case10q5: false,
-      case10q6: false,
-      case10q7: false,
-      case11: false,
-      case11q1: false,
-      case11q2: false,
-      case11q3: false,
-      case11q4: false,
-      case11q5: false,
-      case11q6: false,
-      case11q7: false,
-      case12: false,
-      case12q1: false,
-      case12q2: false,
-      case12q3: false,
-      case12q4: false,
-      case12q5: false,
-      case12q6: false,
-      case12q7: false,
-      case12q8: false,
-      case13: false,
-      case13q1: false,
-      case13q2: false,
-      case13q3: false,
-      case13q4: false
-    })">Clear localStorage</button>
-  </body>
+  <hr>
+  <p style="color:blue"> case11q1 :</p>
+  <p id="case11q1id"></p>
+  <p style="color:blue"> case11q2 :</p>
+  <p id="case11q2id"></p>
+  <p style="color:blue"> case11q3 :</p>
+  <p id="case11q3id"></p>
+  <p style="color:blue"> case11q4 :</p>
+  <p id="case11q4id"></p>
+  <p style="color:blue"> case11q5 :</p>
+  <p id="case11q5id"></p>
+  <p style="color:blue"> case11q6 :</p>
+  <p id="case11q6id"></p>
 
-</html>
+  <hr>
+  <p style="color:blue"> case12q1 :</p>
+  <p id="case12q1id"></p>
+  <p style="color:blue"> case12q2 :</p>
+  <p id="case12q2id"></p>
+  <p style="color:blue"> case12q3 :</p>
+  <p id="case12q3id"></p>
+  <p style="color:blue"> case12q4 :</p>
+  <p id="case12q4id"></p>
+  <p style="color:blue"> case12q5 :</p>
+  <p id="case12q5id"></p>
+  <p style="color:blue"> case12q6 :</p>
+  <p id="case12q6id"></p>
+  <p style="color:blue"> case12q7 :</p>
+  <p id="case12q7id"></p>
+
+  <hr>
+  <p style="color:blue"> case13q1 :</p>
+  <p id="case13q1id"></p>
+  <p style="color:blue"> case13q2 :</p>
+  <p id="case13q2id"></p>
+  <p style="color:blue"> case13q3 :</p>
+  <p id="case13q3id"></p>
+
+
+  <button onclick="resetLocalStorage()">Reset</button>
+</body>
+
+<script>
+function checkItems(){
+
+  var case10q1 = localStorage.getItem('case10q1');
+  var case10q2 = localStorage.getItem('case10q2');
+  var case10q3 = localStorage.getItem('case10q3');
+  var case10q4 = localStorage.getItem('case10q4');
+  var case10q5 = localStorage.getItem('case10q5');
+  var case10q6 = localStorage.getItem('case10q6');
+
+  var case11q1 = localStorage.getItem('case11q1');
+  var case11q2 = localStorage.getItem('case11q2');
+  var case11q3 = localStorage.getItem('case11q3');
+  var case11q4 = localStorage.getItem('case11q4');
+  var case11q5 = localStorage.getItem('case11q5');
+  var case11q6 = localStorage.getItem('case11q6');
+
+
+  var case12q1 = localStorage.getItem('case12q1');
+  var case12q2 = localStorage.getItem('case12q2');
+  var case12q3 = localStorage.getItem('case12q3');
+  var case12q4 = localStorage.getItem('case12q4');
+  var case12q5 = localStorage.getItem('case12q5');
+  var case12q6 = localStorage.getItem('case12q6');
+  var case12q7 = localStorage.getItem('case12q7');
+
+
+
+  var case13q1 = localStorage.getItem('case13q1');
+  var case13q2 = localStorage.getItem('case13q2');
+  var case13q3 = localStorage.getItem('case13q3');
+  //var case13q4 = localStorage.getItem('case13');
+
+//case10
+ if (case10q1) {
+    document.getElementById('case10q1id').textContent = case10q1;
+  }
+  else {
+    document.getElementById('case10q1id').textContent = "false";
+  }
+
+  if (case10q2) {
+    document.getElementById('case10q2id').textContent = case10q2;
+  }
+  else {
+    document.getElementById('case10q2id').textContent = "false";
+  }
+
+  if (case10q3) {
+    document.getElementById('case10q3id').textContent = case10q3;
+  }
+  else {
+    document.getElementById('case10q3id').textContent = "false";
+  }
+
+  if (case10q4) {
+    document.getElementById('case10q4id').textContent = case10q4;
+  }
+  else {
+    document.getElementById('case10q4id').textContent = "false";
+  }
+
+  if (case10q5) {
+    document.getElementById('case10q5id').textContent = case10q5;
+  }
+  else {
+    document.getElementById('case10q5id').textContent = "false";
+  }
+
+  if (case10q6) {
+    document.getElementById('case10q6id').textContent = case10q6;
+  }
+  else {
+    document.getElementById('case10q6id').textContent = "false";
+  }
+
+
+
+//case11
+  if (case11q1) {
+    document.getElementById('case11q1id').textContent = case11q1;
+  }
+  else {
+    document.getElementById('case11q1id').textContent = "false";
+  }
+
+  if (case11q2) {
+    document.getElementById('case11q2id').textContent = case11q2;
+  }
+  else {
+    document.getElementById('case11q2id').textContent = "false";
+  }
+
+  if (case11q3) {
+    document.getElementById('case11q3id').textContent = case11q3;
+  }
+  else {
+    document.getElementById('case11q3id').textContent = "false";
+  }
+
+  if (case11q4) {
+    document.getElementById('case11q4id').textContent = case11q4;
+  }
+  else {
+    document.getElementById('case11q4id').textContent = "false";
+  }
+
+  if (case11q5) {
+    document.getElementById('case11q5id').textContent = case11q5;
+  }
+  else {
+    document.getElementById('case11q5id').textContent = "false";
+  }
+
+  if (case11q6) {
+    document.getElementById('case11q6id').textContent = case11q6;
+  }
+  else {
+    document.getElementById('case11q6id').textContent = "false";
+  }
+
+
+
+
+
+//case12
+  if (case12q1) {
+    document.getElementById('case12q1id').textContent = case12q1;
+  }
+  else {
+    document.getElementById('case12q1id').textContent = "false";
+  }
+
+  if (case12q2) {
+    document.getElementById('case12q2id').textContent = case12q2;
+  }
+  else {
+    document.getElementById('case12q2id').textContent = "false";
+  }
+
+  if (case12q3) {
+    document.getElementById('case12q3id').textContent = case12q3;
+  }
+  else {
+    document.getElementById('case12q3id').textContent = "false";
+  }
+
+  if (case12q4) {
+    document.getElementById('case12q4id').textContent = case12q4;
+  }
+  else {
+    document.getElementById('case12q4id').textContent = "false";
+  }
+
+  if (case12q5) {
+    document.getElementById('case12q5id').textContent = case12q5;
+  }
+  else {
+    document.getElementById('case12q5id').textContent = "false";
+  }
+
+  if (case12q6) {
+    document.getElementById('case12q6id').textContent = case12q6;
+  }
+  else {
+    document.getElementById('case12q6id').textContent = "false";
+  }
+
+  if (case12q7) {
+    document.getElementById('case12q7id').textContent = case12q7;
+  }
+  else {
+    document.getElementById('case12q7id').textContent = "false";
+  }
+
+//case12
+
+//case13
+  if (case13q1) {
+    document.getElementById('case13q1id').textContent = case13q1;
+  }
+  else {
+    document.getElementById('case13q1id').textContent = "false";
+  }
+
+
+  if (case13q2) {
+    document.getElementById('case13q2id').textContent = case13q2;
+  }
+  else {
+    document.getElementById('case13q2id').textContent = "false";
+  }
+
+
+  if (case13q3) {
+    document.getElementById('case13q3id').textContent = case13q3;
+  }
+  else {
+    document.getElementById('case13q3id').textContent = "false";
+  }
+
+
+  if (case13q4) {
+    document.getElementById('case13q4id').textContent = case13q4;
+  }
+  else {
+    document.getElementById('case13q4id').textContent = "false";
+  }
+
+//case13
+
+}
+setInterval(checkItems, 2000);
+checkItems();
+
+function resetLocalStorage(){
+
+
+//case10
+  localStorage.setItem('case10q1', false);
+  localStorage.setItem('case10q2', false);
+  localStorage.setItem('case10q3', false);
+  localStorage.setItem('case10q4', false);
+  localStorage.setItem('case10q5', false);
+  localStorage.setItem('case10q6', false);
+
+
+//case11
+  localStorage.setItem('case11q1', false);
+  localStorage.setItem('case11q2', false);
+  localStorage.setItem('case11q3', false);
+  localStorage.setItem('case11q4', false);
+  localStorage.setItem('case11q5', false);
+  localStorage.setItem('case11q6', false);
+
+
+
+//case12
+
+  localStorage.setItem('case12q1', false);
+  localStorage.setItem('case12q2', false);
+  localStorage.setItem('case12q3', false);
+  localStorage.setItem('case12q4', false);
+  localStorage.setItem('case12q5', false);
+  localStorage.setItem('case12q6', false);
+  localStorage.setItem('case12q7', false);
+
+//case13
+  localStorage.setItem('case13q1', false);
+  localStorage.setItem('case13q2', false);
+  localStorage.setItem('case13q3', false);
+  localStorage.setItem('case13q4', false);
+
+
+}
+
+</script>
+</html> 

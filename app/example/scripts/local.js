@@ -6,7 +6,7 @@
         $scope,
         $localStorage
       ){
-        $scope.$storage = $localStorage.$default({
+        $scope= $localStorage.$default({
           case10: false,
           case10q1: false,
           case10q2: false,
@@ -40,19 +40,19 @@
         });
         
         $scope.deleteCase10 = function() {
-          delete $scope.$storage.case10;
+          delete $scope.case10;
         };
 
         $scope.deleteCase11 = function() {
-          delete $scope.$storage.case11;
+          delete $scope.case11;
         };
 
         $scope.deleteCase12 = function() {
-          delete $scope.$storage.case12;
+          delete $scope.case12;
         };
 
         $scope.deleteCase13 = function() {
-          delete $scope.$storage.case13;
+          delete $scope.case13;
         };
 
         });

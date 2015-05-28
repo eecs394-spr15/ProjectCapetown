@@ -39,6 +39,10 @@ angular
   .module('example')
   .controller('caseController', function ($scope, $filter)
   {
+
+    $scope.case11q1 = localStorage.getItem('case11q1');
+    localStorage.setItem('case11q1', "working");
+
     $scope.answers = [{label:"1.  Ask if the child has had diarrhoea for longer than 14 days?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"You must first address dehydration, as it is a more serious condition, before moving on to the diarrhoea."},
                       {label:"2.  Check to see if the child is unable to or is drinking poorly?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
                       {label:"3.  Check to see if the child is irritable or restless?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must first determine if the child is unconscious or lethargic, as those are more serious issues."},
@@ -82,6 +86,7 @@ angular
     $scope.onSubmit = function()
     {
       if($scope.submitText == "Next -->"){
+        localStorage.setItem('case11q1', true);
         window.location.href = "case11-2.html";
       }
         for(i = 0; i < $scope.answers.length; i++)

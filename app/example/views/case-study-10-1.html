@@ -35,11 +35,18 @@
     </div>
     
     <script>
+
+
         
         angular
         .module('example')
         .controller('caseController', function ($scope, $filter)
                     {
+
+                    $scope.case10q1 = localStorage.getItem('case10q1');
+                    localStorage.setItem('case10q1', "working");
+
+
                     $scope.answers = [{label:"1.	Check to see if the child is unconscious or lethargic?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},
                                       {label:"2.	Ask if the child has a history of asthma?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"Respiratory symptoms and questions are reviewed later."},
                                       {label:"3.    Check to see if the child has sunken eyes?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
@@ -82,7 +89,9 @@
                     
                     $scope.onSubmit = function()
                     {
-                    if($scope.submitText == "Next Question -->"){
+                    if($scope.submitText == "Next Question -->")
+                    {
+                    localStorage.setItem('case10q1',true);
                     window.location.href = "case-study-10-2.html";
                     }
                     for(i = 0; i < $scope.answers.length; i++)

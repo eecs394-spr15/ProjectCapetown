@@ -40,6 +40,8 @@
         .module('example')
         .controller('caseController', function ($scope, $filter)
                     {
+                    $scope.case10q6 = localStorage.getItem('case10q6');
+                    localStorage.setItem('case10q6', "working")
                     $scope.answers = [{label:"1.	Diagnose as Severe Dehydration?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"The child has already been diagnosed with Some Dehydration."},
                                       {label:"2.	Follow Plan B?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You have already treated the child with Plan B."},
                                       {label:"3.    Refer urgently", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"This child has not been diagnosed with Severe Dehydration, so there is no need to refer urgently."},
@@ -79,6 +81,7 @@
                     $scope.onSubmit = function()
                     {
                     if($scope.submitText == "Next Case -->"){
+                    localStorage.setItem('case10q6', true);
                     window.location.href = "case-study-11-1.html";
                     }
                     for(i = 0; i < $scope.answers.length; i++)

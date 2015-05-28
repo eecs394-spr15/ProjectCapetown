@@ -40,6 +40,8 @@
         .module('example')
         .controller('caseController', function ($scope, $filter)
                     {
+                    $scope.case10q4 = localStorage.getItem('case10q4');
+                    localStorage.setItem('case10q4', "working")
                     $scope.answers = [{label:"1.	Follow Plan B?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},
                                       {label:"2.	Ask if the child is losing weight?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"a.	It has been determined that the child is not dehydrated. This question is only necessary if the child was dehydrated (some or severely)."},
                                       {label:"3.	Advise the mother to continue breastfeeding and feeding.", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
@@ -83,6 +85,7 @@
                     $scope.onSubmit = function()
                     {
                     if($scope.submitText == "Next Question -->"){
+                    localStorage.setItem('case10q4', true);
                     window.location.href = "case-study-10-5.html";
                     }
                     for(i = 0; i < $scope.answers.length; i++)

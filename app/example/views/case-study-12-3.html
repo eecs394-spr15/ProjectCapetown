@@ -40,6 +40,10 @@ angular
   .module('example')
   .controller('caseController', function ($scope, $filter)
   {
+
+        $scope.case12q3 = localStorage.getItem('case12q3');
+    localStorage.setItem('case12q3', "working");
+
     $scope.answers = [{label:"1.  Ask if there is blood in the stool?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"This question is not relevant, given the symptoms presented."},
                       {label:"2.  Follow PLan C?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str: "No diagnosis has been made yet, so no treatment can be followed."},
                       {label:"3.  Check to see if stridor is present?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
@@ -79,7 +83,9 @@ angular
 
     $scope.onSubmit = function()
     {
+
       if($scope.submitText == "Next -->"){
+           localStorage.setItem('case12q3', true);
         window.location.href = "case-study-12-4.html";
       }
         for(i = 0; i < $scope.answers.length; i++)

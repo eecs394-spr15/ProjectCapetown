@@ -29,7 +29,6 @@
   </div>
 
     <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()"> {{submitText}} </a>
-    <a class="button button-block button-dark icon-left super-arrow-left-b" href="case-study-13-1.html">Last Question</a>
     <a class="button button-block button-dark icon-left super-arrow-left-b" href="cases.html">Back to Cases</a>
 
 </div>
@@ -40,10 +39,14 @@ angular
   .module('example')
   .controller('caseController', function ($scope, $filter)
   {
-    $scope.answers = [{label:"1.  Diagnose Severe Dehydration?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:" You must have received a “Yes” on at least 2 of the above questions to diagnose Severe Dehydration."},
-                      {label:"2.  Diagnose as Severe Dysentery?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You only have enough information to rule out Severe Dehydration as a diagnosis."},
-                      {label:"3.  Diagnose as Severe Persistent Diarrhoea?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"This is a treatment for Severe Dehydration, and should be conducted when referring urgently."},
-                      {label:"4.  None of the above?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"a. The child has not been successfully treated yet. You must do something based on the information you have received."}];
+
+    $scope.case13q2 = localStorage.getItem('case13q2');
+      localStorage.setItem('case13q2', "working");
+
+    $scope.answers = [{label:"1.  Check to see if he has sunken eyes?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"You must have received a “Yes” on at least 2 of the above questions to diagnose Severe Dehydration."},
+                      {label:"2.  Determine if the child is older than 1 year?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You only have enough information to rule out Severe Dehydration as a diagnosis."},
+                      {label:"3.  Give frequent sips of ORS?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                      {label:"4.  Ask if the child has had the diarrhoea for longer than 14 days?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"The child has not been successfully treated yet. You must do something based on the information you have received."}];
 
     $scope.showAnswers = false;
 
@@ -58,7 +61,7 @@ angular
     $scope.showIncorrect1 = false;
     $scope.showIncorrect2 = false;
 
-    $scope.correct_feedback ="Correct! The next step is: Diagnose as Severe Persistent Diarrhoea";
+    $scope.correct_feedback ='Correct! The next steps are:Ask if the child has been losing weight?\nAsk if the child has had the diarrhoea for longer than 14 days?\nAsk if there is blood in the stool?\nAsk if the child is older than 1 year?\n';
     $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
     $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
 
@@ -79,6 +82,7 @@ angular
     $scope.onSubmit = function()
     {
       if($scope.submitText == "Next Question -->"){
+        localStorage.setItem('case13q2', true);
         window.location.href = "case-study-13-3.html";
       }
         for(i = 0; i < $scope.answers.length; i++)
@@ -94,7 +98,7 @@ angular
 
         if(is_correct)
         {
-          $scope.submitText = "Next Quesion -->";
+          $scope.submitText = "Next Question -->";
           $scope.answers_enabled = false;
           //alert("CORRECT");
           $scope.showCorrect = true;
