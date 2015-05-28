@@ -41,12 +41,12 @@ angular
   .controller('caseController', function ($scope, $filter)
   {
     $scope.answers = [{label:"1.  Ask if the child has had diarrhoea for longer than 14 days?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"You must first address dehydration, as it is a more serious condition, before moving on to the diarrhoea."},
-                      {label:"2.  Check to see if the child is unable to or is drinking poorly?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"WRONG!!"},
+                      {label:"2.  Check to see if the child is unable to or is drinking poorly?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
                       {label:"3.  Check to see if the child is irritable or restless?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must first determine if the child is unconscious or lethargic, as those are more serious issues."},
-                      {label:"4.  Check to see if the child is unconscious or lethargic?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"WRONG!!"},
-                      {label:"5.  Check to see if the child has sunken eyes?", val:false, correct_val:true, correct:false, correct_str:"",                 incorrect_str:"WRONG!!"},
+                      {label:"4.  Check to see if the child is unconscious or lethargic?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                      {label:"5.  Check to see if the child has sunken eyes?", val:false, correct_val:true, correct:false, correct_str:"",                 incorrect_str:""},
                       {label:"6.  Determine the age of the child?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"The age of the child doesn’t matter until you are addressing dysentery."},
-                      {label:"7.  Check to see if the skin pinch goes back very slowly (>2 seconds)?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"WRONG!!"},
+                      {label:"7.  Check to see if the skin pinch goes back very slowly (>2 seconds)?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
                       {label:"8.  Ask if the child has been coughing at night?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"Coughing is not relevant here."}];
 
     $scope.showAnswers = false;
