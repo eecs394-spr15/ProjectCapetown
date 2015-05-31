@@ -3,23 +3,27 @@
 <head>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
-
+<super-navbar>
+    <super-navbar-title>
+        Case 13.3
+    </super-navbar-title>
+</super-navbar>
 <div ng-controller="caseController">
 
 <h3> {{question}} </h3>
 
-  <ul class="list"> 
+<ul class="list">
     <div  ng-repeat="a in answers">
-      <li class="item item-checkbox item-text-wrap">
-         <label class="checkbox">
-           <input type="checkbox" ng-model="a.val" ng-disabled="!answers_enabled">
-         </label>
-         {{a.label}}
-      </li>
-      <div ng-show="showAnswers && a.correct"> <font color="green">{{a.correct_str}}</font> </div>
-      <div ng-show="showAnswers && !a.correct"> <font color="red">{{a.incorrect_str}}</font> </div>
-    </div>
-  </ul>
+        <li class="item item-checkbox item-text-wrap">
+            <label class="checkbox">
+                <input type="checkbox" ng-model="a.val" ng-disabled="!answers_enabled">
+                    </label>
+            {{a.label}}<div ng-show="showAnswers && !a.correct"> <font color="red">{{a.incorrect_str}}</font> </div>
+            </div>
+    </li>
+    <div ng-show="showAnswers && a.correct"> <font color="green">{{a.correct_str}}</font> </div>
+    
+</ul>
 
   <div ng-show="showAnswers"> 
     <p ng-show="showCorrect"> <font color="green">{{correct_feedback}}</font> </p>
@@ -29,7 +33,6 @@
   </div>
 
     <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()"> {{submitText}} </a>
-    <a class="button button-block button-dark icon-left super-arrow-left-b" href="case-study-13-2.html">Last Question</a>
     <a class="button button-block button-dark icon-left super-arrow-left-b" href="cases.html">Back to Cases</a>
 </div>
 
@@ -51,7 +54,7 @@ angular
 
     $scope.showAnswers = false;
 
-    $scope.question = "Based on this information, what are your next steps? Check all that apply.";
+    $scope.question = "You have diagnosed the child with Severe Persistent Diarrhoea.  What are your next steps?  Check all that apply.";
 
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];

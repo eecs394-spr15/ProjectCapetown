@@ -3,23 +3,27 @@
 <head>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
-
+<super-navbar>
+    <super-navbar-title>
+        Case 13.2
+    </super-navbar-title>
+</super-navbar>
 <div ng-controller="caseController">
 
 <h3> {{question}} </h3>
 
-  <ul class="list"> 
+<ul class="list">
     <div  ng-repeat="a in answers">
-      <li class="item item-checkbox item-text-wrap">
-         <label class="checkbox">
-           <input type="checkbox" ng-model="a.val" ng-disabled="!answers_enabled">
-         </label>
-         {{a.label}}
-      </li>
-      <div ng-show="showAnswers && a.correct"> <font color="green">{{a.correct_str}}</font> </div>
-      <div ng-show="showAnswers && !a.correct"> <font color="red">{{a.incorrect_str}}</font> </div>
-    </div>
-  </ul>
+        <li class="item item-checkbox item-text-wrap">
+            <label class="checkbox">
+                <input type="checkbox" ng-model="a.val" ng-disabled="!answers_enabled">
+                    </label>
+            {{a.label}}<div ng-show="showAnswers && !a.correct"> <font color="red">{{a.incorrect_str}}</font> </div>
+            </div>
+    </li>
+    <div ng-show="showAnswers && a.correct"> <font color="green">{{a.correct_str}}</font> </div>
+    
+</ul>
 
   <div ng-show="showAnswers"> 
     <p ng-show="showCorrect"> <font color="green">{{correct_feedback}}</font> </p>
@@ -43,14 +47,14 @@ angular
     $scope.case13q2 = localStorage.getItem('case13q2');
       localStorage.setItem('case13q2', "working");
 
-    $scope.answers = [{label:"1.  Check to see if he has sunken eyes?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"You must have received a “Yes” on at least 2 of the above questions to diagnose Severe Dehydration."},
-                      {label:"2.  Determine if the child is older than 1 year?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You only have enough information to rule out Severe Dehydration as a diagnosis."},
-                      {label:"3.  Give frequent sips of ORS?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"4.  Ask if the child has had the diarrhoea for longer than 14 days?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"The child has not been successfully treated yet. You must do something based on the information you have received."}];
+    $scope.answers = [{label:"1.	Diagnose Severe Dehydration?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"At least 2 of the above questions must have been found to be positive to diagnose Severe Dehydration."},
+                      {label:"2.	Diagnose as Severe Dysentery?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You only have enough information to rule out Severe Dehydration as a diagnosis."},
+                      {label:"3.	Diagnose as Severe Persistent Diarrhoea?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                      {label:"4.  None of the above", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"The child has not been successfully treated yet. You must do something based on the information you have received."}];
 
     $scope.showAnswers = false;
 
-    $scope.question = "You are given the answers to these questions as follows: Yes, Yes, No, and No. Based on this information, what are your next steps?";
+    $scope.question = "You find that the child has been losing weight.  The child has had diarroea for >14 days.  There is no blood in the child's stool.  The child is younger than 1 year.  Based on this information, what are your next steps? Check all that apply.";
 
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
@@ -61,7 +65,7 @@ angular
     $scope.showIncorrect1 = false;
     $scope.showIncorrect2 = false;
 
-    $scope.correct_feedback ='Correct! The next steps are:Ask if the child has been losing weight?\nAsk if the child has had the diarrhoea for longer than 14 days?\nAsk if there is blood in the stool?\nAsk if the child is older than 1 year?\n';
+    $scope.correct_feedback ="Correct! The next step is: Diagnose as Severe Persistent Diarrhoea.";
     $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
     $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
 
