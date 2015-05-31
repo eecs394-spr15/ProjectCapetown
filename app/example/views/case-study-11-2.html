@@ -33,7 +33,6 @@
   </div>
 
     <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()"> {{submitText}} </a>
-    <a class="button button-block button-calm icon-left super-document" href="case-study-11-1.html">Back to Last Question</a>
     <a class="button button-block button-calm icon-left super-document" href="cases.html">Back to Cases</a>
 </div>
 
@@ -50,19 +49,20 @@ angular
                       {label:"2.  Diagnose as No Dehydration?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You only have enough information to rule out Severe Dehydration as a diagnosis."},
                       {label:"3.  Check to see if the skin pinch goes back slowly?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
                       {label:"4.  Check to see if the child is eager to or drinking poorly?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"5.  Check to see if the child is restless or irritable?", val:false, correct_val:true, correct:false, correct_str:"",                 incorrect_str:""},
+                      {label:"5.  Check to see if the child is restless or irritable?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
                       {label:"6.  Check to see if the child has sunken eyes?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
                       {label:"7.  Ask if the child has had diarrhoea for longer than 14 days?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You are not done addressing dehydration. You cannot move on to diarrhoea yet."},
                       {label:"8.  Diagnose as Some Dehydration?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You do not have sufficient evidence to diagnose this child with Some Dehydration."}];
     $scope.showAnswers = false;
-    $scope.question = "You are given the answers to these questions as follows: No, No, No, and No. Based on this information, what are your next steps? Check all that apply.";
+    $scope.question = "You find that the child does is neither unable to drink nor drinking poorly.  Not unconscious or lethargic.  No sunken eyes.  Skin pinch goes back normally.  Based on this information, what are the next steps?  Check all that apply.";
+     
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
     $scope.answers_enabled = true;
     $scope.showCorrect = false;
     $scope.showIncorrect1 = false;
     $scope.showIncorrect2 = false;
-    $scope.correct_feedback ="Correct! The next steps are: Skin pinch goes back slowly?  Thirsty/drinking eagerly? Sunken Eyes?";
+    $scope.correct_feedback ="Correct! The next steps are: check if skin pinch goes back normally?  Child is thirsty or drinking eagerly? is restless or irritable.  Has sunken Eyes?";
     $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
     $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
     $scope.isCorrect = function()

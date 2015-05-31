@@ -3,7 +3,11 @@
 <head>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
-
+<super-navbar>
+    <super-navbar-title>
+        Case 12.7
+    </super-navbar-title>
+</super-navbar>
 <div ng-controller="caseController">
 
 <h3> {{question}} </h3>
@@ -16,8 +20,8 @@
          </label>
          {{a.label}}
       </li>
-      <div ng-show="showAnswers && a.correct"> <font color="green">{{a.correct_str}}</font> </div>
-      <div ng-show="showAnswers && !a.correct"> <font color="red">{{a.incorrect_str}}</font> </div>
+      <div ng-show="showAnswers && a.correct"> <font color="green">{{a.correct_str}}  {{a.incorrect_str}}</font> </div>
+      <!--<div ng-show="showAnswers && !a.correct"> <font color="red">{{a.incorrect_str}}</font> </div> -->
     </div>
   </ul>
 
@@ -29,7 +33,6 @@
   </div>
 
     <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()"> {{submitText}} </a>
-    <a class="button button-block button-calm icon-left super-document" href="case-study-12-6.html">Back to Last Question</a>
     <a class="button button-block button-calm icon-left super-document" href="cases.html">Back to Cases</a>
 
 </div>

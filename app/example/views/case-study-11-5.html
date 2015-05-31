@@ -33,7 +33,6 @@
   </div>
 
     <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()"> {{submitText}} </a>
-    <a class="button button-block button-calm icon-left super-document" href="case-study-11-4.html">Back to Last Question</a>
     <a class="button button-block button-calm icon-left super-document" href="cases.html">Back to Cases</a>
 </div>
 
@@ -53,7 +52,7 @@ angular
 
     $scope.showAnswers = false;
 
-    $scope.question = "You are given answers to the correct questions as follows: Yes, No, and Yes. Based on this information, what are your next steps?Check all that apply.";
+    $scope.question = "You find that the child has had diarrhoea for >14 days.  There is no blood in the child's stool.  The child is older than 1 year.  Based on this information, what are the next steps?  Check all that apply.";
 
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
@@ -63,8 +62,8 @@ angular
     $scope.showCorrect = false;
     $scope.showIncorrect1 = false;
     $scope.showIncorrect2 = false;
-
-    $scope.correct_feedback ="Correct! The next steps are:Give fluid, etc…Ask if the child has had diarrhoea for longer than 14 days..Ask if there is blood in the stool.Determine if the child is older than 1 year.";
+ 
+    $scope.correct_feedback ="Correct! The next step is to diagnose as Persistent Diarrhoea.";
     $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
     $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
 
