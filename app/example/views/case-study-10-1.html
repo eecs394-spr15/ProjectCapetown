@@ -18,13 +18,12 @@
                     <label class="checkbox">
                         <input type="checkbox" ng-model="a.val" ng-disabled="!answers_enabled">
                             </label>
-                    {{a.label}}
-                </li>
-                <div ng-show="showAnswers && a.correct"> <font color="green">{{a.correct_str}}</font> </div>
-                <div ng-show="showAnswers && !a.correct"> <font color="red">{{a.incorrect_str}}</font> </div>
-            </div>
+                    {{a.label}}<div ng-show="showAnswers && !a.correct"> <font color="red">{{a.incorrect_str}}</font> </div>
+                    </div>
+            </li>
+            <div ng-show="showAnswers && a.correct"> <font color="green">{{a.correct_str}}</font> </div>
+            
         </ul>
-        
         <div ng-show="showAnswers">
             <p ng-show="showCorrect"> <font color="green">{{correct_feedback}}</font> </p>
             <p ng-show="showIncorrect1"> <font color="red">{{incorrect_feedback1}}</font> </p>
