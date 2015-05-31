@@ -3,7 +3,11 @@
     <head>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     </head>
-    
+    <super-navbar>
+        <super-navbar-title>
+            Case 10.6
+        </super-navbar-title>
+    </super-navbar>
     <div ng-controller="caseController">
         
         <h3> {{question}} </h3>
@@ -29,7 +33,6 @@
         </div>
         
         <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()"> {{submitText}} </a>
-        <a class="button button-block button-dark icon-left super-arrow-left-b" href="case-study-10-5.html">Last Question</a>
         <a class="button button-block button-dark icon-left super-arrow-left-b" href="cases.html">Back to Cases</a>
         
     </div>
@@ -49,7 +52,7 @@
                     
                     $scope.showAnswers = false;
                     
-                    $scope.question = "You find the answers to all these questions are no. Based on this information, what are your next steps? ";
+                    $scope.question = "You find that the child has not been losing weight.  She has not had diarrhoea for >14 days.  There is no blood in her stool.  The child is less than 1 years old.  Based on this information, what are the next steps?  Check all that apply.";
                     
                     $scope.submitText = "Submit";
                     //$scope.selection = ['a1', 'a4'];
@@ -97,7 +100,7 @@
                     
                     if(is_correct)
                     {
-                    $scope.submitText = "Next Case-->";
+                    $scope.submitText = "Next Case -->";
                     $scope.answers_enabled = false;
                     //alert("CORRECT");
                     $scope.showCorrect = true;

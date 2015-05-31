@@ -3,7 +3,11 @@
     <head>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     </head>
-    
+    <super-navbar>
+        <super-navbar-title>
+            Case 10.1
+        </super-navbar-title>
+    </super-navbar>
     <div ng-controller="caseController">
         
         <h3> {{question}} </h3>
@@ -58,7 +62,7 @@
                     
                     $scope.showAnswers = false;
                     
-                    $scope.question = "A father brings his daughter who is suffering from diarrhoea into the clinic. With this initial information, what are your next steps?";
+                    $scope.question = "A father brings his daughter who is suffering from diarrhoea into the clinic. With this initial information, what are your next steps? Check all that apply.";
                     
                     $scope.submitText = "Submit";
                     //$scope.selection = ['a1', 'a4'];
@@ -69,7 +73,7 @@
                     $scope.showIncorrect1 = false;
                     $scope.showIncorrect2 = false;
                     
-                    $scope.correct_feedback ="Correct! The next steps are: Check to see if the child is unconscious or lethargic? Sunken Eyes? Unable/drinking poorly?  Skin pinch goes back very slowly?";
+                    $scope.correct_feedback ="Correct! The next steps are: Check to see if the child is unconscious or lethargic? Has sunken eyes? Is unable to drink or is drinking poorly?  Her skin pinch goes back very slowly?";
                     $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
                     $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
                     

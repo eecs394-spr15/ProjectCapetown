@@ -3,7 +3,11 @@
     <head>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     </head>
-    
+    <super-navbar>
+        <super-navbar-title>
+            Case 10.3
+        </super-navbar-title>
+    </super-navbar>
     <div ng-controller="caseController">
         
         <h3> {{question}} </h3>
@@ -29,7 +33,6 @@
         </div>
         
         <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()"> {{submitText}} </a>
-        <a class="button button-block button-dark icon-left super-arrow-left-b" href="case-study-10-2.html">Last Question</a>
         <a class="button button-block button-dark icon-left super-arrow-left-b" href="cases.html">Back to Cases</a>
         
     </div>
@@ -49,7 +52,7 @@
                     
                     $scope.showAnswers = false;
                     
-                    $scope.question = "You are given the answers to these questions as follows: No, No, No, and No. Based on this information, what are your next steps? Check all that apply";
+                    $scope.question = "You find that the child is restless and irritable.  She is thirsty and drinking eagerly.  Her eyes are sunken.  Skin pinch does not go  back slowly.  Based on this information, what are the next steps? Check all that apply.";
                     
                     $scope.submitText = "Submit";
                     //$scope.selection = ['a1', 'a4'];
@@ -60,7 +63,7 @@
                     $scope.showIncorrect1 = false;
                     $scope.showIncorrect2 = false;
                     
-                    $scope.correct_feedback ="Correct! The next steps are: Restless/Irritable? Thirsty/drinking eagerly? Sunken eyes? Skin pinch goes back slowly?";
+                    $scope.correct_feedback ="Correct! The next step is to diagnose as some dehydration.";
                     $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
                     $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
                     

@@ -3,7 +3,11 @@
     <head>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     </head>
-    
+    <super-navbar>
+        <super-navbar-title>
+            Case 10.5
+        </super-navbar-title>
+    </super-navbar>
     <div ng-controller="caseController">
         
         <h3> {{question}} </h3>
@@ -29,7 +33,6 @@
         </div>
         
         <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()"> {{submitText}} </a>
-        <a class="button button-block button-dark icon-left super-arrow-left-b" href="case-study-10-4.html">Last Question</a>
         <a class="button button-block button-dark icon-left super-arrow-left-b" href="cases.html">Back to Cases</a>
         
     </div>
@@ -44,12 +47,12 @@
                     localStorage.setItem('case10q5', "working")
                     $scope.answers = [{label:"1.	Ask if the child has been losing weight?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},
                                       {label:"2.	Ask if the child has had diarrhoea for longer than 14 days?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                                      {label:"3.    Diagnose as severe dehydration?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                                      {label:"3.    Ask if there is blood in the stool?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
                                       {label:"4.	Ask if the child is older than 1 year?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""}];
                     
                     $scope.showAnswers = false;
                     
-                    $scope.question = "Based on this information, what are your next steps?";
+                    $scope.question = "You have decided to:  follow Plan B.  Advise the mother to contnue breastfeeding and feeding.  Give zinc for 2 weeks.  Advise parent to return and follow up in 2 days.  What are the next steps?  Check all that apply.";
                     
                     $scope.submitText = "Submit";
                     //$scope.selection = ['a1', 'a4'];
@@ -60,7 +63,7 @@
                     $scope.showIncorrect1 = false;
                     $scope.showIncorrect2 = false;
                     
-                    $scope.correct_feedback ="Correct! The next steps are: Follow Plan B. Give zinc for 2 weeks.  Advise the mother to continue breastfeeding and feeding. Advise the parent when to return immediately and to follow up in 2 days.";
+                    $scope.correct_feedback ="Correct! The next steps are:  ask if child has been losing weight?  Has had diarrhoea for >14 days?  Blood in stool?  Older than 1 year?";
                     $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
                     $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
                     

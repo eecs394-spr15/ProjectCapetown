@@ -3,7 +3,11 @@
     <head>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     </head>
-    
+    <super-navbar>
+        <super-navbar-title>
+            Case 10.4
+        </super-navbar-title>
+    </super-navbar>
     <div ng-controller="caseController">
         
         <h3> {{question}} </h3>
@@ -29,7 +33,6 @@
         </div>
         
         <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()"> {{submitText}} </a>
-        <a class="button button-block button-dark icon-left super-arrow-left-b" href="case-study-10-3.html">Last Question</a>
         <a class="button button-block button-dark icon-left super-arrow-left-b" href="cases.html">Back to Cases</a>
         
     </div>
@@ -53,7 +56,7 @@
                     
                     $scope.showAnswers = false;
                     
-                    $scope.question = "Based on this information, what are your next steps?";
+                    $scope.question = "You have diagnosed the child with some dehydration.  What are the next steps? Check all that apply.";
                     
                     $scope.submitText = "Submit";
                     //$scope.selection = ['a1', 'a4'];
@@ -64,7 +67,7 @@
                     $scope.showIncorrect1 = false;
                     $scope.showIncorrect2 = false;
                     
-                    $scope.correct_feedback ="Correct! The next step is: Diagnose as some dehydration.";
+                    $scope.correct_feedback ="Correct! The next steps is are: Follow Plan B.  Advise mother to contnue breastfeeding and feeding.  Give zinc for 2 weeks.  Advise parent to return and follow up in 2 days.";
                     $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
                     $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
                     
