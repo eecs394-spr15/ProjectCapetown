@@ -42,11 +42,177 @@
   </div>
 </div>
 
-        <a class="button button-block button-balanced icon-left super-document-text" href="case-study-10-1.html">Case 10</a>
-        <a class="button button-block button-balanced icon-left super-document-text" href="case-study-11-1.html">Case 11</a>
-        <a class="button button-block button-balanced icon-left super-document-text" href="case-study-12-1.html">Case 12</a>
-        <a class="button button-block button-balanced icon-left super-document-text" href="case-study-13-1.html">Case 13</a>
+        <a class="button button-block button-balanced icon-left super-document-text" onclick="case10Tracker()">Case 10</a>
+        <a class="button button-block button-balanced icon-left super-document-text" onclick="case11Tracker()">Case 11</a>
+        <a class="button button-block button-balanced icon-left super-document-text" onclick="case12Tracker()">Case 12</a>
+        <a class="button button-block button-balanced icon-left super-document-text" onclick="case13Tracker()">Case 13</a>
         <a class="button button-block button-dark icon-left super-arrow-left-b" href="learning-home.html">Back to Training</a>
+
+
+<script>
+function case10Tracker() {
+
+  alert('case10');
+  var case10q1 = localStorage.getItem('case10q1');
+  var case10q2 = localStorage.getItem('case10q2');
+  var case10q3 = localStorage.getItem('case10q3');
+  var case10q4 = localStorage.getItem('case10q4');
+  var case10q5 = localStorage.getItem('case10q5');
+  var case10q6 = localStorage.getItem('case10q6');
+
+  if (case10q6 == 'true')
+  {
+    alert('case finished')
+  }
+  else if (case10q5 =='true')
+  {
+    window.location = 'case-study-10-6.html'
+  }
+  else if (case10q4 =='true')
+  {
+    window.location = 'case-study-10-5.html'
+  }
+  else if (case10q3 =='true')
+  {
+    window.location = 'case-study-10-4.html'
+  }
+  else if (case10q2 =='true')
+  {
+    window.location = 'case-study-10-3.html'
+  }
+  else if (case10q1 =='true')
+  {
+    window.location = 'case-study-10-2.html'
+  }
+  else
+  {
+    window.location = 'case-study-10-1.html'
+  }
+
+
+}
+
+
+function case11Tracker() {
+ 
+  alert('case11');
+  var case11q1 = localStorage.getItem('case11q1');
+  var case11q2 = localStorage.getItem('case11q2');
+  var case11q3 = localStorage.getItem('case11q3');
+  var case11q4 = localStorage.getItem('case11q4');
+  var case11q5 = localStorage.getItem('case11q5');
+  var case11q6 = localStorage.getItem('case11q6');
+
+
+  if (case11q6 == 'true')
+  {
+    alert('case finished')
+  }
+  else if (case11q5 =='true')
+  {
+    window.location = 'case-study-11-6.html'
+  }
+  else if (case11q4 =='true')
+  {
+    window.location = 'case-study-11-5.html'
+  }
+  else if (case11q3 =='true')
+  {
+    window.location = 'case-study-11-4.html'
+  }
+  else if (case11q2 =='true')
+  {
+    window.location = 'case-study-11-3.html'
+  }
+  else if (case11q1 =='true')
+  {
+    window.location = 'case-study-11-2.html'
+  }
+  else
+  {
+    window.location = 'case-study-11-1.html'
+  }
+
+}
+
+
+function case12Tracker() {
+  
+  alert('case12');
+  var case12q1 = localStorage.getItem('case12q1');
+  var case12q2 = localStorage.getItem('case12q2');
+  var case12q3 = localStorage.getItem('case12q3');
+  var case12q4 = localStorage.getItem('case12q4');
+  var case12q5 = localStorage.getItem('case12q5');
+  var case12q6 = localStorage.getItem('case12q6');
+  var case12q7 = localStorage.getItem('case12q7');
+
+  if (case12q7 == 'true')
+  {
+    alert('case finished');
+  }
+  else if (case12q6 =='true')
+  {
+    window.location = 'case-study-12-7.html'
+  }
+  else if (case12q5 =='true')
+  {
+    window.location = 'case-study-12-6.html'
+  }
+  else if (case12q4 =='true')
+  {
+    window.location = 'case-study-12-5.html'
+  }
+  else if (case12q3 =='true')
+  {
+    window.location = 'case-study-12-4.html'
+  }
+  else if (case12q2 =='true')
+  {
+    window.location = 'case-study-12-3.html'
+  }
+  else if (case12q1 =='true')
+  {
+    window.location = 'case-study-12-2.html'
+  }
+  else
+  {
+    window.location = 'case-study-12-1.html'
+  }  
+
+}
+
+
+function case13Tracker() {
+
+alert('case13');
+var case13q1 = localStorage.getItem('case13q1');
+var case13q2 = localStorage.getItem('case13q2');
+var case13q3 = localStorage.getItem('case13q3');
+
+if (case13q3 =='true')
+{
+  alert('case finished'); 
+}
+else if (case13q2 == 'true') 
+{
+  window.location = 'case-study-13-3.html'
+}
+else if (case13q1 == 'true')
+{
+  window.location = 'case-study-13-2.html'
+}
+else
+{
+  window.location = 'case-study-13-1.html'
+}
+
+}
+
+</script>
+
+
+
 
   </body>
 </html>
