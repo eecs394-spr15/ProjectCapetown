@@ -35,11 +35,22 @@
         margin-right: 0px;
       }
 
+      .btn-progress {
+            width:60%;
+            float:left;
+            vertical-align:middle;
+      }
+      .btn-progress-txt {
+            display:inline-block;
+            float:left;
+            vertical-align:middle;
+      }
+
     </style>
     <title> IMCI </title>
   </head>
   <body>
-    <div class="container" style="padding:30px">
+<div class="container" style="padding:30px">
 <!--   <h3>progress bar:</h3> -->
   <div class="progress">
     <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
@@ -47,7 +58,14 @@
     </div>
   </div>
 </div>
-    <a class="button button-block button-balanced icon-left super-document-text" onclick="case1Tracker()">Case 1</a>
+    <a class="button button-block button-balanced icon-left super-document-text" onclick="case1Tracker()">
+        <div class="btn-progress-txt">Case 1</div>
+        <div class="progress btn-progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                <span >70% Complete</span>
+            </div>
+        </div>
+    </a>
     <a class="button button-block button-balanced icon-left super-document-text" onclick="case2Tracker()">Case 2</a>
     <a class="button button-block button-balanced icon-left super-document-text" onclick="case3Tracker()">Case 3</a>
     <a class="button button-block button-balanced icon-left super-document-text" onclick="case4Tracker()">Case 4</a>
