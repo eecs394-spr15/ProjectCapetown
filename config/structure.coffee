@@ -10,9 +10,9 @@ module.exports =
       location: "example#getting-started" # Supersonic module#view type navigation
     }
     {
-      title: "Training"
+      title: "Case Studies"
       id: "training"
-      location: "example#training"
+      location: "example#cases"
     }
     {
       title: "Game"
