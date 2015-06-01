@@ -12,27 +12,28 @@
         
         <h3> {{question}} </h3>
         
-        <ul class="list">
+        <div class="list">
             <div  ng-repeat="a in answers">
-                <li class="item item-checkbox item-text-wrap">
-                    <label class="checkbox">
-                        <input type="checkbox" ng-model="a.val" ng-disabled="!answers_enabled">
-                            </label>
-                    {{a.label}}
-                </li>
-                <div ng-show="showAnswers && a.correct"> <font color="green">{{a.correct_str}}</font> </div>
-                <div ng-show="showAnswers && !a.correct"> <font color="red">{{a.incorrect_str}}</font> </div>
+            <label class="item item-radio item-text-wrap">
+                <input type="radio" name="group" ng-model="$parent.userAnswer" ng-value="{{a.id}}" ng-disabled="!answers_enabled"/>
+                <div class="item-content">
+                {{a.label}}
+                </div>
+                <i class="radio-icon super-checkmark"></i>
+            </label>
             </div>
-        </ul>
-        
-        <div ng-show="showAnswers">
+  
+        </div>
+        <div><p>Your score is: {{score}}</p>
+        </div>
+
+        <div >
             <p ng-show="showCorrect"> <font color="green">{{correct_feedback}}</font> </p>
-            <p ng-show="showIncorrect1"> <font color="red">{{incorrect_feedback1}}</font> </p>
-            <p ng-show="showIncorrect2"> <font color="red">{{incorrect_feedback2}}</font> </p>
+            <p ng-show="showIncorrect"> <font color="red">{{incorrect_feedback}}</font> </p>
             
         </div>
-        
-        <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()"> {{submitText}} </a>
+
+        <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()"> {{submitText}}</a>
         <a class="button button-block button-dark icon-left super-arrow-left-b" href="g1-2.html">Next</a>
   
         
@@ -40,110 +41,70 @@
     
     <script>
 
-
-        
         angular
         .module('example')
         .controller('caseController', function ($scope, $filter)
                     {
+                    localStorage.setItem('g1score', 0);
+                    $scope.score = localStorage.getItem('g1score');
 
-                    $scope.case10q1 = localStorage.getItem('case10q1');
-                    localStorage.setItem('case10q1', "working");
+                    $scope.answers = [{label:"1.	Give ceftriaxone IM", id:"0"},
+                                      {label:"2.	Give amoxicillin for 5 days",id:"1"},
+                                      {label:"3.    Follow up in 14 days", id:"2",},
+                                      {label:"4.	Give iron ", id:"3"}];
 
-
-                    $scope.answers = [{label:"1.	Give ceftriaxone IM", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},
-                                      {label:"2.	Give amoxicillin for 5 days", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:""},
-                                      {label:"3.    Follow up in 14 days", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:""},
-                                      {label:"4.	Give iron ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:""}];
                     
                     $scope.showAnswers = false;
                     
                     $scope.question = "Which of the following is proper treatment for Mastoiditis? ";
                     
                     $scope.submitText = "Submit";
-                    //$scope.selection = ['a1', 'a4'];
                     
                     $scope.answers_enabled = true;
                     
                     $scope.showCorrect = false;
-                    $scope.showIncorrect1 = false;
-                    $scope.showIncorrect2 = false;
+                    $scope.showIncorrect = false;
                     
                     $scope.correct_feedback ="Correct!";
-                    $scope.incorrect_feedback1 ="Incorrect. ";
+                    $scope.incorrect_feedback ="Incorrect. ";
+
+                    //$scope.userAnswer = '';
+                    $scope.correctId = '0';
                     
                     
-                    $scope.isCorrect = function()
-                    {
-                    var selected = $filter("filter")($scope.answers, {correct:true});
-                    
-                    for(i = 0; i < $scope.answers.length; i++)
-                    {
-                    if(selected.indexOf($scope.answers[i]) < 0)
-                    return false;
-                    }
-                    
-                    return true;
+                    $scope.isCorrect = function(){
+                        return $scope.userAnswer == $scope.correctId;
                     };
                     
                     $scope.onSubmit = function()
                     {
-                    if($scope.submitText == "Next Question -->")
-                    {
-                    localStorage.setItem('case10q1',true);
-                    window.location.href = "case-study-10-2.html";
+                    if($scope.submitText == "Next Question -->"){
+                        window.location.href = "g1-2.html";
                     }
-                    for(i = 0; i < $scope.answers.length; i++)
-                    {
-                    $scope.answers[i].correct = $scope.answers[i].val == $scope.answers[i].correct_val;
+                    else{
+                        var is_correct = $scope.isCorrect();
+                        
+                        if(is_correct){
+                            //alert("CORRECT");
+                            $scope.submitText = "Next Question -->";
+                            $scope.answers_enabled = false;
+                            $scope.showCorrect = true;
+                            $scope.showIncorrect = false;
+                            $scope.score = $scope.score + 1;
+                            localStorage.setItem('g1score',$scope.score);
+                        }
+                        else{
+                            //alert($scope.userAnswer);  
+                            $scope.submitText = "Next Question -->";
+                            $scope.answers_enabled = false;
+                            $scope.showCorrect = false;
+                            $scope.showIncorrect = true;
+                            localStorage.setItem('g1score',$scope.score);
+                        }
+
                     }
-                    
-                    //Check answers
-                    var is_correct = $scope.isCorrect();
-                    
-                    //$(".answer").show();
-                    
-                    
-                    if(is_correct)
-                    {
-                    $scope.submitText = "Next Question -->";
-                    $scope.answers_enabled = false;
-                    //alert("CORRECT");
-                    $scope.showCorrect = true;
-                    $scope.showIncorrect1 = false;
-                    $scope.showIncorrect2 = false;
-                    
                     }
-                    else
-                    {
-                    //alert("INCORRECT");  
-                    for(i = 0; i < $scope.answers.length; i++)
-                    {
-                    if($scope.answers[i].correct_val && !$scope.answers[i].val)
-                    $scope.showIncorrect1 = true;
-                    if($scope.answers[i].val  && !$scope.answers[i].correct_val )
-                    $scope.showIncorrect2 = true;
-                    }
-                    
-                    }
-                    $scope.showAnswers = true;
-                    }
-                    
-                    
-                    
-                    /*
-                     $scope.toggleSelecton = function toggleSelection(answer)
-                     {
-                     var index = $scope.selection.indexOf(answer);
-                     
-                     
-                     if(index > -1)
-                     $scope.selection.splice(index, 1);
-                     else
-                     $scope.selection.push(answer);
-                     
-                     };
-                     */
+
                     });
         </script>
     
