@@ -45,16 +45,16 @@ angular
 
         $scope.case11q2 = localStorage.getItem('case1q2');
     localStorage.setItem('case1q2', "working");
-    $scope.answers = [{label:"1.  Diagnose as Severe Dehydration?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"You must have received a “Yes” on at least 2 of the above question to diagnose Severe Dehydration."},
-                      {label:"2.  Diagnose as No Dehydration?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You only have enough information to rule out Severe Dehydration as a diagnosis."},
-                      {label:"3.  Check to see if the skin pinch goes back slowly?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"4.  Check to see if the child is eager to or drinking poorly?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"5.  Check to see if the child is restless or irritable?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"6.  Check to see if the child has sunken eyes?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"7.  Ask if the child has had diarrhoea for longer than 14 days?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You are not done addressing dehydration. You cannot move on to diarrhoea yet."},
-                      {label:"8.  Diagnose as Some Dehydration?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You do not have sufficient evidence to diagnose this child with Some Dehydration."}];
+    $scope.answers = [{label:"1.	Check to see if the child is restless or irritable?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},
+                      {label:"2.	Check to see if the child drinks eagerly or is thirsty?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                      {label:"3.	Classify as severe dehydration?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"The child did not have at least 2 of the previous symptoms that you asked about. The child does not have severe dehydration."},
+                      {label:"4.	Ask if there is blood in the stool? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must determine if the child is dehydrated before assessing the symptoms of dysentery."},
+                      {label:"5.	Ask if the child has had diarrhoea for longer than 14 days?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must determine if the child is dehydrated before assessing the symptoms of diarrhoea."},
+                      {label:"6.	Check to see if the child has sunken eyes?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                      {label:"7.	Classify as dysentery?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You do not have sufficient information to classify the child with dysentery."},
+                      {label:"8.	Check to see if the skin pinch goes back slowly (<2 seconds)?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""}];
     $scope.showAnswers = false;
-    $scope.question = "You find that the child does is neither unable to drink nor drinking poorly.  Not unconscious or lethargic.  No sunken eyes.  Skin pinch goes back normally.  Based on this information, what are the next steps?  Check all that apply.";
+    $scope.question = "You find that the child is neither unconscious nor lethargic.  Child is niether unable to drink nor is drinking poorly.  Has sunken eyes.  Skin pinch goes back normally.  Based on this information, what are the next steps?  Check all that apply.";
      
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
@@ -62,7 +62,7 @@ angular
     $scope.showCorrect = false;
     $scope.showIncorrect1 = false;
     $scope.showIncorrect2 = false;
-    $scope.correct_feedback ="Correct! The next steps are: check if skin pinch goes back normally?  Child is thirsty or drinking eagerly? is restless or irritable.  Has sunken Eyes?";
+    $scope.correct_feedback ="Correct! The next steps are: Check if child is restless or irritable?  Drinks eagerly or is thirsty?  Has sunken eyes?  Skin pinch goes back slowly?";
     $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
     $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
     $scope.isCorrect = function()
