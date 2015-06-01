@@ -33,7 +33,7 @@
   </div>
 
     <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()"> {{submitText}} </a>
-    <a class="button button-block button-calm icon-left super-document" href="cases.html">Back to Cases</a>
+    <a class="button button-block button-dark icon-left super-document" href="cases.html">Back to Cases</a>
 </div>
 
 
@@ -84,7 +84,7 @@ angular
     $scope.onSubmit = function()
     {
 
-      if($scope.submitText == "Next -->"){
+      if($scope.submitText == "Next Question -->"){
         localStorage.setItem('case11q5', true);
         window.location.href = "case-study-11-6.html";
       }
@@ -102,7 +102,7 @@ angular
 
         if(is_correct)
         {
-          $scope.submitText = "Next -->";
+          $scope.submitText = "Next Question -->";
           $scope.answers_enabled = false;
 
           //alert("CORRECT");

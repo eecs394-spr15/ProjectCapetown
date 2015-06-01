@@ -159,6 +159,46 @@
 
 
 <script>
+    
+    function case1Tracker() {
+        
+        alert('case1');
+        var case1q1 = localStorage.getItem('case1q1');
+        var case1q2 = localStorage.getItem('case1q2');
+        var case1q3 = localStorage.getItem('case1q3');
+        var case1q4 = localStorage.getItem('case1q4');
+        var case1q5 = localStorage.getItem('case1q5');
+        
+        
+        if (case1q5 == 'true')
+        {
+            alert('case finished')
+        }
+        else if (case1q4 =='true')
+        {
+            window.location = 'case-study-1-5.html'
+        }
+        else if (case1q3 =='true')
+        {
+            window.location = 'case-study-1-4.html'
+        }
+        else if (case1q2 =='true')
+        {
+            window.location = 'case-study-1-3.html'
+        }
+        else if (case1q1 =='true')
+        {
+            window.location = 'case-study-1-2.html'
+        }
+        else
+        {
+            window.location = 'case-study-1-1.html'
+        }
+        
+        
+    }
+
+
 function case10Tracker() {
 
   alert('case10');

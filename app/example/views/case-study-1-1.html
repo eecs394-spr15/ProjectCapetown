@@ -5,7 +5,7 @@
 </head>
 <super-navbar>
     <super-navbar-title>
-        Case 11.1
+        Case 1.1
     </super-navbar-title>
 </super-navbar>
 
@@ -45,21 +45,21 @@ angular
   .controller('caseController', function ($scope, $filter)
   {
 
-    $scope.case11q1 = localStorage.getItem('case11q1');
-    localStorage.setItem('case11q1', "working");
+    $scope.case11q1 = localStorage.getItem('case1q1');
+    localStorage.setItem('case1q1', "working");
 
-    $scope.answers = [{label:"1.  Ask if the child has had diarrhoea for longer than 14 days?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"You must first address dehydration, as it is a more serious condition, before moving on to the diarrhoea."},
-                      {label:"2.  Check to see if the child is unable to or is drinking poorly?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"3.  Check to see if the child is irritable or restless?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must first determine if the child is unconscious or lethargic, as those are more serious issues."},
-                      {label:"4.  Check to see if the child is unconscious or lethargic?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"5.  Check to see if the child has sunken eyes?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"6.  Determine the age of the child?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"The age of the child doesn’t matter until you are addressing dysentery."},
-                      {label:"7.  Check to see if the skin pinch goes back very slowly (>2 seconds)?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"8.  Ask if the child has been coughing at night?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"Coughing is not relevant here."}];
+    $scope.answers = [{label:"1.	Check to see if the child is unconscious or lethargic?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},
+                      {label:"2.	Ask if the child has a history of asthma?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"Respiratory symptoms and questions are reviewed later."},
+                      {label:"3.	Check to see if the child has sunken eyes?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                      {label:"4.	Determine if the child is older than 1 year?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must first determine if the child is dehydrated before addressing symptoms of dysentery."},
+                      {label:"5.	Check to see if the child is unable to drink or is drinking poorly?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                      {label:"6.	Ask if the child has had diarrhoea for longer than 14 days?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must first determine if the child is dehydrated before addressing symptoms of diarrhoea."},
+                      {label:"7.	Check if the child is breathing fast? Respiratory symptoms and questions are reviewed later.", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"Respiratory symptoms and questions are reviewed later."},
+                      {label:"8.	Check to see if the skin pinch goes back very slowly (>2 seconds)?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""}];
 
     $scope.showAnswers = false;
 
-    $scope.question = "A mother brings her daughter into your clinic. She tells you that she has diarrhoea. Based on this information, what are your next steps?  Check all that apply.";
+    $scope.question = "A father brings his daughter, Mimi, who is suffering from diarrhoea into the clinic. With this initial information, what are your next steps?  Check all that apply.";
 
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
@@ -70,7 +70,7 @@ angular
     $scope.showIncorrect1 = false;
     $scope.showIncorrect2 = false;
 
-    $scope.correct_feedback ="Correct! The next steps are: Check if the child is unnable to drink or is drinking poorly? Is unconscious or lethargic? Has unken eyes?  Skin pinch goes back very slowly?";
+    $scope.correct_feedback ="Correct! The next steps are: Check if child is unconscious or lethargic?  Has sunken eyes?  Is unable to drink or drinking poorly?  Skin pinch goes back slowly?";
     $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
     $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
 
@@ -90,9 +90,9 @@ angular
 
     $scope.onSubmit = function()
     {
-      if($scope.submitText == "Next -->"){
-        localStorage.setItem('case11q1', true);
-        window.location.href = "case-study-11-2.html";
+      if($scope.submitText == "Next Question -->"){
+        localStorage.setItem('case1q1', true);
+        window.location.href = "case-study-1-2.html";
       }
         for(i = 0; i < $scope.answers.length; i++)
         {
@@ -107,7 +107,7 @@ angular
 
         if(is_correct)
         {
-          $scope.submitText = "Next -->";
+          $scope.submitText = "Next Question -->";
           $scope.answers_enabled = false;
           //alert("CORRECT");
           $scope.showCorrect = true;

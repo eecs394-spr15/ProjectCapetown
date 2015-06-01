@@ -5,7 +5,7 @@
 </head>
 <super-navbar>
     <super-navbar-title>
-        Case 11.3
+        Case 1.3
     </super-navbar-title>
 </super-navbar>
 <div ng-controller="caseController">
@@ -33,7 +33,7 @@
   </div>
 
     <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()"> {{submitText}} </a>
-    <a class="button button-block button-calm icon-left super-document" href="cases.html">Back to Cases</a>
+    <a class="button button-block button-dark icon-left super-document" href="cases.html">Back to Cases</a>
 </div>
 
 
@@ -43,8 +43,8 @@ angular
   .module('example')
   .controller('caseController', function ($scope, $filter)
   {
-        $scope.case11q3 = localStorage.getItem('case11q3');
-    localStorage.setItem('case11q3', "working");
+        $scope.case11q3 = localStorage.getItem('case1q3');
+    localStorage.setItem('case1q3', "working");
     $scope.answers = [{label:"1.  Diagnose as No Dehydration?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:"You must have received a “Yes” on at least 2 of the above question to diagnose Severe Dehydration."},
                       {label:"2.  Diagnose as Some Dehydration? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"a.  You must have received a “Yes” to at least two of the above questions to diagnose Some Dehydration."},
                       {label:"3.  Diagnose as Dysentery?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"a. You do not have sufficient evidence to support this diagnosis."},
@@ -84,8 +84,8 @@ angular
     $scope.onSubmit = function()
     {
 
-      if($scope.submitText == "Next -->"){
-        localStorage.setItem('case11q3', true);
+      if($scope.submitText == "Next Question -->"){
+        localStorage.setItem('case1q3', true);
         window.location.href = "case-study-11-4.html";
       }
 
@@ -102,7 +102,7 @@ angular
 
         if(is_correct)
         {
-          $scope.submitText = "Next -->";
+          $scope.submitText = "Next Question -->";
           $scope.answers_enabled = false;
 
           //alert("CORRECT");
