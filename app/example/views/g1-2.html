@@ -46,6 +46,7 @@
         .controller('caseController', function ($scope, $filter)
                     {
                     $scope.score = localStorage.getItem('g1score');
+                    //$scope.score = parseInt($scope.score);
 
                     $scope.answers = [{label:"1.    Chronic ear infection", id:"0"},
                                       {label:"2.    Acute ear infection",id:"1"},
@@ -88,7 +89,7 @@
                             $scope.answers_enabled = false;
                             $scope.showCorrect = true;
                             $scope.showIncorrect = false;
-                            $scope.score = $scope.score + 1;
+                            $scope.score = '' + (Number($scope.score) + 1);
                             localStorage.setItem('g1score',$scope.score);
                         }
                         else{

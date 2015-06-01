@@ -46,6 +46,7 @@
         .controller('caseController', function ($scope, $filter)
                     {
                     $scope.score = localStorage.getItem('g1score');
+                    $scope.score = parseInt($scope.score);
 
                     $scope.answers = [{label:"1.    Redness and itchy sensations ", id:"0"},
                                       {label:"2.    Pus draining from the ear and redness",id:"1"},

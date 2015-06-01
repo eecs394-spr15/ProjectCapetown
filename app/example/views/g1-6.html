@@ -46,6 +46,7 @@
         .controller('caseController', function ($scope, $filter)
                     {
                     $scope.score = localStorage.getItem('g1score');
+                    $scope.score = parseInt($scope.score);
 
                     $scope.answers = [{label:"1.    Is there ear pain? ", id:"0"},
                                       {label:"2.    Is there ear discharge? ",id:"1"},

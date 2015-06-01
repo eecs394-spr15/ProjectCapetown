@@ -46,6 +46,7 @@
         .controller('caseController', function ($scope, $filter)
                     {
                     $scope.score = localStorage.getItem('g1score');
+                    $scope.score = parseInt($scope.score);
 
                     $scope.answers = [{label:"1.    Amoxicillin and ceftriaxone IM  ", id:"0"},
                                       {label:"2.    Paracetamol and ceftriaxone IM ",id:"1"},
