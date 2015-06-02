@@ -43,14 +43,12 @@ angular
   .module('example')
   .controller('caseController', function ($scope, $filter)
   {
-        $scope.case11q4 = localStorage.getItem('case11q4');
-    localStorage.setItem('case11q4', "working");
-    $scope.answers = [{label:"1.  Give fluid at home, follow up in 5 days if there is no improvement, give zinc, and advise the father when to return immediately?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:"You must have received a “Yes” on at least 2 of the above question to diagnose Severe Dehydration."},
-                      {label:"2.  Refer the child non-urgently?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You only have enough information to rule out Severe Dehydration as a diagnosis."},
-                      {label:"3.  Ask if the child has had diarrhoea for longer than 14 days?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"4.  Ask if there is blood in the stool?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"5.  Check to see if the child is breathing fast?", val:false, correct_val:false, correct:false, correct_str:"",                 incorrect_str:""},
-                      {label:"6.  Determine if the child is older than 1 year?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""}];
+        $scope.case5q4 = localStorage.getItem('case5q4');
+    localStorage.setItem('case5q4', "working");
+    $scope.answers = [{label:"1.  Refer the child non-urgently?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"This classification calls for urgent referral."},
+                      {label:"2.  Refer the child urgently? ", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                      {label:"3.  Also classify as first wheeze?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You do not have evidence to make this classification."},
+                      {label:"4.  Give initial treatment? ", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""}];
 
     $scope.showAnswers = false;
 
@@ -87,8 +85,8 @@ angular
     {
 
       if($scope.submitText == "Next -->"){
-        localStorage.setItem('case11q4', true);
-        window.location.href = "case-study-11-5.html";
+        localStorage.setItem('case5q4', true);
+        window.location.href = "case-study-5-5.html";
       }
 
         for(i = 0; i < $scope.answers.length; i++)

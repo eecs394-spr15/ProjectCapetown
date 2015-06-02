@@ -5,7 +5,7 @@
 </head>
 <super-navbar>
     <super-navbar-title>
-        Case 11.2
+        Case 5.2
     </super-navbar-title>
 </super-navbar>
 <div ng-controller="caseController">
@@ -43,18 +43,14 @@ angular
   .controller('caseController', function ($scope, $filter)
   {
 
-        $scope.case11q2 = localStorage.getItem('case11q2');
-    localStorage.setItem('case11q2', "working");
-    $scope.answers = [{label:"1.  Diagnose as Severe Dehydration?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"You must have received a “Yes” on at least 2 of the above question to diagnose Severe Dehydration."},
-                      {label:"2.  Diagnose as No Dehydration?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You only have enough information to rule out Severe Dehydration as a diagnosis."},
-                      {label:"3.  Check to see if the skin pinch goes back slowly?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"4.  Check to see if the child is eager to or drinking poorly?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"5.  Check to see if the child is restless or irritable?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"6.  Check to see if the child has sunken eyes?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"7.  Ask if the child has had diarrhoea for longer than 14 days?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You are not done addressing dehydration. You cannot move on to diarrhoea yet."},
-                      {label:"8.  Diagnose as Some Dehydration?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You do not have sufficient evidence to diagnose this child with Some Dehydration."}];
+        $scope.case5q2 = localStorage.getItem('case5q2');
+    localStorage.setItem('case5q2', "working");
+    $scope.answers = [{label:"1.  Classify Severe Pneumonia? ", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"You do not have sufficient evidence to make this classification."},
+                      {label:"2.  Check to see if the child’s chest is indrawing? ", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"You only have enough information to rule out Severe Dehydration as a diagnosis."},
+                      {label:"3.  Check to see if the child has stridor? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must gather more information before this question is relevant."},
+                      {label:"4.  None of the above? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must investigate further as you have made no classification."}];
     $scope.showAnswers = false;
-    $scope.question = "You find that the child does is neither unable to drink nor drinking poorly.  Not unconscious or lethargic.  No sunken eyes.  Skin pinch goes back normally.  Based on this information, what are the next steps?  Check all that apply.";
+    $scope.question = "Upon inspection, you find that there are none. Based on this information, what are your next steps? Check all that apply.";
      
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
@@ -62,7 +58,9 @@ angular
     $scope.showCorrect = false;
     $scope.showIncorrect1 = false;
     $scope.showIncorrect2 = false;
-    $scope.correct_feedback ="Correct! The next steps are: check if skin pinch goes back normally?  Child is thirsty or drinking eagerly? is restless or irritable.  Has sunken Eyes?";
+    $scope.correct_feedback ="Correct! The next steps are:
+Check to see if there are any general danger signs.
+";
     $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
     $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
     $scope.isCorrect = function()
@@ -78,8 +76,8 @@ angular
     $scope.onSubmit = function()
     {
       if($scope.submitText == "Next -->"){
-        localStorage.setItem('case11q2', true);
-        window.location.href = "case-study-11-3.html";
+        localStorage.setItem('case5q2', true);
+        window.location.href = "case-study-5-3.html";
       }
         for(i = 0; i < $scope.answers.length; i++)
         {

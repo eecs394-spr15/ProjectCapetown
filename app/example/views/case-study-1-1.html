@@ -45,7 +45,7 @@ angular
   .controller('caseController', function ($scope, $filter)
   {
 
-    $scope.case11q1 = localStorage.getItem('case1q1');
+    $scope.case1q1 = localStorage.getItem('case1q1');
     localStorage.setItem('case1q1', "working");
 
     $scope.answers = [{label:"1.	Check to see if the child is unconscious or lethargic?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},

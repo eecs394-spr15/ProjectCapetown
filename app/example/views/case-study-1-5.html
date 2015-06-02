@@ -43,7 +43,7 @@ angular
   .module('example')
   .controller('caseController', function ($scope, $filter)
   {
-        $scope.case11q5 = localStorage.getItem('case1q5');
+        $scope.case1q5 = localStorage.getItem('case1q5');
     localStorage.setItem('case1q5', "working");
     $scope.answers = [{label:"1.	Classify as dysentery?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"There is no blood in the stool. This is not dysentery."},
                       {label:"2.	Classify as persistent Diarrhoea?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"The child has not had the diarrhoea for longer than 14 days. This is not persistent diarrhoea."},

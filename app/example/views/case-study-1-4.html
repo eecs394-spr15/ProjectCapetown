@@ -43,7 +43,7 @@ angular
   .module('example')
   .controller('caseController', function ($scope, $filter)
   {
-        $scope.case11q4 = localStorage.getItem('case1q4');
+        $scope.case1q4 = localStorage.getItem('case1q4');
     localStorage.setItem('case1q4', "working");
     $scope.answers = [{label:"1.	Give fluid at home, follow up in 5 days if there is no improvement, give zinc, and advise the father when to return immediately?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},
                       {label:"2.	Ask if the child is losing weight?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"It has been determined that the child is not dehydrated. This question is only necessary if the child was dehydrated (some or severely)."},
