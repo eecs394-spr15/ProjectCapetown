@@ -5,7 +5,7 @@
 </head>
 <super-navbar>
     <super-navbar-title>
-        Case 11.5
+        Case 4.5
     </super-navbar-title>
 </super-navbar>
 <div ng-controller="caseController">
@@ -43,16 +43,21 @@ angular
   .module('example')
   .controller('caseController', function ($scope, $filter)
   {
-        $scope.case11q5 = localStorage.getItem('case11q5');
-    localStorage.setItem('case11q5', "working");
-    $scope.answers = [{label:"1.  Diagnose as Dysentery?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"You must have received a “Yes” on at least 2 of the above question to diagnose Severe Dehydration."},
-                      {label:"2.  Nothing. The child can be sent home.", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You only have enough information to rule out Severe Dehydration as a diagnosis."},
-                      {label:"3.  Diagnose as regular diarrhoea?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"4.  Diagnose as Persistent Diarrhoea?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""}];
+        $scope.case4q5 = localStorage.getItem('case4q5');
+    localStorage.setItem('case4q5', "working");
+    $scope.answers = [{label:"1.  Refer the child urgently? ", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"You must have received a “Yes” on at least 2 of the above question to diagnose Severe Dehydration."},
+                      {label:"2.  Give the child amoxicillin? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You only have enough information to rule out Severe Dehydration as a diagnosis."},
+                      {label:"3.  Also classify as cough/cold? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:""},
+                      {label:"4.  None of the above? ", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""}];
 
     $scope.showAnswers = false;
 
-    $scope.question = "You find that the child has had diarrhoea for >14 days.  There is no blood in the child's stool.  The child is older than 1 year.  Based on this information, what are the next steps?  Check all that apply.";
+    $scope.question = "The next steps are:
+Give the child salbutamol for 5 days via spacer.
+Follow up in five days if the wheezing persists.
+Based on this information, what are your next steps?
+Check all that apply.
+";
 
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
@@ -63,7 +68,7 @@ angular
     $scope.showIncorrect1 = false;
     $scope.showIncorrect2 = false;
  
-    $scope.correct_feedback ="Correct! The next step is to diagnose as Persistent Diarrhoea.";
+    $scope.correct_feedback ="Correct!";
     $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
     $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
 
@@ -85,8 +90,8 @@ angular
     {
 
       if($scope.submitText == "Next -->"){
-        localStorage.setItem('case11q5', true);
-        window.location.href = "case-study-11-6.html";
+        localStorage.setItem('case4q5', true);
+        window.location.href = "case-study-5-1.html";
       }
 
         for(i = 0; i < $scope.answers.length; i++)
