@@ -12,7 +12,7 @@
         
         <h3> {{question}} </h3>
         
-        <div class="list">
+       <div class="list">
             <div  ng-repeat="a in answers">
             <label class="item item-radio item-text-wrap">
                 <input type="radio" name="group" ng-model="$parent.userAnswer" ng-value="{{a.id}}" ng-disabled="!answers_enabled"/>
@@ -23,9 +23,12 @@
             </label>
             </div>
   
-        </div>
-        <div><p>Your score is: {{score}}</p>
-        </div>
+        <div class='content'>
+          <div class='visible'>
+            <p>
+              Your score is: {{score}},
+              Timer: <span id="countdown" class="timer" style="color:purple;"></span>
+            </p>
 
         <div >
             <p ng-show="showCorrect"> <font color="green">{{correct_feedback}}</font> </p>
@@ -106,6 +109,27 @@
 
                     });
         </script>
+         <script>
+   var seconds = 30;
+   function secondPassed() {
+   var minutes = Math.round((seconds - 30)/60);
+   var remainingSeconds = seconds % 60;
+   if (remainingSeconds < 10) {
+      remainingSeconds = "0" + remainingSeconds; 
+   }
+   document.getElementById('countdown').innerHTML = remainingSeconds;
+   if (seconds == 0) {
+    clearInterval(countdownTimer);
+    document.getElementById('countdown').innerHTML = "Time out!";
+    alert("Time is out, will go to the next question.");
+    window.location.href = "g1-6.html";
+
+   } else {
+    seconds--;
+   }
+   }
+   var countdownTimer = setInterval('secondPassed()', 1000);
+</script>
     
 </html>
 
