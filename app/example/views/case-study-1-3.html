@@ -45,14 +45,14 @@ angular
   {
         $scope.case11q3 = localStorage.getItem('case1q3');
     localStorage.setItem('case1q3', "working");
-    $scope.answers = [{label:"1.  Diagnose as No Dehydration?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:"You must have received a “Yes” on at least 2 of the above question to diagnose Severe Dehydration."},
-                      {label:"2.  Diagnose as Some Dehydration? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"a.  You must have received a “Yes” to at least two of the above questions to diagnose Some Dehydration."},
-                      {label:"3.  Diagnose as Dysentery?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"a. You do not have sufficient evidence to support this diagnosis."},
-                      {label:"4.  None of the above?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"a.  You have sufficient evidence to make a diagnosis. "}];
+    $scope.answers = [{label:"1.	Classify as dehydration?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"The child did not have at least 2 of the previous symptoms that you asked about. The child does not have dehydration."},
+                      {label:"2.	Classify as no dehydration?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                      {label:"3.	Ask if there is blood in the stool?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must treat the child for dehydration before assessing the symptoms of dysentery."},
+                      {label:"4.	Refer the child urgently?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"The child is not severely dehydrated, referring urgently is not necessary."}];
 
     $scope.showAnswers = false;
 
-    $scope.question = "You find out that a skin pinch goes back normally.  The child is thirsty/drinking eagerly.  Child is not restless or irritable.  Does not have sunken eyes.  Bases on this information, what are the next steps?  Check all that apply.";
+    $scope.question = "You find that the child is neither restless nor irritable.  The child is thirsty and drinks eagerly.  Does not have sunken eyes?  Skin pinch goes back normally.  Bases on this information, what are the next steps?  Check all that apply.";
               
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
@@ -63,7 +63,7 @@ angular
     $scope.showIncorrect1 = false;
     $scope.showIncorrect2 = false;
 
-    $scope.correct_feedback ="Correct! The next step is to diagnose as no dehydration.";
+    $scope.correct_feedback ="Correct! The next step is to classify as no dehydration.";
     $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
     $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
 

@@ -90,7 +90,7 @@
                             $scope.answers_enabled = false;
                             $scope.showCorrect = true;
                             $scope.showIncorrect = false;
-                            $scope.score = $scope.score + 1;
+                            $scope.score = '' + (Number($scope.score) + 1);
                             localStorage.setItem('g1score',$scope.score);
                         }
                         else{

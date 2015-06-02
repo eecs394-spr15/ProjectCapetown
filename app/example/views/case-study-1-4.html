@@ -45,16 +45,18 @@ angular
   {
         $scope.case11q4 = localStorage.getItem('case1q4');
     localStorage.setItem('case1q4', "working");
-    $scope.answers = [{label:"1.  Give fluid at home, follow up in 5 days if there is no improvement, give zinc, and advise the father when to return immediately?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:"You must have received a “Yes” on at least 2 of the above question to diagnose Severe Dehydration."},
-                      {label:"2.  Refer the child non-urgently?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You only have enough information to rule out Severe Dehydration as a diagnosis."},
-                      {label:"3.  Ask if the child has had diarrhoea for longer than 14 days?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"4.  Ask if there is blood in the stool?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"5.  Check to see if the child is breathing fast?", val:false, correct_val:false, correct:false, correct_str:"",                 incorrect_str:""},
-                      {label:"6.  Determine if the child is older than 1 year?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""}];
+    $scope.answers = [{label:"1.	Give fluid at home, follow up in 5 days if there is no improvement, give zinc, and advise the father when to return immediately?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},
+                      {label:"2.	Ask if the child is losing weight?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"It has been determined that the child is not dehydrated. This question is only necessary if the child was dehydrated (some or severely)."},
+                      {label:"3.	Ask if the child has had diarrhoea for longer than 14 days?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                      {label:"4.	Ask if there is blood in the stool?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                      {label:"5.	Give the child amoxicillin?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"Amoxicillin is only presecribed for pneumonia. You have not classified pneumonia."},
+                      {label:"6.	Determine if the child is older than 1 year?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""}];
+              {label:"7.	Follow plan C?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"Plan c is to be followed for severe dehydration or severe persisent diarrhoea, neither of which have been classified."}];
+              {label:"8.	Refer the child non-urgently?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You only refer the child non-urgently for a recurrent wheeze classification."}];
 
     $scope.showAnswers = false;
 
-    $scope.question = "You have determined that the child does not  have dehydration.  What are your next steps? Check all that apply.";
+    $scope.question = "You have determined that the child does not have dehydration.  What are your next steps? Check all that apply.";
 
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
@@ -65,7 +67,7 @@ angular
     $scope.showIncorrect1 = false;
     $scope.showIncorrect2 = false;
 
-    $scope.correct_feedback ="Correct! The next steps are:  Give fluid at home for 5 days, then follow up.  Ask if child has had diarrhoea for >14 days?  Ask if there is blood in the stool?  Determine if child is older than 1 year?";
+    $scope.correct_feedback ="Correct! The next steps are: Give fluid at home then follow up in 5 days.  Ask if child has had diarrhoea for >14 days?  Ask if there is blood in the child's stool?  Determine whether the child is older than 1 year?";
     $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
     $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
 
