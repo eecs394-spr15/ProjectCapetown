@@ -65,7 +65,7 @@
   </div>
 </div>
 -->
-    <a class="button button-block button-balanced icon-left super-document-text" onclick="case1Tracker()">
+    <a class="button button-block button-calm icon-left super-document-text" onclick="case1Tracker()">
         <div class="btn-progress-div">
             <div class="btn-progress-txt">Case 1</div>
             <div class="progress btn-progress">
@@ -75,7 +75,7 @@
             </div>
         </div>
     </a>
-    <a class="button button-block button-balanced icon-left super-document-text" onclick="case2Tracker()">
+    <a class="button button-block button-calm icon-left super-document-text" onclick="case2Tracker()">
         <div class="btn-progress-div">
             <div class="btn-progress-txt">Case 2</div>
             <div class="progress btn-progress">
@@ -85,7 +85,7 @@
             </div>
         </div>
     </a>
-    <a class="button button-block button-balanced icon-left super-document-text" onclick="case3Tracker()">
+    <a class="button button-block button-calm icon-left super-document-text" onclick="case3Tracker()">
         <div class="btn-progress-div">
             <div class="btn-progress-txt">Case 3</div>
             <div class="progress btn-progress">
@@ -95,7 +95,7 @@
             </div>
         </div>
     </a>
-    <a class="button button-block button-balanced icon-left super-document-text" onclick="case4Tracker()">
+    <a class="button button-block button-calm icon-left super-document-text" onclick="case4Tracker()">
         <div class="btn-progress-div">
             <div class="btn-progress-txt">Case 4</div>
             <div class="progress btn-progress">
@@ -105,7 +105,7 @@
             </div>
         </div>
     </a>
-    <a class="button button-block button-balanced icon-left super-document-text" onclick="case5Tracker()">
+    <a class="button button-block button-calm icon-left super-document-text" onclick="case5Tracker()">
         <div class="btn-progress-div">
             <div class="btn-progress-txt">Case 5</div>
             <div class="progress btn-progress">
@@ -115,7 +115,7 @@
             </div>
         </div>
     </a>
-        <a class="button button-block button-balanced icon-left super-document-text" onclick="case10Tracker()">
+        <a class="button button-block button-calm icon-left super-document-text" onclick="case10Tracker()">
         <div class="btn-progress-div">
             <div class="btn-progress-txt">Case 10</div>
             <div class="progress btn-progress">
@@ -125,7 +125,7 @@
             </div>
         </div>
     </a>
-        <a class="button button-block button-balanced icon-left super-document-text" onclick="case11Tracker()">
+        <a class="button button-block button-calm icon-left super-document-text" onclick="case11Tracker()">
         <div class="btn-progress-div">
             <div class="btn-progress-txt">Case 11</div>
             <div class="progress btn-progress">
@@ -135,7 +135,7 @@
             </div>
         </div>
     </a>
-        <a class="button button-block button-balanced icon-left super-document-text" onclick="case12Tracker()">
+        <a class="button button-block button-calm icon-left super-document-text" onclick="case12Tracker()">
         <div class="btn-progress-div">
             <div class="btn-progress-txt">Case 12</div>
             <div class="progress btn-progress">
@@ -145,7 +145,7 @@
             </div>
         </div>
     </a>
-        <a class="button button-block button-balanced icon-left super-document-text" onclick="case13Tracker()">
+        <a class="button button-block button-calm icon-left super-document-text" onclick="case13Tracker()">
         <div class="btn-progress-div">
             <div class="btn-progress-txt">Case 13</div>
             <div class="progress btn-progress">
@@ -154,8 +154,7 @@
                 </div>
             </div>
         </div>
-    </a>
-        <a class="button button-block button-dark icon-left super-arrow-left-b" href="training.html">Back to Training</a>
+    </a> 
 
 
 <script>
@@ -241,10 +240,49 @@ function case10Tracker() {
 
 }
 
+function case2Tracker() {
+  alert('case11');
+  var case2q1 = localStorage.getItem('case2q1');
+  var case2q2 = localStorage.getItem('case2q2');
+  var case2q3 = localStorage.getItem('case2q3');
+  var case2q4 = localStorage.getItem('case2q4');
+  var case2q5 = localStorage.getItem('case2q5');
+  var case2q6 = localStorage.getItem('case2q6');
+
+
+  if (case2q6 == 'true')
+  {
+    alert('case finished')
+  }
+  else if (case2q5 =='true')
+  {
+    window.location = 'case-study-2-6.html'
+  }
+  else if (case2q4 =='true')
+  {
+    window.location = 'case-study-2-5.html'
+  }
+  else if (case2q3 =='true')
+  {
+    window.location = 'case-study-2-4.html'
+  }
+  else if (case2q2 =='true')
+  {
+    window.location = 'case-study-2-3.html'
+  }
+  else if (case2q1 =='true')
+  {
+    window.location = 'case-study-2-2.html'
+  }
+  else
+  {
+    window.location = 'case-study-2-1.html'
+  }
+}
 
 function case11Tracker() {
  
-  alert('case11');
+  alert('case2');
   var case11q1 = localStorage.getItem('case11q1');
   var case11q2 = localStorage.getItem('case11q2');
   var case11q3 = localStorage.getItem('case11q3');
@@ -283,7 +321,30 @@ function case11Tracker() {
   }
 
 }
+function case3Tracker() {
+  alert('case3');
+  var case3q1 = localStorage.getItem('case3q1');
+  var case3q2 = localStorage.getItem('case3q2');
+  var case3q3 = localStorage.getItem('case3q3');
 
+
+  if (case3q3 == 'true')
+  {
+    alert('case finished')
+  }
+  else if (case3q2 =='true')
+  {
+    window.location = 'case-study-3-3.html'
+  }
+  else if (case3q1 =='true')
+  {
+    window.location = 'case-study-3-2.html'
+  }
+  else
+  {
+    window.location = 'case-study-3-1.html'
+  }
+}
 
 function case12Tracker() {
   

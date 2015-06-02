@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+    	<div ng-controller="caseController">
+        <h1>Final Score:</h1>
+        <h2>{{score}}</h2>
+        <a class="button button-block button-dark icon-left super-arrow-left-b" href="Game.html">Back to Game Categories</a>
+    </div>
+    </body>
+    
+<script>
+
+        angular
+        .module('example')
+        .controller('caseController', function ($scope, $filter)
+                    {
+                    $scope.score = localStorage.getItem('g1score');   
+                    });
+</script> 
+</html>
