@@ -118,7 +118,8 @@ Check all that apply.
         }
         else
         {
-          //alert("INCORRECT");  
+                    $scope.showIncorrect1 = false;
+          $scope.showIncorrect2 = false;
           for(i = 0; i < $scope.answers.length; i++)
             {
               if($scope.answers[i].correct_val && !$scope.answers[i].val)
