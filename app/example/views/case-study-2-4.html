@@ -5,7 +5,7 @@
 </head>
 <super-navbar>
     <super-navbar-title>
-        Case 11.4
+        Case 2.4
     </super-navbar-title>
 </super-navbar>
 <div ng-controller="caseController">
@@ -43,18 +43,16 @@ angular
   .module('example')
   .controller('caseController', function ($scope, $filter)
   {
-        $scope.case11q4 = localStorage.getItem('case11q4');
-    localStorage.setItem('case11q4', "working");
-    $scope.answers = [{label:"1.  Give fluid at home, follow up in 5 days if there is no improvement, give zinc, and advise the father when to return immediately?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:"You must have received a “Yes” on at least 2 of the above question to diagnose Severe Dehydration."},
-                      {label:"2.  Refer the child non-urgently?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You only have enough information to rule out Severe Dehydration as a diagnosis."},
-                      {label:"3.  Ask if the child has had diarrhoea for longer than 14 days?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"4.  Ask if there is blood in the stool?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"5.  Check to see if the child is breathing fast?", val:false, correct_val:false, correct:false, correct_str:"",                 incorrect_str:""},
-                      {label:"6.  Determine if the child is older than 1 year?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""}];
+        $scope.case2q4 = localStorage.getItem('case2q4');
+    localStorage.setItem('case2q4', "working");
+    $scope.answers = [{label:"1.  Check to see if the child has been losing weight? ", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:"Diarrhoea issues will be addressed in a different module. Focus first on the respiratory issues."},
+                      {label:"2. Classify as severe pneumonia? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You do not have sufficient evidence to make this classification."},
+                      {label:"3.  Ask if the child has had the cough for longer than 14 days? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You were already told the child has had it less than 7, and this question may not be necessary."},
+                      {label:"4.  Check to see if the child is breathing fast (>40bpm)?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""}];
 
     $scope.showAnswers = false;
 
-    $scope.question = "You have determined that the child does not  have dehydration.  What are your next steps? Check all that apply.";
+    $scope.question = "You find that the answer to the above question is no. Based on this information, what are your next steps? Check all that apply.";
 
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
@@ -65,9 +63,8 @@ angular
     $scope.showIncorrect1 = false;
     $scope.showIncorrect2 = false;
 
-    $scope.correct_feedback ="Correct! The next steps are:  Give fluid at home for 5 days, then follow up.  Ask if child has had diarrhoea for >14 days?  Ask if there is blood in the stool?  Determine if child is older than 1 year?";
-    $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
-    $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
+    $scope.correct_feedback ="Correct! The next steps are: Check to see if the child is breathing fast.";
+    $scope.incorrect_feedback1 ="At least one of your answers is incorrect. Please review the choices and choose again.";
 
 
     $scope.isCorrect = function()
@@ -87,8 +84,8 @@ angular
     {
 
       if($scope.submitText == "Next -->"){
-        localStorage.setItem('case11q4', true);
-        window.location.href = "case-study-11-5.html";
+        localStorage.setItem('case2q4', true);
+        window.location.href = "case-study-2-5.html";
       }
 
         for(i = 0; i < $scope.answers.length; i++)
