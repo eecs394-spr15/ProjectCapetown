@@ -282,7 +282,7 @@ function case2Tracker() {
 
 function case11Tracker() {
  
-  alert('case11');
+  alert('case2');
   var case11q1 = localStorage.getItem('case11q1');
   var case11q2 = localStorage.getItem('case11q2');
   var case11q3 = localStorage.getItem('case11q3');
@@ -321,7 +321,33 @@ function case11Tracker() {
   }
 
 }
+function case3Tracker() {
+  alert('case3');
+  var case2q1 = localStorage.getItem('case3q1');
+  var case2q2 = localStorage.getItem('case3q2');
+  var case2q3 = localStorage.getItem('case3q3');
+  var case2q4 = localStorage.getItem('case3q4');
+  var case2q5 = localStorage.getItem('case3q5');
+  var case2q6 = localStorage.getItem('case3q6');
 
+
+  if (case3q3 == 'true')
+  {
+    alert('case finished')
+  }
+  else if (case3q2 =='true')
+  {
+    window.location = 'case-study-3-3.html'
+  }
+  else if (case3q1 =='true')
+  {
+    window.location = 'case-study-3-2.html'
+  }
+  else
+  {
+    window.location = 'case-study-3-1.html'
+  }
+}
 
 function case12Tracker() {
   
