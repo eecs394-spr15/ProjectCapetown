@@ -72,8 +72,8 @@
         <div class="btn-progress-div">
             <div class="btn-progress-txt">Case 1</div>
             <div class="progress btn-progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                    <span >70% Complete</span>
+                <div id="case1_prog" class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                    <span id='case1_span'></span>
                 </div>
             </div>
         </div>
@@ -82,8 +82,8 @@
         <div class="btn-progress-div">
             <div class="btn-progress-txt">Case 2</div>
             <div class="progress btn-progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                    <span >70% Complete</span>
+                <div id="case2_prog" class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                    <span id='case2_span'></span>
                 </div>
             </div>
         </div>
@@ -92,8 +92,8 @@
         <div class="btn-progress-div">
             <div class="btn-progress-txt">Case 3</div>
             <div class="progress btn-progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                    <span >70% Complete</span>
+                <div id="case3_prog" class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                    <span id='case3_span'></span>
                 </div>
             </div>
         </div>
@@ -102,8 +102,8 @@
         <div class="btn-progress-div">
             <div class="btn-progress-txt">Case 4</div>
             <div class="progress btn-progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                    <span >70% Complete</span>
+                <div id="case4_prog" class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                    <span id='case4_span'></span>
                 </div>
             </div>
         </div>
@@ -112,8 +112,8 @@
         <div class="btn-progress-div">
             <div class="btn-progress-txt">Case 5</div>
             <div class="progress btn-progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                    <span >70% Complete</span>
+                <div id="case5_prog" class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                    <span id='case5_span'></span>
                 </div>
             </div>
         </div>
@@ -122,8 +122,8 @@
         <div class="btn-progress-div">
             <div class="btn-progress-txt">Case 10</div>
             <div class="progress btn-progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                    <span >70% Complete</span>
+                <div id="case10_prog" class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                    <span id='case10_span'></span>
                 </div>
             </div>
         </div>
@@ -132,8 +132,8 @@
         <div class="btn-progress-div">
             <div class="btn-progress-txt">Case 11</div>
             <div class="progress btn-progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                    <span >70% Complete</span>
+                <div id="case11_prog" class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                    <span id='case11_span'></span>
                 </div>
             </div>
         </div>
@@ -142,8 +142,8 @@
         <div class="btn-progress-div">
             <div class="btn-progress-txt">Case 12</div>
             <div class="progress btn-progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                    <span >70% Complete</span>
+                <div id="case12_prog" class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                    <span id='case12_span'></span>
                 </div>
             </div>
         </div>
@@ -152,8 +152,8 @@
         <div class="btn-progress-div">
             <div class="btn-progress-txt">Case 13</div>
             <div class="progress btn-progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                    <span >70% Complete</span>
+                <div id="case13_prog" class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                    <span id='case13_span'></span>
                 </div>
             </div>
         </div>
@@ -161,7 +161,233 @@
 
 
 <script>
+
+
+    //functions to get number of questions completed
+    function case1Progress()
+    {
+        /*
+        alert("1-1");
+        var case1q1 = localStorage.getItem('case1q1');
+        var case1q2 = localStorage.getItem('case1q2');
+        var case1q3 = localStorage.getItem('case1q3');
+        var case1q4 = localStorage.getItem('case1q4');
+        var case1q5 = localStorage.getItem('case1q5');
+        */
+        var progress = 5;//(int)case1q1 + (int)case1q2 + (int)case1q3 + (int)case1q4 + (int)case1q5;
+
+        var percent = (progress/5.0)*100;
+
+        document.getElementById("case1_span").innerHTML = progress + " / 5";
+        $("#case1_prog").css('width', percent+'%').attr("aria-valuenow", progress);
+        $("#case1_prog").attr("aria-valuemax", 5);
+    }
+    function case2Progress()
+    {
+        /*
+        var case2q1 = localStorage.getItem('case2q1');
+        var case2q2 = localStorage.getItem('case2q2');
+        var case2q3 = localStorage.getItem('case2q3');
+        var case2q4 = localStorage.getItem('case2q4');
+        var case2q5 = localStorage.getItem('case2q5');
+        var case2q6 = localStorage.getItem('case2q6');
+*/
+        var progress = 4;//(int)case2q1 + (int)case2q2 + (int)case2q3 + (int)case2q4 + (int)case2q5 + (int)case2q6;
+
+        var percent = (progress/6.0)*100;
+
+        document.getElementById("case2_span").innerHTML = progress + " / 6";
+        $("#case2_prog").css('width', percent+'%').attr("aria-valuenow", progress);
+        $("#case2_prog").attr("aria-valuemax", 6);
+    }
+    function case3Progress()
+    {
+        /*
+        var case3q1 = localStorage.getItem('case3q1');
+        var case3q2 = localStorage.getItem('case3q2');
+        var case3q3 = localStorage.getItem('case3q3');
+*/
+        var progress = 4//(int)case3q1 + (int)case3q2 + (int)case3q3;
+
+        var percent = (progress/3.0)*100;
+
+        document.getElementById("case3_span").innerHTML = progress + " / 3";
+        $("#case3_prog").css('width', percent+'%').attr("aria-valuenow", progress);
+        $("#case3_prog").attr("aria-valuemax", 3);
+    }
+    function case4Progress()
+    {
+        /*
+        var case4q1 = localStorage.getItem('case4q1');
+        var case4q2 = localStorage.getItem('case4q2');
+        var case4q3 = localStorage.getItem('case4q3');
+        var case4q4 = localStorage.getItem('case4q4');
+        var case4q5 = localStorage.getItem('case4q5');
+*/
+        var progress = 3;//(int)case4q1 + (int)case4q2 + (int)case4q3 + (int)case4q4 + (int)case4q5;
+
+        var percent = (progress/5.0)*100;
+
+        document.getElementById("case4_span").innerHTML = progress + " / 5";
+        $("#case4_prog").css('width', percent+'%').attr("aria-valuenow", progress);
+        $("#case4_prog").attr("aria-valuemax", 5);
+    }
+    function case5Progress()
+    {
+        /*
+        var case5q1 = localStorage.getItem('case5q1');
+        var case5q2 = localStorage.getItem('case5q2');
+        var case5q3 = localStorage.getItem('case5q3');
+        var case5q4 = localStorage.getItem('case5q4');
+        var case5q5 = localStorage.getItem('case5q5');
+*/
+        var progress = 4;//(int)case5q1 + (int)case5q2 + (int)case5q3 + (int)case5q4 + (int)case5q5;
+
+        var percent = (progress/5.0)*100;
+
+        document.getElementById("case5_span").innerHTML = progress + " / 5";
+        $("#case5_prog").css('width', percent+'%').attr("aria-valuenow", progress);
+        $("#case5_prog").attr("aria-valuemax", 5);
+    }
+    function case6Progress()
+    {
+        /*
+        var case6q1 = localStorage.getItem('case6q1');
+        var case6q2 = localStorage.getItem('case6q2');
+        var case6q3 = localStorage.getItem('case6q3');
+        var case6q4 = localStorage.getItem('case6q4');
+        var case6q5 = localStorage.getItem('case6q5');
+*/
+        var progress = 2;//(int)case6q1 + (int)case6q2 + (int)case6q3 + (int)case6q4 + (int)case6q5;
+
+        var percent = (progress/5.0)*100;
+
+        document.getElementById("case6_span").innerHTML = progress + " / 5";
+        $("#case6_prog").css('width', percent+'%').attr("aria-valuenow", progress);
+        $("#case6_prog").attr("aria-valuemax", 5);
+    }
+    function case7Progress()
+    {
+        /*
+        var case7q1 = localStorage.getItem('case7q1');
+        var case7q2 = localStorage.getItem('case7q2');
+        var case7q3 = localStorage.getItem('case7q3');
+        var case7q4 = localStorage.getItem('case7q4');
+        var case7q5 = localStorage.getItem('case7q5');
+*/
+        var progress = 0;//(int)case7q1 + (int)case7q2 + (int)case7q3 + (int)case7q4 + (int)case7q5;
+
+        var percent = (progress/5.0)*100;
+
+        document.getElementById("case7_span").innerHTML = progress + " / 5";
+        $("#case7_prog").css('width', percent+'%').attr("aria-valuenow", progress);
+        $("#case7_prog").attr("aria-valuemax", 5);
+    }
+    function case8Progress()
+    {
+        /*
+        var case8q1 = localStorage.getItem('case8q1');
+        var case8q2 = localStorage.getItem('case8q2');
+        var case8q3 = localStorage.getItem('case8q3');
+        var case8q4 = localStorage.getItem('case8q4');
+        var case8q5 = localStorage.getItem('case8q5');
+*/
+        var progress = 1;//(int)case8q1 + (int)case8q2 + (int)case8q3 + (int)case8q4 + (int)case8q5;
+
+        var percent = (progress/5.0)*100;
+
+        document.getElementById("case8_span").innerHTML = progress + " / 5";
+        $("#case8_prog").css('width', percent+'%').attr("aria-valuenow", progress);
+        $("#case8_prog").attr("aria-valuemax", 5);
+    }
+    function case9Progress()
+    {
+        /*
+        var case9q1 = localStorage.getItem('case9q1');
+        var case9q2 = localStorage.getItem('case9q2');
+        var case9q3 = localStorage.getItem('case9q3');
+        var case9q4 = localStorage.getItem('case9q4');
+        var case9q5 = localStorage.getItem('case9q5');
+*/
+        var progress = 0;//(int)case9q1 + (int)case9q2 + (int)case9q3 + (int)case9q4 + (int)case9q5;
+
+        var percent = (progress/5.0)*100;
+
+        document.getElementById("case9_span").innerHTML = progress + " / 5";
+        $("#case9_prog").css('width', percent+'%').attr("aria-valuenow", progress);
+        $("#case9_prog").attr("aria-valuemax", 5);
+    }
+    function case10Progress()
+    {
+        /*
+        var case10q1 = localStorage.getItem('case10q1');
+        var case10q2 = localStorage.getItem('case10q2');
+        var case10q3 = localStorage.getItem('case10q3');
+        var case10q4 = localStorage.getItem('case10q4');
+        var case10q5 = localStorage.getItem('case10q5');
+        var case10q6 = localStorage.getItem('case10q6');
+*/
+        var progress = 2;//(int)case10q1 + (int)case10q2 + (int)case10q3 + (int)case10q4 + (int)case10q5 + (int)case10q6;
+
+        var percent = (progress/6.0)*100;
+
+        document.getElementById("case10_span").innerHTML = progress + " / 6";
+        $("#case10_prog").css('width', percent+'%').attr("aria-valuenow", progress);
+        $("#case10_prog").attr("aria-valuemax", 6);
+    }
+    function case11Progress()
+    {
+        /*
+        var case11q1 = localStorage.getItem('case11q1');
+        var case11q2 = localStorage.getItem('case11q2');
+        var case11q3 = localStorage.getItem('case11q3');
+        var case11q4 = localStorage.getItem('case11q4');
+        var case11q5 = localStorage.getItem('case11q5');
+        var case11q6 = localStorage.getItem('case11q6');
+*/
+        var progress = 0;//(int)case11q1 + (int)case11q2 + (int)case11q3 + (int)case11q4 + (int)case11q5 + (int)case11q6;
+
+        var percent = (progress/6.0)*100;
+
+        document.getElementById("case11_span").innerHTML = progress + " / 6";
+        $("#case11_prog").css('width', percent+'%').attr("aria-valuenow", progress);
+        $("#case11_prog").attr("aria-valuemax", 6);
+    }
+    function case12Progress()
+    {
+        /*
+        var case12q1 = localStorage.getItem('case12q1');
+        var case12q2 = localStorage.getItem('case12q2');
+        var case12q3 = localStorage.getItem('case12q3');
+        var case12q4 = localStorage.getItem('case12q4');
+        var case12q5 = localStorage.getItem('case12q5');
+*/
+        var progress = 1;//(int)case12q1 + (int)case12q2 + (int)case12q3 + (int)case12q4 + (int)case12q5;
+
+        var percent = (progress/5.0)*100;
+
+        document.getElementById("case12_span").innerHTML = progress + " / 5";
+        $("#case12_prog").css('width', percent+'%').attr("aria-valuenow", progress);
+        $("#case12_prog").attr("aria-valuemax", 5);
+    }
+    function case13Progress()
+    {
+        /*
+        var case13q1 = localStorage.getItem('case13q1');
+        var case13q2 = localStorage.getItem('case13q2');
+        var case13q3 = localStorage.getItem('case13q3');
+*/
+        var progress = 0;//(int)case13q1 + (int)case13q2 + (int)case13q3;
+
+        var percent = (progress/3.0)*100;
+
+        document.getElementById("case13_span").innerHTML = progress + " / 3";
+        $("#case13_prog").css('width', percent+'%').attr("aria-valuenow", progress);
+        $("#case13_prog").attr("aria-valuemax", 3);
+    }
     
+
+    //Case trackers -- find which question is next in each case
     function case1Tracker() {
         
         alert('case1');
@@ -421,6 +647,20 @@ else
 }
 
 }
+
+
+ window.onload = function()
+ {
+    case1Progress();
+    case2Progress();
+    case3Progress();
+    case4Progress();
+    case5Progress();
+    case10Progress();
+    case11Progress();
+    case12Progress();
+    case13Progress();
+ };
 
 </script>
 
