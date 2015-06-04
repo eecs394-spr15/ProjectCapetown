@@ -32,7 +32,7 @@ The purpose of our IMCI Nurse Training Application is to help Nurses in Capetown
   
  #### Download Source Code
  *  Option 1: Clone the github repo: Run this command in your terminal/cmd: `git clone https://github.com/eecs394-spr15/ProjectCapetown.git` 
- *  Option 2: Get source code from the github: `git clone https://github.com/eecs394-spr15/ProjectCapetown.git`
+ *  Option 2: Get source code from the github: https://github.com/eecs394-spr15/ProjectCapetown.git
  
  For either option:
   *  Using the command `cd` to navigate to the application directory 'ProjectCapetown'.
@@ -42,7 +42,10 @@ The purpose of our IMCI Nurse Training Application is to help Nurses in Capetown
  
  ## Build and Deploy
 * [Deploying to cloud](http://docs.appgyver.com/tooling/build-service/build-settings/deploying-to-cloud/)
+* [Build settings for iOS](http://docs.appgyver.com/tooling/build-service/build-settings/build-settings-for-ios/)
+* [Build settings for Android](http://docs.appgyver.com/tooling/build-service/build-settings/build-settings-for-android/)
 * [iOS build types](http://docs.appgyver.com/tooling/build-service/build-settings/ios-build-types/)
+* [Android build types](http://docs.appgyver.com/tooling/build-service/build-settings/android-build-types/)
  
  ## Going Forward
 * Build other types of games
