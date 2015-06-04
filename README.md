@@ -42,10 +42,11 @@ The purpose of our IMCI Nurse Training Application is to help Nurses in Capetown
  
  ## Build and Deploy
 * [Deploying to cloud](http://docs.appgyver.com/tooling/build-service/build-settings/deploying-to-cloud/)
-* [Build settings for iOS](http://docs.appgyver.com/tooling/build-service/build-settings/build-settings-for-ios/)
 * [Build settings for Android](http://docs.appgyver.com/tooling/build-service/build-settings/build-settings-for-android/)
-* [iOS build types](http://docs.appgyver.com/tooling/build-service/build-settings/ios-build-types/)
+* [Build settings for iOS](http://docs.appgyver.com/tooling/build-service/build-settings/build-settings-for-ios/)
 * [Android build types](http://docs.appgyver.com/tooling/build-service/build-settings/android-build-types/)
+* [iOS build types](http://docs.appgyver.com/tooling/build-service/build-settings/ios-build-types/)
+
  
  ## Going Forward
 * Build other types of games
