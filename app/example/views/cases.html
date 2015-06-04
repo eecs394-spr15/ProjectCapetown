@@ -512,7 +512,6 @@
         
      };
 
-
      setInterval(case1Progress, 1000);
      setInterval(case2Progress, 1000);
      setInterval(case3Progress, 1000);
@@ -526,21 +525,7 @@
      setInterval(case11Progress, 1000);
      setInterval(case12Progress, 1000);
      setInterval(case13Progress, 1000);
-     case1Progress();
-     case2Progress();
-     case3Progress();
-     case4Progress();
-     case5Progress();
-     case6Progress();
-     case7Progress();
-     case8Progress();
-     case9Progress();
-     case10Progress();
-     case11Progress();
-     case12Progress();
-     case13Progress();
-
-
+     setInterval(totalProgress, 1000);
     
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Case trackers -- find which question is next in each case
@@ -1096,7 +1081,6 @@ function resetLocalStorage(){
   localStorage.setItem('case13q2', 0);
   localStorage.setItem('case13q3', 0);
   localStorage.setItem('case13q4', 0);
-
 
 }
 
