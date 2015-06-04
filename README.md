@@ -32,7 +32,9 @@ The purpose of our IMCI Nurse Training Application is to help Nurses in Capetown
   
  #### Download Source Code
  *  Option 1: Clone the github repo: Run this command in your terminal/cmd: 
-      `git clone https://github.com/eecs394-spr15/ProjectCapetown.git` 
+ ```
+ git clone https://github.com/eecs394-spr15/ProjectCapetown.git
+ ```
  *  Option 2: Get source code from the github: https://github.com/eecs394-spr15/ProjectCapetown.git
  
  For either option:
