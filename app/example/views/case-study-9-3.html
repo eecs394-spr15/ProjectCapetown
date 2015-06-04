@@ -5,7 +5,7 @@
     </head>
     <super-navbar>
         <super-navbar-title>
-            Case 10.3
+            Case 9.3
         </super-navbar-title>
     </super-navbar>
     <div ng-controller="caseController">
@@ -43,16 +43,16 @@
         .module('example')
         .controller('caseController', function ($scope, $filter)
                     {
-                    $scope.case10q3 = localStorage.getItem('case10q3');
-                    localStorage.setItem('case10q3', "working")
-                    $scope.answers = [{label:"1.	Diagnose as no dehydration?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"The child had more that 2 of the previous symptoms that you asked about."},
-                                      {label:"2.	Diagnose as some dehydration?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                                      {label:"3.	Ask if there is blood in the stool?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must treat the child for dehydration before assessing the symptoms of dysentery."},
-                                      {label:"4.	Refer the child urgently?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"ßThe child is not severely dehydrated, so referring urgently is not necessary."}];
+                    $scope.case9q3 = localStorage.getItem('case9q3');
+                    localStorage.setItem('case9q3', "working")
+                    $scope.answers = [{label:"1.    Diagnose as no dehydration.", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},
+                                      {label:"2.    Diagnose as some dehydration.", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"Child must have 2 of the symptoms listed above. This child only has 1."},
+                                      {label:"3.    Diagnose as dysentery.", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You currently do not have enough information about the child to make this classification."},
+                                      {label:"4.    None of the above.", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You have enough evidence to make some conclusion about the child’s health. "}];
                     
                     $scope.showAnswers = false;
                     
-                    $scope.question = "You find that the child is restless and irritable.  She is thirsty and drinking eagerly.  Her eyes are sunken.  Skin pinch does not go  back slowly.  Based on this information, what are the next steps? Check all that apply.";
+                    $scope.question = "Skin pinch does NOT go back slowly. Child is thirsty and drinking eagerly. Child is NOT restless or irritable. Child does NOT have sunken eyes. Based on this information, what are your next steps. Check all that apply. ";
                     
                     $scope.submitText = "Submit";
                     //$scope.selection = ['a1', 'a4'];
@@ -84,8 +84,8 @@
                     $scope.onSubmit = function()
                     {
                     if($scope.submitText == "Next Question -->"){
-                    localStorage.setItem('case10q3', true);
-                    window.location.href = "case-study-10-4.html";
+                    localStorage.setItem('case9q3', true);
+                    window.location.href = "case-study-9-4.html";
                     }
                     for(i = 0; i < $scope.answers.length; i++)
                     {
