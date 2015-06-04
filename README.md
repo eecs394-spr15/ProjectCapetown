@@ -39,6 +39,7 @@ The IMCI Nurse Training Application is... (Ben will complete this)
 * Implement a better way of adding new case materials
 
 ## Limitations of the app
+* This application was built to run on android tablets to train nurses in Cape Town. One of the major restrictions was not using WIFI. Therefore, we have saved all of the contents inside our application. It is much harder for the application managers to change contents of this application since they would have to reprogramm every tablet (no updates via WIFI).
 
 
 
