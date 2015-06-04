@@ -22,7 +22,7 @@ The purpose of our IMCI Nurse Training Application is to help Nurses in Capetown
   *  Diarrhoea
   *  Meningitis
 
- ## Continuing Development
+## Continuing Development
   This app is build with AngularJS on top of the AppGyver steroids framework. 
   
  ### Download and Installation
@@ -43,7 +43,7 @@ The purpose of our IMCI Nurse Training Application is to help Nurses in Capetown
   *  Run `steroids connect`. The Steroids CLI will open up the Connect Screen in a new browser window.
    *  To run your app on a real device, all you have to do is open the AppGyver Scanner you installed previously and scan the displayed QR code. The Scanner app will then start your app.
  
- ## Build and Deploy
+## Build and Deploy
 * [Deploying to cloud](http://docs.appgyver.com/tooling/build-service/build-settings/deploying-to-cloud/)
 * [Build settings for Android](http://docs.appgyver.com/tooling/build-service/build-settings/build-settings-for-android/)
 * [Build settings for iOS](http://docs.appgyver.com/tooling/build-service/build-settings/build-settings-for-ios/)
@@ -51,13 +51,13 @@ The purpose of our IMCI Nurse Training Application is to help Nurses in Capetown
 * [Android build types](http://docs.appgyver.com/tooling/build-service/build-settings/android-build-types/)
 
  
- ## Going Forward
+## Going Forward
 * Build other types of games
 * Implement Learn section with whole flowcharts
 * Implement a better way of adding new case materials
 * Currently, in order to edit content in Intro, Case Studies, or Game, our clients (Katherine and Linda) must change content directly in the html files.  This is not convenient, and requires comprehensive instructions.  We will be dilivering the app with such instructions included.     
  
- ## Limitations of the app
+## Limitations of the app
 This application was built to run on android tablets to train nurses in Cape Town. One of the major restrictions was not using WIFI. Therefore, we have saved all of the contents inside our application. It is much harder for the application managers to change contents of this application since they would have to reprogramm every tablet (no updates via WIFI).
  
  
