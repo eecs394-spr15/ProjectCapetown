@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    </head>
+    <super-navbar>
+        <super-navbar-title>
+            Case 10.4
+        </super-navbar-title>
+    </super-navbar>
+    <div ng-controller="caseController">
+        
+        <h3> {{question}} </h3>
+        
+        <ul class="list">
+            <div  ng-repeat="a in answers">
+                <li class="item item-checkbox item-text-wrap">
+                    <label class="checkbox">
+                        <input type="checkbox" ng-model="a.val" ng-disabled="!answers_enabled">
+                            </label>
+                    {{a.label}}<div ng-show="showAnswers && !a.correct"> <font color="red">{{a.incorrect_str}}</font> </div>
+                    </div>
+            </li>
+            <div ng-show="showAnswers && a.correct"> <font color="green">{{a.correct_str}}</font> </div>
+            
+        </ul>
+        
+        <div ng-show="showAnswers">
+            <p ng-show="showCorrect"> <font color="green">{{correct_feedback}}</font> </p>
+            <p ng-show="showIncorrect1"> <font color="red">{{incorrect_feedback1}}</font> </p>
+            <p ng-show="showIncorrect2"> <font color="red">{{incorrect_feedback2}}</font> </p>
+            
+        </div>
+        
+        <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()"> {{submitText}} </a>
+        <a class="button button-block button-dark icon-left super-arrow-left-b" href="cases.html">Back to Cases</a>
+        
+    </div>
+    
+    <script>
+        
+        angular
+        .module('example')
+        .controller('caseController', function ($scope, $filter)
+                    {
+                    $scope.case10q4 = localStorage.getItem('case10q4');
+                    localStorage.setItem('case10q4', "working")
+                    $scope.answers = [{label:"1.	Follow Plan B?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},
+                                      {label:"2.	Ask if the child is losing weight?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"a.	It has been determined that the child is not dehydrated. This question is only necessary if the child was dehydrated (some or severely)."},
+                                      {label:"3.	Advise the mother to continue breastfeeding and feeding.", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                                      {label:"4.	Give zinc for 2 weeks?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                                      {label:"5.	Give the child amoxicillin?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"Amoxicillin is only prescribed for pneumonia. The child has not  been diagnosed with pneumonia."},
+                                      {label:"6.	Advise the parent to return immediately and to follow up in 2 days?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                                      {label:"7.	Follow Plan C?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"Plan C is to be followed for severe dehydration or severe persistent diarrhoea, neither of which have been diagnosed."},
+                                      {label:"8.	Refer the child non-urgently?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You only refer the child non-urgently for a recurrent wheeze diagnosis."}];
+                    
+                    $scope.showAnswers = false;
+                    
+                    $scope.question = "You have diagnosed the child with some dehydration.  What are the next steps? Check all that apply.";
+                    
+                    $scope.submitText = "Submit";
+                    //$scope.selection = ['a1', 'a4'];
+                    
+                    $scope.answers_enabled = true;
+                    
+                    $scope.showCorrect = false;
+                    $scope.showIncorrect1 = false;
+                    $scope.showIncorrect2 = false;
+                    
+                    $scope.correct_feedback ="Correct! The next steps is are: Follow Plan B.  Advise mother to contnue breastfeeding and feeding.  Give zinc for 2 weeks.  Advise parent to return and follow up in 2 days.";
+                    $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
+                    $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
+                    
+                    
+                    $scope.isCorrect = function()
+                    {
+                    var selected = $filter("filter")($scope.answers, {correct:true});
+                    
+                    for(i = 0; i < $scope.answers.length; i++)
+                    {
+                    if(selected.indexOf($scope.answers[i]) < 0)
+                    return false;
+                    }
+                    
+                    return true;
+                    };
+                    
+                    $scope.onSubmit = function()
+                    {
+                    if($scope.submitText == "Next Question -->"){
+                    localStorage.setItem('case10q4', true);
+                    window.location.href = "case-study-10-5.html";
+                    }
+                    for(i = 0; i < $scope.answers.length; i++)
+                    {
+                    $scope.answers[i].correct = $scope.answers[i].val == $scope.answers[i].correct_val;
+                    }
+                    
+                    //Check answers
+                    var is_correct = $scope.isCorrect();
+                    
+                    //$(".answer").show();
+                    
+                    
+                    if(is_correct)
+                    {
+                    $scope.submitText = "Next Question -->";
+                    $scope.answers_enabled = false;
+                    //alert("CORRECT");
+                    $scope.showCorrect = true;
+                    $scope.showIncorrect1 = false;
+                    $scope.showIncorrect2 = false;
+                    
+                    }
+                    else
+                    {
+                              $scope.showIncorrect1 = false;
+          $scope.showIncorrect2 = false;
+                    for(i = 0; i < $scope.answers.length; i++)
+                    {
+                    if($scope.answers[i].correct_val && !$scope.answers[i].val)
+                    $scope.showIncorrect1 = true;
+                    if($scope.answers[i].val  && !$scope.answers[i].correct_val )
+                    $scope.showIncorrect2 = true;
+                    }
+                    
+                    }
+                    $scope.showAnswers = true;
+                    }
+                    
+                    
+                    
+                    /*
+                     $scope.toggleSelecton = function toggleSelection(answer)
+                     {
+                     var index = $scope.selection.indexOf(answer);
+                     
+                     
+                     if(index > -1)
+                     $scope.selection.splice(index, 1);
+                     else
+                     $scope.selection.push(answer);
+                     
+                     };
+                     */
+                    });
+        </script>
+    
+</html>
+
+

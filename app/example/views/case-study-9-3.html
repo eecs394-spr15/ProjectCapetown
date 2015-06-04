@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    </head>
+    <super-navbar>
+        <super-navbar-title>
+            Case 10.3
+        </super-navbar-title>
+    </super-navbar>
+    <div ng-controller="caseController">
+        
+        <h3> {{question}} </h3>
+        
+        <ul class="list">
+            <div  ng-repeat="a in answers">
+                <li class="item item-checkbox item-text-wrap">
+                    <label class="checkbox">
+                        <input type="checkbox" ng-model="a.val" ng-disabled="!answers_enabled">
+                            </label>
+                    {{a.label}}<div ng-show="showAnswers && !a.correct"> <font color="red">{{a.incorrect_str}}</font> </div>
+                    </div>
+            </li>
+            <div ng-show="showAnswers && a.correct"> <font color="green">{{a.correct_str}}</font> </div>
+            
+        </ul>
+        
+        <div ng-show="showAnswers">
+            <p ng-show="showCorrect"> <font color="green">{{correct_feedback}}</font> </p>
+            <p ng-show="showIncorrect1"> <font color="red">{{incorrect_feedback1}}</font> </p>
+            <p ng-show="showIncorrect2"> <font color="red">{{incorrect_feedback2}}</font> </p>
+            
+        </div>
+        
+        <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()"> {{submitText}} </a>
+        <a class="button button-block button-dark icon-left super-arrow-left-b" href="cases.html">Back to Cases</a>
+        
+    </div>
+    
+    <script>
+        
+        angular
+        .module('example')
+        .controller('caseController', function ($scope, $filter)
+                    {
+                    $scope.case10q3 = localStorage.getItem('case10q3');
+                    localStorage.setItem('case10q3', "working")
+                    $scope.answers = [{label:"1.	Diagnose as no dehydration?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"The child had more that 2 of the previous symptoms that you asked about."},
+                                      {label:"2.	Diagnose as some dehydration?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                                      {label:"3.	Ask if there is blood in the stool?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must treat the child for dehydration before assessing the symptoms of dysentery."},
+                                      {label:"4.	Refer the child urgently?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"ßThe child is not severely dehydrated, so referring urgently is not necessary."}];
+                    
+                    $scope.showAnswers = false;
+                    
+                    $scope.question = "You find that the child is restless and irritable.  She is thirsty and drinking eagerly.  Her eyes are sunken.  Skin pinch does not go  back slowly.  Based on this information, what are the next steps? Check all that apply.";
+                    
+                    $scope.submitText = "Submit";
+                    //$scope.selection = ['a1', 'a4'];
+                    
+                    $scope.answers_enabled = true;
+                    
+                    $scope.showCorrect = false;
+                    $scope.showIncorrect1 = false;
+                    $scope.showIncorrect2 = false;
+                    
+                    $scope.correct_feedback ="Correct! The next step is to diagnose as some dehydration.";
+                    $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
+                    $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
+                    
+                    
+                    $scope.isCorrect = function()
+                    {
+                    var selected = $filter("filter")($scope.answers, {correct:true});
+                    
+                    for(i = 0; i < $scope.answers.length; i++)
+                    {
+                    if(selected.indexOf($scope.answers[i]) < 0)
+                    return false;
+                    }
+                    
+                    return true;
+                    };
+                    
+                    $scope.onSubmit = function()
+                    {
+                    if($scope.submitText == "Next Question -->"){
+                    localStorage.setItem('case10q3', true);
+                    window.location.href = "case-study-10-4.html";
+                    }
+                    for(i = 0; i < $scope.answers.length; i++)
+                    {
+                    $scope.answers[i].correct = $scope.answers[i].val == $scope.answers[i].correct_val;
+                    }
+                    
+                    //Check answers
+                    var is_correct = $scope.isCorrect();
+                    
+                    //$(".answer").show();
+                    
+                    
+                    if(is_correct)
+                    {
+                    $scope.submitText = "Next Question -->";
+                    $scope.answers_enabled = false;
+                    //alert("CORRECT");
+                    $scope.showCorrect = true;
+                    $scope.showIncorrect1 = false;
+                    $scope.showIncorrect2 = false;
+                    
+                    }
+                    else
+                    {
+                              $scope.showIncorrect1 = false;
+          $scope.showIncorrect2 = false;
+                    for(i = 0; i < $scope.answers.length; i++)
+                    {
+                    if($scope.answers[i].correct_val && !$scope.answers[i].val)
+                    $scope.showIncorrect1 = true;
+                    if($scope.answers[i].val  && !$scope.answers[i].correct_val )
+                    $scope.showIncorrect2 = true;
+                    }
+                    
+                    }
+                    $scope.showAnswers = true;
+                    }
+                    
+                    
+                    
+                    /*
+                     $scope.toggleSelecton = function toggleSelection(answer)
+                     {
+                     var index = $scope.selection.indexOf(answer);
+                     
+                     
+                     if(index > -1)
+                     $scope.selection.splice(index, 1);
+                     else
+                     $scope.selection.push(answer);
+                     
+                     };
+                     */
+                    });
+        </script>
+    
+</html>
+
+

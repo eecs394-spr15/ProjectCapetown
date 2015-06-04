@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<super-navbar>
+    <super-navbar-title>
+        Case 5.1
+    </super-navbar-title>
+</super-navbar>
+
+<div ng-controller="caseController">
+
+<h3> {{question}} </h3>
+
+<ul class="list">
+    <div  ng-repeat="a in answers">
+        <li class="item item-checkbox item-text-wrap">
+            <label class="checkbox">
+                <input type="checkbox" ng-model="a.val" ng-disabled="!answers_enabled">
+                    </label>
+            {{a.label}}<div ng-show="showAnswers && !a.correct"> <font color="red">{{a.incorrect_str}}</font> </div>
+            </div>
+    </li>
+    <div ng-show="showAnswers && a.correct"> <font color="green">{{a.correct_str}}</font> </div>
+    
+</ul>
+
+  <div ng-show="showAnswers"> 
+    <p ng-show="showCorrect"> <font color="green">{{correct_feedback}}</font> </p>
+    <p ng-show="showIncorrect1"> <font color="red">{{incorrect_feedback1}}</font> </p>
+    <p ng-show="showIncorrect2"> <font color="red">{{incorrect_feedback2}}</font> </p>
+
+  </div>
+
+    <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()"> {{submitText}} </a>
+    <a class="button button-block button-dark icon-left super-arrow-left-b" href="cases.html">Back to Cases</a>
+
+</div>
+
+<script>
+
+angular
+  .module('example')
+  .controller('caseController', function ($scope, $filter)
+  {
+
+    $scope.case5q1 = localStorage.getItem('case5q1');
+    localStorage.setItem('case5q1', "working");
+
+    $scope.answers = [{label:"1.  Check to see if the child’s chest is indrawing? ", val:false, correct_val:false, correct:false, correct_str:"",incorrect_str:"You must first check to see if there are any general danger signs."},
+                      {label:"2.  Ask how old the child is? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"This information is not necessary right now"},
+                      {label:"3.  Check for any General Danger Sign? ", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                      {label:"4.  Check to see if the skin pinch goes back slowly (<2 seconds)?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"That is addressed in the diarrhoea module."}];
+
+    $scope.showAnswers = false;
+
+    $scope.question = "A mother brings her 2 year old son into the clinic who has been coughing for a week. With this initial information, what are your next steps? Check all that apply.";
+
+    $scope.submitText = "Submit";
+    //$scope.selection = ['a1', 'a4'];
+
+    $scope.answers_enabled = true;
+
+    $scope.showCorrect = false;
+    $scope.showIncorrect1 = false;
+    $scope.showIncorrect2 = false;
+
+    $scope.correct_feedback ="Correct! The next steps are: Check if the child is unnable to drink or is drinking poorly? Is unconscious or lethargic? Has unken eyes?  Skin pinch goes back very slowly?";
+    $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
+    $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
+
+
+    $scope.isCorrect = function()
+    {
+      var selected = $filter("filter")($scope.answers, {correct:true});
+
+      for(i = 0; i < $scope.answers.length; i++)
+      {
+        if(selected.indexOf($scope.answers[i]) < 0)
+          return false;
+      }
+
+      return true;
+    };
+
+    $scope.onSubmit = function()
+    {
+      if($scope.submitText == "Next -->"){
+        localStorage.setItem('case5q2', true);
+        window.location.href = "case-study-5-2.html";
+      }
+        for(i = 0; i < $scope.answers.length; i++)
+        {
+          $scope.answers[i].correct = $scope.answers[i].val == $scope.answers[i].correct_val;
+        }
+
+        //Check answers
+        var is_correct = $scope.isCorrect();
+
+        //$(".answer").show();
+
+
+        if(is_correct)
+        {
+          $scope.submitText = "Next -->";
+          $scope.answers_enabled = false;
+          //alert("CORRECT");
+          $scope.showCorrect = true;
+          $scope.showIncorrect1 = false;
+          $scope.showIncorrect2 = false;
+
+        }
+        else
+        {
+                    $scope.showIncorrect1 = false;
+          $scope.showIncorrect2 = false;
+          for(i = 0; i < $scope.answers.length; i++)
+            {
+              if($scope.answers[i].correct_val && !$scope.answers[i].val)
+                $scope.showIncorrect1 = true;
+              if($scope.answers[i].val  && !$scope.answers[i].correct_val )
+                $scope.showIncorrect2 = true;
+            }
+          
+        }
+        $scope.showAnswers = true;
+    }
+
+
+
+/*
+    $scope.toggleSelecton = function toggleSelection(answer)
+    {
+      var index = $scope.selection.indexOf(answer);
+
+
+      if(index > -1)
+        $scope.selection.splice(index, 1);
+      else
+        $scope.selection.push(answer);
+
+    };
+*/
+  });
+</script>
+
+</html>
+
+
