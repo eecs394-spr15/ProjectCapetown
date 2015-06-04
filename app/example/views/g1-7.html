@@ -11,9 +11,15 @@
     <div ng-controller="caseController">
         
         <h3> {{question}} </h3>
+
+                <img ng-show="showCorrect" src="/img/right.jpg" style= "width: 100%;"/>
+        <img ng-show="showIncorrect" src="/img/wrong.jpg" style= "width: 100%;"/>
+
+        <p ng-show="showCorrect"> Correct Answer is: {{correctAnswer}}</p>
+        <p ng-show="showIncorrect">  Correct Answer is: {{correctAnswer}}</p>
         
         <div class="list">
-            <div  ng-repeat="a in answers">
+            <div  ng-repeat="a in answers" ng-show="answers_enabled">
             <label class="item item-radio item-text-wrap">
                 <input type="radio" name="group" ng-model="$parent.userAnswer" ng-value="{{a.id}}" ng-disabled="!answers_enabled"/>
                 <div class="item-content">
@@ -31,12 +37,12 @@
             </p>
 
         <div >
-            <p ng-show="showCorrect"> <font color="green">{{correct_feedback}}</font> </p>
-            <p ng-show="showIncorrect"> <font color="red">{{incorrect_feedback}}</font> </p>
+            <p ng-show="showCorrect"> <font color="green">{{correct_feedback}} You got {{gamescore}} points</font> </p>
+            <p ng-show="showIncorrect"> <font color="red">{{incorrect_feedback}} You lost {{gamescore}} points</font> </p>
             
         </div>
 
-        <a id= "submit" class="button button-block button-balanced" ng-click="onSubmit()" onclick="Submit()" > {{submitText}}</a>
+        <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()" onclick="Submit()" > {{submitText}}</a>
                 <!-- <a class="button button-block button-dark icon-left super-arrow-left-b" href="g1.html">Back to Game</a> -->
   
         
@@ -73,7 +79,10 @@
 
                     //$scope.userAnswer = '';
                     $scope.correctId = '1';
-                    
+                    angular.forEach($scope.answers, function(answer) {
+                        if (answer.id == $scope.correctId ){
+                            $scope.correctAnswer = answer.label;}
+                    });                    
                     
                     $scope.isCorrect = function(){
                         return $scope.userAnswer == $scope.correctId;
@@ -93,8 +102,10 @@
                             $scope.answers_enabled = false;
                             $scope.showCorrect = true;
                             $scope.showIncorrect = false;
+                            $scope.gamescore = document.getElementById('countdown').innerHTML
                             $scope.score = '' + (Number($scope.score) +  Number(document.getElementById('countdown').innerHTML));
                             localStorage.setItem('g1score',$scope.score);
+                            //$scope.mainColor = 'green';
                         }
                         else{
                             //alert($scope.userAnswer);  
@@ -102,10 +113,11 @@
                             $scope.answers_enabled = false;
                             $scope.showCorrect = false;
                             $scope.showIncorrect = true;
+                            $scope.gamescore = document.getElementById('countdown').innerHTML
                             $scope.score = '' + (Number($scope.score) - Number(document.getElementById('countdown').innerHTML));
                             localStorage.setItem('g1score',$scope.score);
+                            //$scope.mainColor = 'red';
                         }
-
 
                     }
                     }
