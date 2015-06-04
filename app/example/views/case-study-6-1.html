@@ -5,7 +5,7 @@
 </head>
 <super-navbar>
     <super-navbar-title>
-        Case 5.1
+        Case 6.1
     </super-navbar-title>
 </super-navbar>
 
@@ -45,17 +45,21 @@ angular
   .controller('caseController', function ($scope, $filter)
   {
 
-    $scope.case5q1 = localStorage.getItem('case5q1');
-    localStorage.setItem('case5q1', "working");
+    $scope.case6q1 = localStorage.getItem('case6q1');
+    localStorage.setItem('case6q1', "working");
 
-    $scope.answers = [{label:"1.  Check to see if the child’s chest is indrawing? ", val:false, correct_val:false, correct:false, correct_str:"",incorrect_str:"You must first check to see if there are any general danger signs."},
-                      {label:"2.  Ask how old the child is? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"This information is not necessary right now"},
-                      {label:"3.  Check for any General Danger Sign? ", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"4.  Check to see if the skin pinch goes back slowly (<2 seconds)?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"That is addressed in the diarrhoea module."}];
+    $scope.answers = [{label:"1.  Check to see if the child has been vomiting everything they try to eat? ", val:false, correct_val:true, correct:false, correct_str:"",incorrect_str:""},
+                      {label:"2.  Check to see if the child is breathing fast?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must first check for general danger signs."},
+                      {label:"3.  Diagnose as a general danger sign?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You do not have sufficient information to make this classification at this point."},
+                      {label:"4.  Ask if the child has been losing weight?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must first address respiratory conditions.  This question is important when checking for diarrhea."}];
+                      {label:"5.  Ask how long the child has been sick?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"The duration of sickness does not matter at this point."}];
+              {label:"6.  Ask if the child has been having trouble drinking or breastfeeding?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""}];
+              {label:"7.  Check to see if the child is or has been having convulsions?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""}];
+              {label:"8.  Check to see if the child is unconscious or lethargic?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""}];
 
     $scope.showAnswers = false;
 
-    $scope.question = "A mother brings her 2 year old son into the clinic who has been coughing for a week. With this initial information, what are your next steps? Check all that apply.";
+    $scope.question = "A mother brings her son, Lebo, into your clinic. She tells you that he is sick. Based on this information, what are your next steps?  Check all that apply.";
 
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
@@ -66,7 +70,7 @@ angular
     $scope.showIncorrect1 = false;
     $scope.showIncorrect2 = false;
 
-    $scope.correct_feedback ="Correct! The next steps are: Check if the child is unnable to drink or is drinking poorly? Is unconscious or lethargic? Has unken eyes?  Skin pinch goes back very slowly?";
+    $scope.correct_feedback ="Correct! The next steps are: Check if the child is vomiting?  Having trouble drinking or breatsfeeding?  Has been having convulsions?  Is unconscious or lethargic?";
     $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
     $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
 
@@ -86,9 +90,9 @@ angular
 
     $scope.onSubmit = function()
     {
-      if($scope.submitText == "Next -->"){
-        localStorage.setItem('case5q2', true);
-        window.location.href = "case-study-5-2.html";
+      if($scope.submitText == "Next Question -->"){
+        localStorage.setItem('case6q2', true);
+        window.location.href = "case-study-6-2.html";
       }
         for(i = 0; i < $scope.answers.length; i++)
         {
@@ -103,7 +107,7 @@ angular
 
         if(is_correct)
         {
-          $scope.submitText = "Next -->";
+          $scope.submitText = "Next Question -->";
           $scope.answers_enabled = false;
           //alert("CORRECT");
           $scope.showCorrect = true;

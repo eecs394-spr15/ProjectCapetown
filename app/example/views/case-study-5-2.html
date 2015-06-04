@@ -75,7 +75,7 @@ Check to see if there are any general danger signs.
     };
     $scope.onSubmit = function()
     {
-      if($scope.submitText == "Next -->"){
+      if($scope.submitText == "Next Question -->"){
         localStorage.setItem('case5q2', true);
         window.location.href = "case-study-5-3.html";
       }
@@ -88,7 +88,7 @@ Check to see if there are any general danger signs.
         //$(".answer").show();
         if(is_correct)
         {
-          $scope.submitText = "Next -->";
+          $scope.submitText = "Next Question -->";
           $scope.answers_enabled = false;
           //alert("CORRECT");
           $scope.showCorrect = true;
