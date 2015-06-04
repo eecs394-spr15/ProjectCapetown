@@ -44,7 +44,7 @@ angular
   .controller('caseController', function ($scope, $filter)
   {
         $scope.case11q3 = localStorage.getItem('case3q3');
-    localStorage.setItem('case3q3', "working");
+    localStorage.setItem('case3q3', 0);
     $scope.answers = [{label:"1.  Classify as severe persistent diarrhoea? ", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"The child has not had diarrhoea for longer than 14 days, nor has there been blood in the stool."},
                       {label:"2.  Refer the child urgently, and give initial treatment?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
                       {label:"3.  Classify as severe dysentery?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
@@ -85,7 +85,7 @@ angular
     {
 
       if($scope.submitText == "Next Case"){
-        localStorage.setItem('case3q3', true);
+        localStorage.setItem('case3q3', 1);
         window.location.href = "case-study-4-1.html";
       }
 

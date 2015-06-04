@@ -44,7 +44,7 @@ angular
   .controller('caseController', function ($scope, $filter)
   {
         $scope.case5q4 = localStorage.getItem('case5q4');
-    localStorage.setItem('case5q4', "working");
+    localStorage.setItem('case5q4', 0);
     $scope.answers = [{label:"1.  Refer the child non-urgently?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"This classification calls for urgent referral."},
                       {label:"2.  Refer the child urgently? ", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
                       {label:"3.  Also classify as first wheeze?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You do not have evidence to make this classification."},
@@ -85,7 +85,7 @@ angular
     {
 
       if($scope.submitText == "Next -->"){
-        localStorage.setItem('case5q4', true);
+        localStorage.setItem('case5q4', 1);
         window.location.href = "case-study-5-5.html";
       }
 

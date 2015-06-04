@@ -44,7 +44,7 @@ angular
   .controller('caseController', function ($scope, $filter)
   {
     $scope.case11q6 = localStorage.getItem('case11q6');
-    localStorage.setItem('case11q6', "working");
+    localStorage.setItem('case11q6', 0);
 
     $scope.answers = [{label:"1.  Counsel the parent of feeding, when to follow up, and when to return immediately?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},
                       {label:"2.  Follow Plan C?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"This is only followed for Severe Persistent Diarrhoea or Severe Dehydration."},
@@ -86,7 +86,7 @@ angular
     {
 
       if($scope.submitText == "Next Case -->"){
-        localStorage.setItem('case11q6', true);
+        localStorage.setItem('case11q6', 1);
         window.location.href = "case-study-12-1.html";
       }
 

@@ -44,7 +44,7 @@ angular
   .controller('caseController', function ($scope, $filter)
   {
     $scope.case2q6 = localStorage.getItem('case2q6');
-    localStorage.setItem('case2q6', "working");
+    localStorage.setItem('case2q6', 0);
 
     $scope.answers = [{label:"1.  Consider TB? ", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"You know that the child has had the cough for less than 7 days from your questioning."},
                       {label:"2.  Soothe the throat and relieve the cough?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
@@ -86,7 +86,7 @@ angular
     {
 
       if($scope.submitText == "Next Case -->"){
-        localStorage.setItem('case2q6', true);
+        localStorage.setItem('case2q6', 1);
         window.location.href = "case-study-3-1.html";
       }
 

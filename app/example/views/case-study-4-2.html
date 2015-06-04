@@ -44,7 +44,7 @@ angular
   {
 
         $scope.case4q2 = localStorage.getItem('case4q2');
-    localStorage.setItem('case4q2', "working");
+    localStorage.setItem('case4q2', 0);
     $scope.answers = [{label:"1.  Check to see if the child drinks eagerly or is thirsty? ", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"You must have received a “Yes” on at least 2 of the above question to diagnose Severe Dehydration."},
                       {label:"2.  Check to see if the child is or has been vomiting? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You only have enough information to rule out Severe Dehydration as a diagnosis."},
                       {label:"3.  Ask if the child has wheezed before?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
@@ -85,7 +85,7 @@ Check all that apply.
     $scope.onSubmit = function()
     {
       if($scope.submitText == "Next -->"){
-        localStorage.setItem('case4q2', true);
+        localStorage.setItem('case4q2', 1);
         window.location.href = "case-study-4-3.html";
       }
         for(i = 0; i < $scope.answers.length; i++)

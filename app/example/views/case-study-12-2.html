@@ -45,7 +45,7 @@ angular
   {
 
     $scope.case12q2 = localStorage.getItem('case12q2');
-    localStorage.setItem('case12q2', "working");
+    localStorage.setItem('case12q2', 0);
     $scope.answers = [{label:"1.  Check to see if the chest is indrawing?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},
                       {label:"2.  Look and feel for a stick neck or bulging fontanelle?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str: "These steps are not relevant, given the symptoms presented in the child."},
                       {label:"3.  Check for fast breathing?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"This step is checked later."},
@@ -86,7 +86,7 @@ angular
     $scope.onSubmit = function()
     {
       if($scope.submitText == "Next Question -->"){
-           localStorage.setItem('case12q2', true);
+           localStorage.setItem('case12q2', 1);
         window.location.href = "case-study-12-3.html";
       }
         for(i = 0; i < $scope.answers.length; i++)

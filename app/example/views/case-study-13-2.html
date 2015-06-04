@@ -45,7 +45,7 @@ angular
   {
 
     $scope.case13q2 = localStorage.getItem('case13q2');
-      localStorage.setItem('case13q2', "working");
+      localStorage.setItem('case13q2', "0");
 
     $scope.answers = [{label:"1.	Diagnose Severe Dehydration?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"At least 2 of the above questions must have been found to be positive to diagnose Severe Dehydration."},
                       {label:"2.	Diagnose as Severe Dysentery?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You only have enough information to rule out Severe Dehydration as a diagnosis."},
@@ -86,7 +86,7 @@ angular
     $scope.onSubmit = function()
     {
       if($scope.submitText == "Next Question -->"){
-        localStorage.setItem('case13q2', true);
+        localStorage.setItem('case13q2', 1);
         window.location.href = "case-study-13-3.html";
       }
         for(i = 0; i < $scope.answers.length; i++)

@@ -46,7 +46,7 @@ angular
   {
 
     $scope.case3q1 = localStorage.getItem('case2q1');
-    localStorage.setItem('case3q2', "working");
+    localStorage.setItem('case3q2', 0);
 
     $scope.answers = [{label:"1.  Check to see if the child drinks eagerly or is thirsty? ", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"You have already determined that the child is unable to or is drinking poorly. Therefore this question is unecessary/already known."},
                       {label:"2.  Classify as severe dehydration, refer the child urgently, and give initial treatment.", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
@@ -91,7 +91,7 @@ angular
     $scope.onSubmit = function()
     {
       if($scope.submitText == "Next -->"){
-        localStorage.setItem('case3q2', true);
+        localStorage.setItem('case3q2', 1);
         window.location.href = "case-study-3-3.html";
       }
         for(i = 0; i < $scope.answers.length; i++)

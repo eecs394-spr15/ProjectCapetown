@@ -44,7 +44,7 @@ angular
   .controller('caseController', function ($scope, $filter)
   {
         $scope.case4q4 = localStorage.getItem('case4q4');
-    localStorage.setItem('case4q4', "working");
+    localStorage.setItem('case4q4', 0);
     $scope.answers = [{label:"1.  Check to see if the child has been losing weight? ", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"Diarrhoea issues will be addressed in a different module. Focus first on the respiratory issues."},
                       {label:"2.  Follow up in 5 days if the wheezing persists?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
                       {label:"3.  Ask if the child has had the cough for longer than 14 days?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You were already told the child has had it less than 7, and this question may not be necessary."},
@@ -89,7 +89,7 @@ Check all that apply.
     {
 
       if($scope.submitText == "Next -->"){
-        localStorage.setItem('case4q4', true);
+        localStorage.setItem('case4q4', 1);
         window.location.href = "case-study-4-5.html";
       }
 

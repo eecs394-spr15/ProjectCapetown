@@ -44,7 +44,7 @@ angular
   .controller('caseController', function ($scope, $filter)
   {
         $scope.case2q3 = localStorage.getItem('case2q3');
-    localStorage.setItem('case2q3', "working");
+    localStorage.setItem('case2q3', 0);
     $scope.answers = [{label:"1.  Classify as recurrent wheeze? ", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"The child had a cough, ignore the wheeze classifys for the time being."},
                       {label:"2.  Classify as severe pneumonia? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You do not have sufficient evidence to make this classification."},
                       {label:"3.  Check to see if stridor is present?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
@@ -84,7 +84,7 @@ angular
     {
 
       if($scope.submitText == "Next -->"){
-        localStorage.setItem('case2q3', true);
+        localStorage.setItem('case2q3', 1);
         window.location.href = "case-study-2-4.html";
       }
 

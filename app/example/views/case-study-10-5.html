@@ -44,7 +44,7 @@
         .controller('caseController', function ($scope, $filter)
                     {
                     $scope.case10q5 = localStorage.getItem('case10q5');
-                    localStorage.setItem('case10q5', "working")
+                    localStorage.setItem('case10q5', 0)
                     $scope.answers = [{label:"1.	Ask if the child has been losing weight?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},
                                       {label:"2.	Ask if the child has had diarrhoea for longer than 14 days?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
                                       {label:"3.    Ask if there is blood in the stool?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
@@ -84,7 +84,7 @@
                     $scope.onSubmit = function()
                     {
                     if($scope.submitText == "Next Question -->"){
-                    localStorage.setItem('case10q5', true);
+                    localStorage.setItem('case10q5', 1);
                     window.location.href = "case-study-10-6.html";
                     }
                     for(i = 0; i < $scope.answers.length; i++)

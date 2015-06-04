@@ -5,7 +5,7 @@
 </head>
 <super-navbar>
     <super-navbar-title>
-        Case 5.2
+        Case 8.2
     </super-navbar-title>
 </super-navbar>
 <div ng-controller="caseController">
@@ -43,8 +43,8 @@ angular
   .controller('caseController', function ($scope, $filter)
   {
 
-        $scope.case5q2 = localStorage.getItem('case5q2');
-    localStorage.setItem('case5q2', "working");
+        $scope.case8q2 = localStorage.getItem('case8q2');
+    localStorage.setItem('case8q2', 0);
     $scope.answers = [{label:"1.  Classify Severe Pneumonia? ", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"You do not have sufficient evidence to make this classification."},
                       {label:"2.  Check to see if the child’s chest is indrawing? ", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"You only have enough information to rule out Severe Dehydration as a diagnosis."},
                       {label:"3.  Check to see if the child has stridor? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must gather more information before this question is relevant."},
@@ -76,8 +76,8 @@ Check to see if there are any general danger signs.
     $scope.onSubmit = function()
     {
       if($scope.submitText == "Next -->"){
-        localStorage.setItem('case5q2', true);
-        window.location.href = "case-study-5-3.html";
+        localStorage.setItem('case8q2', 1);
+        window.location.href = "case-study-8-3.html";
       }
         for(i = 0; i < $scope.answers.length; i++)
         {

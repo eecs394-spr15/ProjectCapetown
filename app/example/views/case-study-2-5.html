@@ -44,7 +44,7 @@ angular
   .controller('caseController', function ($scope, $filter)
   {
         $scope.case2q5 = localStorage.getItem('case2q5');
-    localStorage.setItem('case2q5', "working");
+    localStorage.setItem('case2q5', 0);
     $scope.answers = [{label:"1.  Classify as pneumonia? ", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"You do not have evidence to make this classification."},
                       {label:"2.  Classify as cough/cold?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
                       {label:"3.  Check the TB chart? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"This requires a different classification and further questioning."},
@@ -84,7 +84,7 @@ angular
     {
 
       if($scope.submitText == "Next -->"){
-        localStorage.setItem('case2q5', true);
+        localStorage.setItem('case2q5', 1);
         window.location.href = "case-study-2-6.html";
       }
 

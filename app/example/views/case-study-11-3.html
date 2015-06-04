@@ -44,7 +44,7 @@ angular
   .controller('caseController', function ($scope, $filter)
   {
         $scope.case11q3 = localStorage.getItem('case11q3');
-    localStorage.setItem('case11q3', "working");
+    localStorage.setItem('case11q3', 0);
     $scope.answers = [{label:"1.  Diagnose as No Dehydration?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:"You must have received a “Yes” on at least 2 of the above question to diagnose Severe Dehydration."},
                       {label:"2.  Diagnose as Some Dehydration? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"a.  You must have received a “Yes” to at least two of the above questions to diagnose Some Dehydration."},
                       {label:"3.  Diagnose as Dysentery?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"a. You do not have sufficient evidence to support this diagnosis."},
@@ -85,7 +85,7 @@ angular
     {
 
       if($scope.submitText == "Next Question -->"){
-        localStorage.setItem('case11q3', true);
+        localStorage.setItem('case11q3', 1);
         window.location.href = "case-study-11-4.html";
       }
 

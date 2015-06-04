@@ -50,17 +50,17 @@
     <link rel="stylesheet" href="res/css/bootstrap.min.css">
     <link rel="stylesheet" href="res/css/bootstrap-theme.min.css">
     <link rel='stylesheet' href='res/css/style.css'>
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
     <script type="text/javascript" src="cordova.js"></script>
     <script src="res/js/jquery-1.11.2.min.js"></script>
     <script src="res/js/bootstrap.min.js"></script>
     <script type='text/javascript' src='res/js/prototype.js'></script>
     <script type='text/javascript' src='res/js/test.js'></script>
     <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <style>
       .content div {
         margin-bottom: 25px;
@@ -118,6 +118,7 @@
             </div>
         </div>
     </a>
+
     <a class="button button-block button-calm icon-left super-document-text" onclick="case2Tracker()">
         <div class="btn-progress-div">
             <div class="btn-progress-txt">Case 2</div>
@@ -246,15 +247,13 @@
     //functions to get number of questions completed
     function case1Progress()
     {
-        /*
-        alert("1-1");
+        
         var case1q1 = localStorage.getItem('case1q1');
         var case1q2 = localStorage.getItem('case1q2');
         var case1q3 = localStorage.getItem('case1q3');
         var case1q4 = localStorage.getItem('case1q4');
         var case1q5 = localStorage.getItem('case1q5');
-        */
-        var progress = 5;//(int)case1q1 + (int)case1q2 + (int)case1q3 + (int)case1q4 + (int)case1q5;
+        var progress =Number(case1q1) + Number(case1q2) + Number(case1q3) + Number(case1q4) + Number(case1q5);
 
         var percent = (progress/5.0)*100;
 
@@ -264,15 +263,15 @@
     }
     function case2Progress()
     {
-        /*
+        
         var case2q1 = localStorage.getItem('case2q1');
         var case2q2 = localStorage.getItem('case2q2');
         var case2q3 = localStorage.getItem('case2q3');
         var case2q4 = localStorage.getItem('case2q4');
         var case2q5 = localStorage.getItem('case2q5');
         var case2q6 = localStorage.getItem('case2q6');
-*/
-        var progress = 4;//(int)case2q1 + (int)case2q2 + (int)case2q3 + (int)case2q4 + (int)case2q5 + (int)case2q6;
+
+        var progress = Number(case2q1) + Number(case2q2) + Number(case2q3) + Number(case2q4) + Number(case2q5) + Number(case2q6);
 
         var percent = (progress/6.0)*100;
 
@@ -282,12 +281,12 @@
     }
     function case3Progress()
     {
-        /*
+
         var case3q1 = localStorage.getItem('case3q1');
         var case3q2 = localStorage.getItem('case3q2');
         var case3q3 = localStorage.getItem('case3q3');
-*/
-        var progress = 4//(int)case3q1 + (int)case3q2 + (int)case3q3;
+
+        var progress = Number(case3q1) + Number(case3q2) + Number(case3q3);
 
         var percent = (progress/3.0)*100;
 
@@ -297,14 +296,14 @@
     }
     function case4Progress()
     {
-        /*
+
         var case4q1 = localStorage.getItem('case4q1');
         var case4q2 = localStorage.getItem('case4q2');
         var case4q3 = localStorage.getItem('case4q3');
         var case4q4 = localStorage.getItem('case4q4');
         var case4q5 = localStorage.getItem('case4q5');
-*/
-        var progress = 3;//(int)case4q1 + (int)case4q2 + (int)case4q3 + (int)case4q4 + (int)case4q5;
+
+        var progress = Number(case4q1) + Number(case4q2) + Number(case4q3) + Number(case4q4) + Number(case4q5);
 
         var percent = (progress/5.0)*100;
 
@@ -314,14 +313,14 @@
     }
     function case5Progress()
     {
-        /*
+        
         var case5q1 = localStorage.getItem('case5q1');
         var case5q2 = localStorage.getItem('case5q2');
         var case5q3 = localStorage.getItem('case5q3');
         var case5q4 = localStorage.getItem('case5q4');
         var case5q5 = localStorage.getItem('case5q5');
-*/
-        var progress = 4;//(int)case5q1 + (int)case5q2 + (int)case5q3 + (int)case5q4 + (int)case5q5;
+
+        var progress =Number(case5q1) + Number(case5q2) + Number(case5q3) + Number(case5q4) + Number(case5q5);
 
         var percent = (progress/5.0)*100;
 
@@ -331,12 +330,12 @@
     }
     function case6Progress()
     {
-        /*
+        
         var case6q1 = localStorage.getItem('case6q1');
         var case6q2 = localStorage.getItem('case6q2');
         var case6q3 = localStorage.getItem('case6q3');
-*/
-        var progress = 2;//(int)case6q1 + (int)case6q2 + (int)case6q3;
+
+        var progress = Number(case6q1) + Number(case6q2) + Number(case6q3);
 
         var percent = (progress/3.0)*100;
 
@@ -346,12 +345,12 @@
     }
     function case7Progress()
     {
-        /*
+        
         var case7q1 = localStorage.getItem('case7q1');
         var case7q2 = localStorage.getItem('case7q2');
         var case7q3 = localStorage.getItem('case7q3');
-*/
-        var progress = 0;//(int)case7q1 + (int)case7q2 + (int)case7q3;
+
+        var progress = Number(case7q1) + Number(case7q2) + Number(case7q3);
 
         var percent = (progress/3.0)*100;
 
@@ -361,12 +360,12 @@
     }
     function case8Progress()
     {
-        /*
+
+
         var case8q1 = localStorage.getItem('case8q1');
         var case8q2 = localStorage.getItem('case8q2');
         var case8q3 = localStorage.getItem('case8q3');
-*/
-        var progress = 1;//(int)case8q1 + (int)case8q2 + (int)case8q3;
+        var progress = Number(case8q1) + Number(case8q2) + Number(case8q3);
 
         var percent = (progress/3.0)*100;
 
@@ -376,15 +375,15 @@
     }
     function case9Progress()
     {
-        /*
+        
         var case9q1 = localStorage.getItem('case9q1');
         var case9q2 = localStorage.getItem('case9q2');
         var case9q3 = localStorage.getItem('case9q3');
         var case9q4 = localStorage.getItem('case9q4');
         var case9q5 = localStorage.getItem('case9q5');
-        var case9q5 = localStorage.getItem('case9q6');
-*/
-        var progress = 0;//(int)case9q1 + (int)case9q2 + (int)case9q3 + (int)case9q4 + (int)case9q5 (int)case9q6;
+        var case9q6 = localStorage.getItem('case9q6');
+
+        var progress = Number(case9q1) + Number(case9q2) + Number(case9q3) + Number(case9q4) + Number(case9q5) + Number(case9q6);
 
         var percent = (progress/6.0)*100;
 
@@ -394,15 +393,15 @@
     }
     function case10Progress()
     {
-        /*
+        
         var case10q1 = localStorage.getItem('case10q1');
         var case10q2 = localStorage.getItem('case10q2');
         var case10q3 = localStorage.getItem('case10q3');
         var case10q4 = localStorage.getItem('case10q4');
         var case10q5 = localStorage.getItem('case10q5');
         var case10q6 = localStorage.getItem('case10q6');
-*/
-        var progress = 2;//(int)case10q1 + (int)case10q2 + (int)case10q3 + (int)case10q4 + (int)case10q5 + (int)case10q6;
+
+        var progress = Number(case10q1) + Number(case10q2) + Number(case10q3) + Number(case10q4) + Number(case10q5) + Number(case10q6);
 
         var percent = (progress/6.0)*100;
 
@@ -412,15 +411,15 @@
     }
     function case11Progress()
     {
-        /*
+        
         var case11q1 = localStorage.getItem('case11q1');
         var case11q2 = localStorage.getItem('case11q2');
         var case11q3 = localStorage.getItem('case11q3');
         var case11q4 = localStorage.getItem('case11q4');
         var case11q5 = localStorage.getItem('case11q5');
         var case11q6 = localStorage.getItem('case11q6');
-*/
-        var progress = 0;//(int)case11q1 + (int)case11q2 + (int)case11q3 + (int)case11q4 + (int)case11q5 + (int)case11q6;
+
+        var progress = Number(case11q1) + Number(case11q2) + Number(case11q3) + Number(case11q4) + Number(case11q5) + Number(case11q6);
 
         var percent = (progress/6.0)*100;
 
@@ -430,14 +429,14 @@
     }
     function case12Progress()
     {
-        /*
+        
         var case12q1 = localStorage.getItem('case12q1');
         var case12q2 = localStorage.getItem('case12q2');
         var case12q3 = localStorage.getItem('case12q3');
         var case12q4 = localStorage.getItem('case12q4');
         var case12q5 = localStorage.getItem('case12q5');
-*/
-        var progress = 1;//(int)case12q1 + (int)case12q2 + (int)case12q3 + (int)case12q4 + (int)case12q5;
+
+        var progress = Number(case12q1) + Number(case12q2) + Number(case12q3) + Number(case12q4) + Number(case12q5);
 
         var percent = (progress/5.0)*100;
 
@@ -447,21 +446,22 @@
     }
     function case13Progress()
     {
-        /*
+        
         var case13q1 = localStorage.getItem('case13q1');
         var case13q2 = localStorage.getItem('case13q2');
         var case13q3 = localStorage.getItem('case13q3');
-*/
-        var progress = 0;//(int)case13q1 + (int)case13q2 + (int)case13q3;
+        
+
+
+        var progress = Number(case13q1) + Number(case13q2) + Number(case13q3);
 
         var percent = (progress/3.0)*100;
-
         document.getElementById("case13_span").innerHTML = progress + " / 3";
         $("#case13_prog").css('width', percent+'%').attr("aria-valuenow", progress);
         $("#case13_prog").attr("aria-valuemax", 3);
     }
     
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Case trackers -- find which question is next in each case
     function case1Tracker() {
         
@@ -473,23 +473,23 @@
         var case1q5 = localStorage.getItem('case1q5');
         
         
-        if (case1q5 == 'true')
+        if (case1q5 == '1')
         {
             alert('case finished')
         }
-        else if (case1q4 =='true')
+        else if (case1q4 =='1')
         {
             window.location = 'case-study-1-5.html'
         }
-        else if (case1q3 =='true')
+        else if (case1q3 =='1')
         {
             window.location = 'case-study-1-4.html'
         }
-        else if (case1q2 =='true')
+        else if (case1q2 =='1')
         {
             window.location = 'case-study-1-3.html'
         }
-        else if (case1q1 =='true')
+        else if (case1q1 =='1')
         {
             window.location = 'case-study-1-2.html'
         }
@@ -511,27 +511,27 @@ function case2Tracker() {
     var case2q6 = localStorage.getItem('case2q6');
     
     
-    if (case2q6 == 'true')
+    if (case2q6 == '1')
     {
         alert('case finished')
     }
-    else if (case2q5 =='true')
+    else if (case2q5 =='1')
     {
         window.location = 'case-study-2-6.html'
     }
-    else if (case2q4 =='true')
+    else if (case2q4 =='1')
     {
         window.location = 'case-study-2-5.html'
     }
-    else if (case2q3 =='true')
+    else if (case2q3 =='1')
     {
         window.location = 'case-study-2-4.html'
     }
-    else if (case2q2 =='true')
+    else if (case2q2 =='1')
     {
         window.location = 'case-study-2-3.html'
     }
-    else if (case2q1 =='true')
+    else if (case2q1 =='1')
     {
         window.location = 'case-study-2-2.html'
     }
@@ -549,15 +549,15 @@ function case3Tracker() {
     var case3q3 = localStorage.getItem('case3q3');
     
     
-    if (case3q3 == 'true')
+    if (case3q3 == '1')
     {
         alert('case finished')
     }
-    else if (case3q2 =='true')
+    else if (case3q2 =='1')
     {
         window.location = 'case-study-3-3.html'
     }
-    else if (case3q1 =='true')
+    else if (case3q1 =='1')
     {
         window.location = 'case-study-3-2.html'
     }
@@ -577,23 +577,23 @@ function case4Tracker() {
   var case4q4 = localStorage.getItem('case4q4');
   var case4q5 = localStorage.getItem('case4q5');
 
-  if (case4q5 == 'true')
+  if (case4q5 == '1')
   {
     alert('case finished')
   }
-  else if (case4q4 =='true')
+  else if (case4q4 =='1')
   {
     window.location = 'case-study-4-5.html'
   }
-  else if (case4q3 =='true')
+  else if (case4q3 =='1')
   {
     window.location = 'case-study-4-4.html'
   }
-  else if (case4q2 =='true')
+  else if (case4q2 =='1')
   {
     window.location = 'case-study-4-3.html'
   }
-  else if (case4q1 =='true')
+  else if (case4q1 =='1')
   {
     window.location = 'case-study-4-2.html'
   }
@@ -613,23 +613,23 @@ function case5Tracker() {
     var case5q4 = localStorage.getItem('case5q4');
     var case5q5 = localStorage.getItem('case5q5');
     
-    if (case5q5 == 'true')
+    if (case5q5 == '1')
     {
         alert('case finished')
     }
-    else if (case5q4 =='true')
+    else if (case5q4 =='1')
     {
         window.location = 'case-study-5-5.html'
     }
-    else if (case5q3 =='true')
+    else if (case5q3 =='1')
     {
         window.location = 'case-study-5-4.html'
     }
-    else if (case5q2 =='true')
+    else if (case5q2 =='1')
     {
         window.location = 'case-study-5-3.html'
     }
-    else if (case5q1 =='true')
+    else if (case5q1 =='1')
     {
         window.location = 'case-study-5-2.html'
     }
@@ -646,15 +646,15 @@ function case6Tracker() {
     var case6q2 = localStorage.getItem('case6q2');
     var case6q3 = localStorage.getItem('case6q3');
     
-    if (case6q3 =='true')
+    if (case6q3 =='1')
     {
         alert('case finished');
     }
-    else if (case6q2 == 'true')
+    else if (case6q2 == '1')
     {
         window.location = 'case-study-6-3.html'
     }
-    else if (case6q1 == 'true')
+    else if (case6q1 == '1')
     {
         window.location = 'case-study-6-2.html'
     }
@@ -671,15 +671,15 @@ function case6Tracker() {
     var case6q2 = localStorage.getItem('case6q2');
     var case6q3 = localStorage.getItem('case6q3');
     
-    if (case6q3 =='true')
+    if (case6q3 =='1')
     {
         alert('case finished');
     }
-    else if (case6q2 == 'true')
+    else if (case6q2 == '1')
     {
         window.location = 'case-study-6-3.html'
     }
-    else if (case6q1 == 'true')
+    else if (case6q1 == '1')
     {
         window.location = 'case-study-6-2.html'
     }
@@ -696,15 +696,15 @@ function case7Tracker() {
     var case7q2 = localStorage.getItem('case7q2');
     var case7q3 = localStorage.getItem('case7q3');
     
-    if (case7q3 =='true')
+    if (case7q3 =='1')
     {
         alert('case finished');
     }
-    else if (case7q2 == 'true')
+    else if (case7q2 == '1')
     {
         window.location = 'case-study-7-3.html'
     }
-    else if (case7q1 == 'true')
+    else if (case7q1 == '1')
     {
         window.location = 'case-study-7-2.html'
     }
@@ -721,15 +721,15 @@ function case8Tracker() {
     var case8q2 = localStorage.getItem('case8q2');
     var case8q3 = localStorage.getItem('case8q3');
     
-    if (case8q3 =='true')
+    if (case8q3 =='1')
     {
         alert('case finished');
     }
-    else if (case8q2 == 'true')
+    else if (case8q2 == '1')
     {
         window.location = 'case-study-8-3.html'
     }
-    else if (case8q1 == 'true')
+    else if (case8q1 == '1')
     {
         window.location = 'case-study-8-2.html'
     }
@@ -750,27 +750,27 @@ function case9Tracker() {
     var case9q6 = localStorage.getItem('case9q6');
     
     
-    if (case9q6 == 'true')
+    if (case9q6 == '1')
     {
         alert('case finished')
     }
-    else if (case9q5 =='true')
+    else if (case9q5 =='1')
     {
         window.location = 'case-study-9-6.html'
     }
-    else if (case9q4 =='true')
+    else if (case9q4 =='1')
     {
         window.location = 'case-study-9-5.html'
     }
-    else if (case9q3 =='true')
+    else if (case9q3 =='1')
     {
         window.location = 'case-study-9-4.html'
     }
-    else if (case9q2 =='true')
+    else if (case9q2 =='1')
     {
         window.location = 'case-study-9-3.html'
     }
-    else if (case9q1 =='true')
+    else if (case9q1 =='1')
     {
         window.location = 'case-study-9-2.html'
     }
@@ -792,27 +792,27 @@ function case10Tracker() {
     var case10q6 = localStorage.getItem('case10q6');
     
     
-    if (case10q6 == 'true')
+    if (case10q6 == '1')
     {
         alert('case finished')
     }
-    else if (case10q5 =='true')
+    else if (case10q5 =='1')
     {
         window.location = 'case-study-10-6.html'
     }
-    else if (case10q4 =='true')
+    else if (case10q4 =='1')
     {
         window.location = 'case-study-10-5.html'
     }
-    else if (case10q3 =='true')
+    else if (case10q3 =='1')
     {
         window.location = 'case-study-10-4.html'
     }
-    else if (case10q2 =='true')
+    else if (case10q2 =='1')
     {
         window.location = 'case-study-10-3.html'
     }
-    else if (case10q1 =='true')
+    else if (case10q1 =='1')
     {
         window.location = 'case-study-10-2.html'
     }
@@ -835,27 +835,27 @@ function case11Tracker() {
   var case11q6 = localStorage.getItem('case11q6');
 
 
-  if (case11q6 == 'true')
+  if (case11q6 == '1')
   {
     alert('case finished')
   }
-  else if (case11q5 =='true')
+  else if (case11q5 =='1')
   {
     window.location = 'case-study-11-6.html'
   }
-  else if (case11q4 =='true')
+  else if (case11q4 =='1')
   {
     window.location = 'case-study-11-5.html'
   }
-  else if (case11q3 =='true')
+  else if (case11q3 =='1')
   {
     window.location = 'case-study-11-4.html'
   }
-  else if (case11q2 =='true')
+  else if (case11q2 =='1')
   {
     window.location = 'case-study-11-3.html'
   }
-  else if (case11q1 =='true')
+  else if (case11q1 =='1')
   {
     window.location = 'case-study-11-2.html'
   }
@@ -878,31 +878,31 @@ function case12Tracker() {
   var case12q6 = localStorage.getItem('case12q6');
   var case12q7 = localStorage.getItem('case12q7');
 
-  if (case12q7 == 'true')
+  if (case12q7 == '1')
   {
     alert('case finished');
   }
-  else if (case12q6 =='true')
+  else if (case12q6 =='1')
   {
     window.location = 'case-study-12-7.html'
   }
-  else if (case12q5 =='true')
+  else if (case12q5 =='1')
   {
     window.location = 'case-study-12-6.html'
   }
-  else if (case12q4 =='true')
+  else if (case12q4 =='1')
   {
     window.location = 'case-study-12-5.html'
   }
-  else if (case12q3 =='true')
+  else if (case12q3 =='1')
   {
     window.location = 'case-study-12-4.html'
   }
-  else if (case12q2 =='true')
+  else if (case12q2 =='1')
   {
     window.location = 'case-study-12-3.html'
   }
-  else if (case12q1 =='true')
+  else if (case12q1 =='1')
   {
     window.location = 'case-study-12-2.html'
   }
@@ -921,15 +921,15 @@ var case13q1 = localStorage.getItem('case13q1');
 var case13q2 = localStorage.getItem('case13q2');
 var case13q3 = localStorage.getItem('case13q3');
 
-if (case13q3 =='true')
+if (case13q3 =='1')
 {
   alert('case finished'); 
 }
-else if (case13q2 == 'true') 
+else if (case13q2 == '1') 
 {
   window.location = 'case-study-13-3.html'
 }
-else if (case13q1 == 'true')
+else if (case13q1 == '1')
 {
   window.location = 'case-study-13-2.html'
 }
@@ -950,7 +950,7 @@ else
     case5Progress();
     case6Progress();
     case7Progress();
-    case8rogress();
+    case8Progress();
     case9Progress();
     case10Progress();
     case11Progress();

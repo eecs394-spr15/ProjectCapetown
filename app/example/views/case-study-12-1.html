@@ -41,7 +41,7 @@ angular
   {
 
      $scope.case12q1 = localStorage.getItem('case12q1');
-    localStorage.setItem('case12q1', "working");
+    localStorage.setItem('case12q1', 0);
 
     $scope.answers = [{label:"1.  Ask if the child frequently coughs at night?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"This question should be asked if the child has a wheeze."},
                       {label:"2.  Check for any danger signs?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str: ""},
@@ -83,7 +83,7 @@ angular
     $scope.onSubmit = function()
     {
       if($scope.submitText == "Next Question -->"){
-           localStorage.setItem('case12q1', true);
+           localStorage.setItem('case12q1', 1);
         window.location.href = "case-study-12-2.html";
       }
         for(i = 0; i < $scope.answers.length; i++)

@@ -45,7 +45,7 @@ angular
   {
 
      $scope.case12q6 = localStorage.getItem('case12q6');
-    localStorage.setItem('case12q6', "working");
+    localStorage.setItem('case12q6', 0);
     $scope.answers = [{label:"1.  Consider TB?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"You know that the child has had the cough for less than 7 days from your questioning."},
                       {label:"2.  Ask if the child has had the cough for longer than 14 days?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str: ""},
                       {label:"3.  Advise the mother when to return immediately, and when to follow up?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You know that the child has had the cough for less than 7 days from your questioning."},
@@ -88,7 +88,7 @@ angular
     $scope.onSubmit = function()
     {
       if($scope.submitText == "Next Question -->"){
-           localStorage.setItem('case12q6', true);
+           localStorage.setItem('case12q6', 1);
         window.location.href = "case-study-12-7.html";
       }
         for(i = 0; i < $scope.answers.length; i++)

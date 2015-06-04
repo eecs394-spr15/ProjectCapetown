@@ -5,7 +5,7 @@
     </head>
     <super-navbar>
         <super-navbar-title>
-            Case 10.1
+            Case 9.1
         </super-navbar-title>
     </super-navbar>
     <div ng-controller="caseController">
@@ -46,8 +46,8 @@
         .controller('caseController', function ($scope, $filter)
                     {
 
-                    $scope.case10q1 = localStorage.getItem('case10q1');
-                    localStorage.setItem('case10q1', "working");
+                    $scope.case9q1 = localStorage.getItem('case9q1');
+                    localStorage.setItem('case9q1', 0);
 
 
                     $scope.answers = [{label:"1.	Check to see if the child is unconscious or lethargic?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},
@@ -94,8 +94,8 @@
                     {
                     if($scope.submitText == "Next Question -->")
                     {
-                    localStorage.setItem('case10q1',true);
-                    window.location.href = "case-study-10-2.html";
+                    localStorage.setItem('case9q1',1);
+                    window.location.href = "case-study-9-2.html";
                     }
                     for(i = 0; i < $scope.answers.length; i++)
                     {

@@ -44,7 +44,7 @@
         .controller('caseController', function ($scope, $filter)
                     {
                     $scope.case10q2 = localStorage.getItem('case10q2');
-                    localStorage.setItem('case10q2', "working")
+                    localStorage.setItem('case10q2', 0)
                     $scope.answers = [{label:"1.	Check to see if the child is restless or iritable", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},
                                       {label:"2.	Check to see if the child drinks eagerly or is thirsty", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
                                       {label:"3.    Diagnose as severe dehydration?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"The child did not have at least 2 of the previous symptoms that you asked about. The child does not have severe dehydration."},
@@ -88,7 +88,7 @@
                     $scope.onSubmit = function()
                     {
                     if($scope.submitText == "Next Question -->"){
-                    localStorage.setItem('case10q2', true);
+                    localStorage.setItem('case10q2', 1);
                     window.location.href = "case-study-10-3.html";
                     }
                     for(i = 0; i < $scope.answers.length; i++)

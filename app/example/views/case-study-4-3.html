@@ -44,7 +44,7 @@ angular
   .controller('caseController', function ($scope, $filter)
   {
         $scope.case4q3 = localStorage.getItem('case4q3');
-    localStorage.setItem('case4q3', "working");
+    localStorage.setItem('case4q3', 0);
     $scope.answers = [{label:"1.  Classify as First Wheeze? ", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},
                       {label:"2.  Check to see if the child has stridor? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"This is not necessary at this time."},
                       {label:"3.  Classify as recurrent wheeze? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"The answers you received do not support this classification."},
@@ -91,7 +91,7 @@ You find that the answers to all these questions is no.
     {
 
       if($scope.submitText == "Next -->"){
-        localStorage.setItem('case4q3', true);
+        localStorage.setItem('case4q3', 1);
         window.location.href = "case-study-4-4.html";
       }
 

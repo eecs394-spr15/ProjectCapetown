@@ -5,7 +5,7 @@
 </head>
 <super-navbar>
     <super-navbar-title>
-        Case 11.3
+        Case 8.3
     </super-navbar-title>
 </super-navbar>
 <div ng-controller="caseController">
@@ -43,8 +43,8 @@ angular
   .module('example')
   .controller('caseController', function ($scope, $filter)
   {
-        $scope.case5q3 = localStorage.getItem('case5q3');
-    localStorage.setItem('case5q3', "working");
+        $scope.case8q3 = localStorage.getItem('case8q3');
+    localStorage.setItem('case8q3', 0);
     $scope.answers = [{label:"1.  Classify Pneumonia? ", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"The evidence points to another classification."},
                       {label:"2.  Check to see if the child has stridor? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"This question is unnecessary as you have sufficient evidence to make a classification."},
                       {label:"3.  Classify as Severe Pneumonia? ", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
@@ -85,8 +85,8 @@ angular
     {
 
       if($scope.submitText == "Next -->"){
-        localStorage.setItem('case5q3', true);
-        window.location.href = "case-study-5-4.html";
+        localStorage.setItem('case8q3', 1);
+        window.location.href = "case-study-9-1.html";
       }
 
         for(i = 0; i < $scope.answers.length; i++)

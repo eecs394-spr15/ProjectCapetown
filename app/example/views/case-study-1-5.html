@@ -44,7 +44,7 @@ angular
   .controller('caseController', function ($scope, $filter)
   {
         $scope.case1q5 = localStorage.getItem('case1q5');
-    localStorage.setItem('case1q5', "working");
+    localStorage.setItem('case1q5', 0);
     $scope.answers = [{label:"1.	Classify as dysentery?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"There is no blood in the stool. This is not dysentery."},
                       {label:"2.	Classify as persistent Diarrhoea?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"The child has not had the diarrhoea for longer than 14 days. This is not persistent diarrhoea."},
                       {label:"3.	Refer the child non-urgently?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"There is no need to refer the child non-urgently. Treat the child for "No dehydration" and that's it."},
@@ -85,7 +85,7 @@ angular
     {
 
       if($scope.submitText == "Next Case -->"){
-        localStorage.setItem('case1q5', true);
+        localStorage.setItem('case1q5', 1);
         window.location.href = "case-study-2-1.html";
       }
 
