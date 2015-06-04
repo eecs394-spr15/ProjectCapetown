@@ -213,8 +213,11 @@
         </div>
     </a> 
 
+    <a class="button button-block button-dark" onclick="resetLocalStorage()">Reset</button>
+
 
 <script>
+
 
 
     var casesComplete = 0;
@@ -492,7 +495,6 @@
      window.onload = function()
      {
         case1Progress();
-        
         case2Progress();
         case3Progress();
         case4Progress();
@@ -509,6 +511,34 @@
         totalProgress();
         
      };
+
+
+     setInterval(case1Progress, 1000);
+     setInterval(case2Progress, 1000);
+     setInterval(case3Progress, 1000);
+     setInterval(case4Progress, 1000);
+     setInterval(case5Progress, 1000);
+     setInterval(case6Progress, 1000);
+     setInterval(case7Progress, 1000);
+     setInterval(case8Progress, 1000);
+     setInterval(case9Progress, 1000);
+     setInterval(case10Progress, 1000);
+     setInterval(case11Progress, 1000);
+     setInterval(case12Progress, 1000);
+     setInterval(case13Progress, 1000);
+     case1Progress();
+     case2Progress();
+     case3Progress();
+     case4Progress();
+     case5Progress();
+     case6Progress();
+     case7Progress();
+     case8Progress();
+     case9Progress();
+     case10Progress();
+     case11Progress();
+     case12Progress();
+     case13Progress();
 
 
     
@@ -974,6 +1004,99 @@ else
 {
   window.location = 'case-study-13-1.html'
 }
+
+}
+
+
+function resetLocalStorage(){
+
+//case1
+  localStorage.setItem('case1q1', 0);
+  localStorage.setItem('case1q2', 0);
+  localStorage.setItem('case1q3', 0);
+  localStorage.setItem('case1q4', 0);
+  localStorage.setItem('case1q5', 0);
+//case2
+  localStorage.setItem('case2q1', 0);
+  localStorage.setItem('case2q2', 0);
+  localStorage.setItem('case2q3', 0);
+  localStorage.setItem('case2q4', 0);
+  localStorage.setItem('case2q5', 0);
+  localStorage.setItem('case2q6', 0);
+
+//case3
+  localStorage.setItem('case3q1', 0);
+  localStorage.setItem('case3q2', 0);
+  localStorage.setItem('case3q3', 0);
+
+//case4
+  localStorage.setItem('case4q1', 0);
+  localStorage.setItem('case4q2', 0);
+  localStorage.setItem('case4q3', 0);
+  localStorage.setItem('case4q4', 0);
+  localStorage.setItem('case4q5', 0);
+
+//case5
+  localStorage.setItem('case5q1', 0);
+  localStorage.setItem('case5q2', 0);
+  localStorage.setItem('case5q3', 0);
+  localStorage.setItem('case5q4', 0);
+  localStorage.setItem('case5q5', 0);
+//case6
+  localStorage.setItem('case6q1', 0);
+  localStorage.setItem('case6q2', 0);
+  localStorage.setItem('case6q3', 0);
+//case7
+  localStorage.setItem('case7q1', 0);
+  localStorage.setItem('case7q2', 0);
+  localStorage.setItem('case7q3', 0);
+
+//case8
+  localStorage.setItem('case8q1', 0);
+  localStorage.setItem('case8q2', 0);
+  localStorage.setItem('case8q3', 0);
+
+//case9
+  localStorage.setItem('case9q1', 0);
+  localStorage.setItem('case9q2', 0);
+  localStorage.setItem('case9q3', 0);
+  localStorage.setItem('case9q4', 0);
+  localStorage.setItem('case9q5', 0);
+  localStorage.setItem('case9q6', 0);
+//case10
+  localStorage.setItem('case10q1', 0);
+  localStorage.setItem('case10q2', 0);
+  localStorage.setItem('case10q3', 0);
+  localStorage.setItem('case10q4', 0);
+  localStorage.setItem('case10q5', 0);
+  localStorage.setItem('case10q6', 0);
+
+
+//case11
+  localStorage.setItem('case11q1', 0);
+  localStorage.setItem('case11q2', 0);
+  localStorage.setItem('case11q3', 0);
+  localStorage.setItem('case11q4', 0);
+  localStorage.setItem('case11q5', 0);
+  localStorage.setItem('case11q6', 0);
+
+
+//case12
+
+  localStorage.setItem('case12q1', 0);
+  localStorage.setItem('case12q2', 0);
+  localStorage.setItem('case12q3', 0);
+  localStorage.setItem('case12q4', 0);
+  localStorage.setItem('case12q5', 0);
+  localStorage.setItem('case12q6', 0);
+  localStorage.setItem('case12q7', 0);
+
+//case13
+  localStorage.setItem('case13q1', 0);
+  localStorage.setItem('case13q2', 0);
+  localStorage.setItem('case13q3', 0);
+  localStorage.setItem('case13q4', 0);
+
 
 }
 

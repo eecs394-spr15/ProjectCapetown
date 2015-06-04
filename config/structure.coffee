@@ -7,7 +7,7 @@ module.exports =
     {
       title: "Intro"
       id: "index"
-      location: "example#test" # Supersonic module#view type navigation
+      location: "example#getting-started" # Supersonic module#view type navigation
     }
     {
       title: "Case Studies"
