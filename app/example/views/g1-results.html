@@ -13,7 +13,7 @@
     	<div ng-controller="caseController">
     	<h1 ng-show="showWin"> <font color="green">Congratulations! You Win!</font> </h1>
         <h1 ng-show="showLose"> <font color="red">Better luck next time!</font> </h1>
-        <h2>Final Score: {{score}}/h2>
+        <h2>Final Score: {{score}}</h2>
         <h3></h3>
         <a class="button button-block button-dark icon-left super-arrow-left-b" href="Game.html">Back to Game Categories</a>
         <a class="button button-block button-balanced icon-left super-arrow-left-b" href="g1-rules.html">Try Again</a>
@@ -26,7 +26,7 @@
     .controller('caseController', function ($scope, $filter)
                 {
                 $scope.score = localStorage.getItem('g1score');  
-                if($scope.score > 7) {
+                if($scope.score > 0) {
                 	$scope.showWin = true;
                 	$scope.showLose = false;
                 }
