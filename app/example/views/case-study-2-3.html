@@ -45,14 +45,14 @@ angular
   {
         $scope.case2q3 = localStorage.getItem('case2q3');
     localStorage.setItem('case2q3', "working");
-    $scope.answers = [{label:"1.  Classify as recurrent wheeze? ", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"The child had a cough, ignore the wheeze classifys for the time being."},
-                      {label:"2.  Classify as severe pneumonia? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You do not have sufficient evidence to make this classification."},
+    $scope.answers = [{label:"1.  Classify as recurrent wheeze?", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"The child had a cough, ignore the wheeze classifys for the time being."},
+                      {label:"2.  Classify as severe pneumonia?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You do not have sufficient evidence to make this classification."},
                       {label:"3.  Check to see if stridor is present?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"4.  Check to see if the child is breathing fast (>40bpm)? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"There are other questions you must ask first. This may be an unecessary question."}];
+                      {label:"4.  Check to see if the child is breathing fast (>40bpm)?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"There are other questions you must ask first. This may be an unecessary question."}];
 
     $scope.showAnswers = false;
 
-    $scope.question = "You find that the answers to this question is No. Based on this information, what are your next steps? Check all that apply.";
+    $scope.question = "You find that the the chest is not indrawing. Based on this information, what are your next steps? Check all that apply.";
               
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
@@ -63,7 +63,7 @@ angular
     $scope.showIncorrect1 = false;
     $scope.showIncorrect2 = false;
 
-    $scope.correct_feedback ="Correct! The next steps are: Check to see if stridor is present.";
+    $scope.correct_feedback ="Correct! The next step is: Check to see if stridor is present.";
     $scope.incorrect_feedback1 ="At least one of your answers is incorrect. Please review the choices and choose again.";
 
 

@@ -50,7 +50,7 @@ angular
                       {label:"3.  Check to see if the child has stridor? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must gather more information before this question is relevant."},
                       {label:"4.  None of the above? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must investigate further as you have made no classification."}];
     $scope.showAnswers = false;
-    $scope.question = "Upon inspection, you find that there are none. Based on this information, what are your next steps? Check all that apply.";
+    $scope.question = "Upon inspection, you find that there are no general danger signs. Based on this information, what are your next steps? Check all that apply.";
      
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
@@ -58,9 +58,7 @@ angular
     $scope.showCorrect = false;
     $scope.showIncorrect1 = false;
     $scope.showIncorrect2 = false;
-    $scope.correct_feedback ="Correct! The next steps are:
-Check to see if there are any general danger signs.
-";
+    $scope.correct_feedback ="Correct! The next step is: Check to see if the child's chest is indrawing?";
     $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
     $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
     $scope.isCorrect = function()
