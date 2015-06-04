@@ -44,15 +44,18 @@
         .controller('caseController', function ($scope, $filter)
                     {
                     $scope.case9q5 = localStorage.getItem('case9q5');
+
                     localStorage.setItem('case9q5', 0)
-                    $scope.answers = [{label:"1.	Ask if the child has been losing weight?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},
-                                      {label:"2.	Ask if the child has had diarrhoea for longer than 14 days?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                                      {label:"3.    Ask if there is blood in the stool?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                                      {label:"4.	Ask if the child is older than 1 year?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""}];
+                    $scope.answers = [{label:"1.    Diagnose as dysentery.", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},
+                                      {label:"2.    Nothing, send the child home.", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"The child can be classified with an illness."},
+                                      {label:"3.    Diagnose as persistent diarrhea.", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"The child has not had diarrhea longer than 14 days."},
+                                      {label:"4.    Diagnose as severe dysentery.", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"Child is less than 12 months old."}];
+
                     
                     $scope.showAnswers = false;
                     
-                    $scope.question = "You have decided to:  follow Plan B.  Advise the mother to contnue breastfeeding and feeding.  Give zinc for 2 weeks.  Advise parent to return and follow up in 2 days.  What are the next steps?  Check all that apply.";
+                    $scope.question = "Child is NOT dehydrated. Child has NOT had diarrhea for longer than 14 days. There is blood in the child’s stool. 
+The child is older than 12 months old. Based on this information, what are your next steps? Check all that apply. ";
                     
                     $scope.submitText = "Submit";
                     //$scope.selection = ['a1', 'a4'];
@@ -85,6 +88,7 @@
                     {
                     if($scope.submitText == "Next Question -->"){
                     localStorage.setItem('case9q5', 1);
+
                     window.location.href = "case-study-9-6.html";
                     }
                     for(i = 0; i < $scope.answers.length; i++)

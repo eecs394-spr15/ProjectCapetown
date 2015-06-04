@@ -52,12 +52,7 @@ angular
 
     $scope.showAnswers = false;
 
-    $scope.question = "The next steps are:
-Give the child salbutamol for 5 days via spacer.
-Follow up in five days if the wheezing persists.
-Based on this information, what are your next steps?
-Check all that apply.
-";
+    $scope.question = "You give the child salbutamol for 5 days via spacer and follow up in 5 days if wheezing persists.  What are your next steps?  Check all that apply.";
 
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
@@ -68,7 +63,7 @@ Check all that apply.
     $scope.showIncorrect1 = false;
     $scope.showIncorrect2 = false;
  
-    $scope.correct_feedback ="Correct!";
+    $scope.correct_feedback ="Congratulation!  You have successfully treated this child!";
     $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
     $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
 
@@ -89,8 +84,9 @@ Check all that apply.
     $scope.onSubmit = function()
     {
 
-      if($scope.submitText == "Next -->"){
+      if($scope.submitText == "Next Question -->"){
         localStorage.setItem('case4q5', 1);
+
         window.location.href = "case-study-5-1.html";
       }
 
@@ -107,7 +103,7 @@ Check all that apply.
 
         if(is_correct)
         {
-          $scope.submitText = "Next -->";
+          $scope.submitText = "Next Question -->";
           $scope.answers_enabled = false;
 
           //alert("CORRECT");

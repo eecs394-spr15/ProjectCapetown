@@ -5,7 +5,7 @@
 </head>
 <super-navbar>
     <super-navbar-title>
-        Case 11.2
+        Case 4.2
     </super-navbar-title>
 </super-navbar>
 <div ng-controller="caseController">
@@ -54,14 +54,7 @@ angular
                       {label:"7.  Classify as cough/cold? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You are not done addressing dehydration. You cannot move on to diarrhoea yet."},
                       {label:"8.  Ask if the child has a history of asthma?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"You do not have sufficient evidence to diagnose this child with Some Dehydration."}];
     $scope.showAnswers = false;
-    $scope.question = "The next steps are:
-Check to see if there are any general danger signs.
-
-Upon inspection, you find that there are none.
-
-Based on this information, what are your next steps?
-Check all that apply.
-";
+    $scope.question = "Upon inspection, you find that there are no general danger signs.  Based on this information, what are your next steps?  Check all that apply.";
      
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
@@ -69,7 +62,7 @@ Check all that apply.
     $scope.showCorrect = false;
     $scope.showIncorrect1 = false;
     $scope.showIncorrect2 = false;
-    $scope.correct_feedback ="Correct!";
+    $scope.correct_feedback ="Correct! Ask if the child has had the cough for longer than 7 days?  Ask if the child has been coughing at night?  Ask if the child has wheezed before?  Ask if the child has a history of asthma?";
     $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
     $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
     $scope.isCorrect = function()
@@ -84,7 +77,7 @@ Check all that apply.
     };
     $scope.onSubmit = function()
     {
-      if($scope.submitText == "Next -->"){
+      if($scope.submitText == "Next Question -->"){
         localStorage.setItem('case4q2', 1);
         window.location.href = "case-study-4-3.html";
       }
@@ -97,7 +90,7 @@ Check all that apply.
         //$(".answer").show();
         if(is_correct)
         {
-          $scope.submitText = "Next -->";
+          $scope.submitText = "Next Question -->";
           $scope.answers_enabled = false;
           //alert("CORRECT");
           $scope.showCorrect = true;

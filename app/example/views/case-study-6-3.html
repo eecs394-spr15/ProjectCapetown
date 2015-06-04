@@ -5,7 +5,7 @@
 </head>
 <super-navbar>
     <super-navbar-title>
-        Case 11.3
+        Case 6.3
     </super-navbar-title>
 </super-navbar>
 <div ng-controller="caseController">
@@ -44,15 +44,17 @@ angular
   .controller('caseController', function ($scope, $filter)
   {
         $scope.case6q3 = localStorage.getItem('case6q3');
+
     localStorage.setItem('case6q3', 0);
-    $scope.answers = [{label:"1.  Classify Pneumonia? ", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"The evidence points to another classification."},
-                      {label:"2.  Check to see if the child has stridor? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"This question is unnecessary as you have sufficient evidence to make a classification."},
-                      {label:"3.  Classify as Severe Pneumonia? ", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"4.  Give initial treatment? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must make a classification before you treat the child."}];
+    $scope.answers = [{label:"1.  Refer the child urgently?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},
+                      {label:"2.  Test for low blood sugar, and treat if child has low blood sugar?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                      {label:"3.  Give O2?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"This is only necessary if the child is unconscious or lethargic."},
+                      {label:"4.  None of the above.", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"Any general danger sign means that the child needs to be referred urgently and given treatment."}];
+
 
     $scope.showAnswers = false;
 
-    $scope.question = "You find out that a skin pinch goes back normally.  The child is thirsty/drinking eagerly.  Child is not restless or irritable.  Does not have sunken eyes.  Bases on this information, what are the next steps?  Check all that apply.";
+    $scope.question = "Lebo is classified with a general danger sign. What are your next steps?  Check all that apply.";
               
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
@@ -63,7 +65,7 @@ angular
     $scope.showIncorrect1 = false;
     $scope.showIncorrect2 = false;
 
-    $scope.correct_feedback ="Correct! The next step is to diagnose as no dehydration.";
+    $scope.correct_feedback ="Congratulations! You have successfully treated Lebo!";
     $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
     $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
 
@@ -84,7 +86,7 @@ angular
     $scope.onSubmit = function()
     {
 
-      if($scope.submitText == "Next -->"){
+      if($scope.submitText == "Next Case -->"){
         localStorage.setItem('case6q3', 1);
         window.location.href = "case-study-7-1.html";
       }
@@ -102,7 +104,7 @@ angular
 
         if(is_correct)
         {
-          $scope.submitText = "Next -->";
+          $scope.submitText = "Next Case -->";
           $scope.answers_enabled = false;
 
           //alert("CORRECT");

@@ -5,7 +5,7 @@
 </head>
 <super-navbar>
     <super-navbar-title>
-        Case 11.3
+        Case 7.3
     </super-navbar-title>
 </super-navbar>
 <div ng-controller="caseController">
@@ -45,14 +45,14 @@ angular
   {
         $scope.case7q3 = localStorage.getItem('case7q3');
     localStorage.setItem('case7q3', 0);
-    $scope.answers = [{label:"1.  Classify Pneumonia? ", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"The evidence points to another classification."},
-                      {label:"2.  Check to see if the child has stridor? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"This question is unnecessary as you have sufficient evidence to make a classification."},
-                      {label:"3.  Classify as Severe Pneumonia? ", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"4.  Give initial treatment? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must make a classification before you treat the child."}];
+    $scope.answers = [{label:"1.	Dysentery.", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"Incorrect because the child is dehydrated and does not have blood in the stool."},
+                      {label:"2.	Severe persistent diarrhea.", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"Child has not had diarrhea for longer than 14 days."},
+                      {label:"3.	Severe dehydration.", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                      {label:"4.	No visible dehydration.", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:" Child is presenting symptoms indicating dehydration."}];
 
     $scope.showAnswers = false;
 
-    $scope.question = "You find out that a skin pinch goes back normally.  The child is thirsty/drinking eagerly.  Child is not restless or irritable.  Does not have sunken eyes.  Bases on this information, what are the next steps?  Check all that apply.";
+              $scope.question = "This 3-year-old child has NOT had diarrhea for more than 14 days, is dehydrated, but is NOT losing weight.  This child does NOT have blood in the stool.  Based on this information, what classification can be made?";
               
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
@@ -63,7 +63,7 @@ angular
     $scope.showIncorrect1 = false;
     $scope.showIncorrect2 = false;
 
-    $scope.correct_feedback ="Correct! The next step is to diagnose as no dehydration.";
+    $scope.correct_feedback ="CONGRATULATIONS! You have successfully classified this child!";
     $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
     $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
 
@@ -84,8 +84,8 @@ angular
     $scope.onSubmit = function()
     {
 
-      if($scope.submitText == "Next -->"){
-        localStorage.setItem('case7q3', true);
+      if($scope.submitText == "Next Case -->"){
+        localStorage.setItem('case7q3', 1);
         window.location.href = "case-study-8-1.html";
       }
 
@@ -102,7 +102,7 @@ angular
 
         if(is_correct)
         {
-          $scope.submitText = "Next -->";
+          $scope.submitText = "Next Case -->";
           $scope.answers_enabled = false;
 
           //alert("CORRECT");

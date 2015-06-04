@@ -50,7 +50,7 @@ angular
                       {label:"3.  Check to see if the child has stridor? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must gather more information before this question is relevant."},
                       {label:"4.  None of the above? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must investigate further as you have made no classification."}];
     $scope.showAnswers = false;
-    $scope.question = "Upon inspection, you find that there are none. Based on this information, what are your next steps? Check all that apply.";
+    $scope.question = "The child has not had a wheeze before. The child sometimes frequently coughs at night. The child’s wheeze has lasted about 5 days. The child IS currently on asthma treatment. Based on this information, what classification can you give the child? ";
      
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
@@ -77,6 +77,7 @@ Check to see if there are any general danger signs.
     {
       if($scope.submitText == "Next -->"){
         localStorage.setItem('case8q2', 1);
+
         window.location.href = "case-study-8-3.html";
       }
         for(i = 0; i < $scope.answers.length; i++)

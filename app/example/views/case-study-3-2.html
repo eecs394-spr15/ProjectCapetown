@@ -45,9 +45,9 @@ angular
   .controller('caseController', function ($scope, $filter)
   {
 
-    $scope.case3q1 = localStorage.getItem('case2q1');
-    localStorage.setItem('case3q2', 0);
 
+    $scope.case3q2 = localStorage.getItem('case3q2');
+    localStorage.setItem('case3q2', 0);
     $scope.answers = [{label:"1.  Check to see if the child drinks eagerly or is thirsty? ", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"You have already determined that the child is unable to or is drinking poorly. Therefore this question is unecessary/already known."},
                       {label:"2.  Classify as severe dehydration, refer the child urgently, and give initial treatment.", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
                       {label:"3.  Check to see if the child is or has been vomiting? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"This is done during the General Danger Signs module, not the diarrhoea module."},
@@ -59,7 +59,7 @@ angular
 
     $scope.showAnswers = false;
 
-    $scope.question = "Based on this information, what are your next steps? Check all that apply.";
+    $scope.question = "Upon inspection, you find that the child does not have sunken eyes.  Skin pinch goes back very slowly.  The child is unable to drink/dinking slowly.  The chid is not unconsicous nor lethargic.  Based on this information, what are your next steps? Check all that apply.";
 
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
@@ -70,7 +70,7 @@ angular
     $scope.showIncorrect1 = false;
     $scope.showIncorrect2 = false;
 
-    $scope.correct_feedback ="Correct! The next steps are: Classify as Severe dehydration, refer the child urgently, and give initial treatment. Ask if the child has had diarrhoea for longer than 14 days. Ask if there is blood in the stool. Ask if the child has been losing weight. Determine if the child is older than 1 year. The answers to these questions are as follows: No, Yes, No, No.";
+    $scope.correct_feedback ="Correct! The next steps are: Classify as Severe dehydration, refer the child urgently, and give initial treatment. Ask if the child has had diarrhoea for longer than 14 days. Ask if there is blood in the stool. Ask if the child has been losing weight. Determine if the child is older than 1 year.";
     $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
     $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
 
@@ -90,7 +90,8 @@ angular
 
     $scope.onSubmit = function()
     {
-      if($scope.submitText == "Next -->"){
+
+      if($scope.submitText == "Next Question -->"){
         localStorage.setItem('case3q2', 1);
         window.location.href = "case-study-3-3.html";
       }
@@ -107,7 +108,7 @@ angular
 
         if(is_correct)
         {
-          $scope.submitText = "Next -->";
+          $scope.submitText = "Next Question -->";
           $scope.answers_enabled = false;
           //alert("CORRECT");
           $scope.showCorrect = true;

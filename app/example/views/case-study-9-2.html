@@ -44,19 +44,20 @@
         .controller('caseController', function ($scope, $filter)
                     {
                     $scope.case9q2 = localStorage.getItem('case9q2');
+
                     localStorage.setItem('case9q2', 0)
-                    $scope.answers = [{label:"1.	Check to see if the child is restless or iritable", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},
-                                      {label:"2.	Check to see if the child drinks eagerly or is thirsty", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                                      {label:"3.    Diagnose as severe dehydration?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"The child did not have at least 2 of the previous symptoms that you asked about. The child does not have severe dehydration."},
-                                      {label:"4.	Ask if there is blood in the stool?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must determine if the child is dehydrated before assessing the symptoms of dysentery."},
-                                      {label:"5.	Ask if the child has had diarrhoea for longer than 14 days?", val:false, correct_val:false, correct:false, correct_str:"",                 incorrect_str:"You must determine if the child is dehydrated before assessing the symptoms of diarrhoea."},
-                                      {label:"6.	Check to see if the child has sunken eyes?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                                      {label:"7.	Diagnose as dysentery?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You do not have sufficient information to diagnose the child with dysentery."},
-                                      {label:"8.	Check to see if the skin pinch goes back very slowly (>2 seconds)?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""}];
+                    $scope.answers = [{label:"1.    Classify as severe dehydration.", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"Child must be presenting two of the symptoms listed above."},
+                                      {label:"2.    Classify as no dehydration.", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"Only have enough information to rule out severe dehydration."},
+                                      {label:"3.    Classify as some dehydration.", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"Not enough information yet to classify as some dehydration."},
+                                      {label:"4.    Check to see if the child is thirsty.", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                                      {label:"5.    Check to see if the child is restless or irritable.", val:false, correct_val:true, correct:false, correct_str:"",                 incorrect_str:""},
+                                      {label:"6.    Check if the skin pinch goes back very slowly – more than 2 seconds.", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                                      {label:"7.    Ask if the child has had diarrhea for longer than 14 days.", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"Must first determine if the child is dehydrated. "}];
+
                     
                     $scope.showAnswers = false;
                     
-                    $scope.question = "You find that the child is neither unconscious nor letharic.  She is not drinking poorly nor unable to drink.  She does not have sunken eyes.  Skin pinch does not go back very slowly.  Based on this information, what are the next steps?  Check all that apply.";
+                    $scope.question = "Child IS able to drink and not drinking poorly. Child is NOT unconscious or lethargic. Child does NOT have sunken eyes. Skin pinch does NOT go back slowly. Based on this information, what are your next steps? Check all that apply.";
                     
                     $scope.submitText = "Submit";
                     //$scope.selection = ['a1', 'a4'];
@@ -89,6 +90,7 @@
                     {
                     if($scope.submitText == "Next Question -->"){
                     localStorage.setItem('case9q2', 1);
+
                     window.location.href = "case-study-9-3.html";
                     }
                     for(i = 0; i < $scope.answers.length; i++)

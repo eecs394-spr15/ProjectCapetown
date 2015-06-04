@@ -5,7 +5,7 @@
 </head>
 <super-navbar>
     <super-navbar-title>
-        Case 11.3
+        Case 4.3
     </super-navbar-title>
 </super-navbar>
 <div ng-controller="caseController">
@@ -52,13 +52,7 @@ angular
 
     $scope.showAnswers = false;
 
-    $scope.question = "The next steps are:
-Ask if the child has had the cough for longer than 7 days.
-Ask if the child has been coughing at night.
-Ask if the child has wheezed before.
-Ask if the child has a history of asthma.
-You find that the answers to all these questions is no.
-";
+    $scope.question = "Upon inspection, you find that the child has not had a cough for longer than 7 days.  The child has not been coughing at night.  The child has not wheezed before.  The child does not have a history of asthma.  Based on this information, what are your next steps?  Check all that apply.";
               
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
@@ -69,7 +63,7 @@ You find that the answers to all these questions is no.
     $scope.showIncorrect1 = false;
     $scope.showIncorrect2 = false;
 
-    $scope.correct_feedback ="Correct!";
+    $scope.correct_feedback ="Correct! The next step is: Classify as First Wheeze.";
     $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
     $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
 
@@ -90,7 +84,8 @@ You find that the answers to all these questions is no.
     $scope.onSubmit = function()
     {
 
-      if($scope.submitText == "Next -->"){
+
+      if($scope.submitText == "Next Question -->"){
         localStorage.setItem('case4q3', 1);
         window.location.href = "case-study-4-4.html";
       }
@@ -108,7 +103,7 @@ You find that the answers to all these questions is no.
 
         if(is_correct)
         {
-          $scope.submitText = "Next -->";
+          $scope.submitText = "Next Question -->";
           $scope.answers_enabled = false;
 
           //alert("CORRECT");

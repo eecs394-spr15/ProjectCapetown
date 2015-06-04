@@ -39,7 +39,7 @@
             
         </div>
 
-        <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()"> {{submitText}}</a>
+        <a id= "submit" class="button button-block button-balanced" ng-click="onSubmit()"> {{submitText}}</a>
                 <!-- <a class="button button-block button-dark icon-left super-arrow-left-b" href="g1.html">Back to Game</a> -->
   
         
@@ -51,7 +51,6 @@
         .module('example')
         .controller('caseController', function ($scope, $filter)
                     {
-                    localStorage.setItem('g2score', 0);
                     $scope.score = localStorage.getItem('g2score');
 
                     $scope.answers = [{label:"1.    Yes", id:"0"},

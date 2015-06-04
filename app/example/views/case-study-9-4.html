@@ -44,19 +44,20 @@
         .controller('caseController', function ($scope, $filter)
                     {
                     $scope.case9q4 = localStorage.getItem('case9q4');
+
                     localStorage.setItem('case9q4', 0)
-                    $scope.answers = [{label:"1.	Follow Plan B?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},
-                                      {label:"2.	Ask if the child is losing weight?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"a.	It has been determined that the child is not dehydrated. This question is only necessary if the child was dehydrated (some or severely)."},
-                                      {label:"3.	Advise the mother to continue breastfeeding and feeding.", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                                      {label:"4.	Give zinc for 2 weeks?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                                      {label:"5.	Give the child amoxicillin?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"Amoxicillin is only prescribed for pneumonia. The child has not  been diagnosed with pneumonia."},
-                                      {label:"6.	Advise the parent to return immediately and to follow up in 2 days?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                                      {label:"7.	Follow Plan C?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"Plan C is to be followed for severe dehydration or severe persistent diarrhoea, neither of which have been diagnosed."},
-                                      {label:"8.	Refer the child non-urgently?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You only refer the child non-urgently for a recurrent wheeze diagnosis."}];
+                    $scope.answers = [{label:"1.    Give fluid at home, give zinc, advise mother when to return immediately, and follow up in 5 days if no improvement. ", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},
+                                      {label:"2.    Refer the child non-urgently.", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"A child does not need a referral when not dehydrated."},
+                                      {label:"3.    Ask if the child has had diarrhea for longer than 14 days.", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                                      {label:"4.    Ask if there is blood in the stool.", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                                      {label:"5.    Check to see if the child is breathing fast.", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"Must address the diarrhea before checking for other potential health risks."},
+                                      {label:"6.    Ask if the child is older than 12 months.", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                                      {label:"7.    Send the child home.", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must also address the child’s diarrhea."}];
+
                     
                     $scope.showAnswers = false;
                     
-                    $scope.question = "You have diagnosed the child with some dehydration.  What are the next steps? Check all that apply.";
+                    $scope.question = "Child has diarrhea. Child is not dehydrated. Based on this information, what should you do next? Check all that apply.";
                     
                     $scope.submitText = "Submit";
                     //$scope.selection = ['a1', 'a4'];
@@ -88,7 +89,11 @@
                     $scope.onSubmit = function()
                     {
                     if($scope.submitText == "Next Question -->"){
+<<<<<<< HEAD
                     localStorage.setItem('case9q4', 1);
+=======
+                    localStorage.setItem('case9q4', true);
+>>>>>>> 3b863563529e19508adb7a7bda2fb5030e3e188d
                     window.location.href = "case-study-9-5.html";
                     }
                     for(i = 0; i < $scope.answers.length; i++)
