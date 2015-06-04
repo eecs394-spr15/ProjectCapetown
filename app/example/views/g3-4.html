@@ -5,14 +5,14 @@
     </head>
     <super-navbar>
         <super-navbar-title>
-            Ear
+            Pneumonia
         </super-navbar-title>
     </super-navbar>
     <div ng-controller="caseController">
         
         <h3> {{question}} </h3>
         
-        <div class="list">
+         <div class="list">
             <div  ng-repeat="a in answers">
             <label class="item item-radio item-text-wrap">
                 <input type="radio" name="group" ng-model="$parent.userAnswer" ng-value="{{a.id}}" ng-disabled="!answers_enabled"/>
@@ -29,6 +29,9 @@
               Your score is: {{score}},
               Timer: <span id="countdown" class="timer" style="color:purple;"></span>
             </p>
+
+          </div>
+        </div>
 
         <div >
             <p ng-show="showCorrect"> <font color="green">{{correct_feedback}}</font> </p>
@@ -48,17 +51,17 @@
         .module('example')
         .controller('caseController', function ($scope, $filter)
                     {
-                    $scope.score = localStorage.getItem('g1score');
-                    $scope.score = parseInt($scope.score);
+                    $scope.score = localStorage.getItem('g3score');
 
-                    $scope.answers = [{label:"1.    Tender swelling behind the ear", id:"0"},
-                                      {label:"2.    Chronic ear infection ",id:"1"},
-                                      {label:"3.    Suspected hearing loss", id:"2",},
-                                      {label:"4.    Pain or discharge persists", id:"3"}];
-          
+                    $scope.answers = [{label:"1.	Wheeze", id:"0"},
+                                      {label:"2.	Malaria",id:"1"},
+                                      {label:"3.    Meningitis", id:"2",},
+                                      {label:"4.	Pneumonia", id:"3"}];
+
+                    
                     $scope.showAnswers = false;
                     
-                    $scope.question = "What symptoms is the child experiencing in their ear that requires follow up in 5 days? ";
+                    $scope.question = "Which classification requires follow up in 2 days?";
                     
                     $scope.submitText = "Submit";
                     
@@ -80,28 +83,28 @@
                     
                     $scope.onSubmit = function()
                     {
-                    if($scope.submitText == "Results"){
-                        window.location.href = "g1-results.html";
+                    if($scope.submitText == "Next Question -->"){
+                        window.location.href = "g3-5.html";
                     }
                     else{
                         var is_correct = $scope.isCorrect();
                         
                         if(is_correct){
                             //alert("CORRECT");
-                            $scope.submitText = "Results";
+                            $scope.submitText = "Next Question -->";
                             $scope.answers_enabled = false;
                             $scope.showCorrect = true;
                             $scope.showIncorrect = false;
-                            $scope.score = $scope.score + 1;
-                            localStorage.setItem('g1score',$scope.score);
+                            $scope.score = '' + (Number($scope.score) + 1);
+                            localStorage.setItem('g3score',$scope.score);
                         }
                         else{
                             //alert($scope.userAnswer);  
-                            $scope.submitText = "Results";
+                            $scope.submitText = "Next Question -->";
                             $scope.answers_enabled = false;
                             $scope.showCorrect = false;
                             $scope.showIncorrect = true;
-                            localStorage.setItem('g1score',$scope.score);
+                            localStorage.setItem('g3score',$scope.score);
                         }
 
                     }
@@ -110,7 +113,7 @@
                     });
         </script>
 
-         <script>
+        <script>
    var seconds = 30;
    function secondPassed() {
    var minutes = Math.round((seconds - 30)/60);
@@ -122,8 +125,8 @@
    if (seconds == 0) {
     clearInterval(countdownTimer);
     document.getElementById('countdown').innerHTML = "Time out!";
-    alert("Time is out, this part is finished.");
-    window.location.href = "g1-results.html";
+    alert("Time is out, will go to the next question.");
+    window.location.href = "g3-5.html";
 
    } else {
     seconds--;
@@ -133,7 +136,5 @@
 </script>
     
 </html>
-
-
 
 

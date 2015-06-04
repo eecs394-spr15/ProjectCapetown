@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+    	<div ng-controller="caseController">
+    	<h1 ng-show="showWin"> <font color="green">Congratulations! You Win!</font> </h1>
+        <h1 ng-show="showLose"> <font color="green">You are almost there...</font> </h1>
+        <h2>Final Score: {{score}} out of 5</h2>
+        <h3></h3>
+        <a class="button button-block button-dark icon-left super-arrow-left-b" href="Game.html">Back to Game Categories</a>
+        <a class="button button-block button-calm icon-left super-arrow-left-b" href="g3-rules.html">Try Again</a>
+    </div>
+    </body>
+    
+<script>
+    angular
+    .module('example')
+    .controller('caseController', function ($scope, $filter)
+                {
+                $scope.score = localStorage.getItem('g3score');  
+                if($scope.score > 4) {
+                	$scope.showWin = true;
+                	$scope.showLose = false;
+                }
+                else {
+                	$scope.showWin = false;
+                	$scope.showLose = true;
+
+                }
+
+                });
+</script> 
+</html>

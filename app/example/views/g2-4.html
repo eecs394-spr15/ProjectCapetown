@@ -5,7 +5,7 @@
     </head>
     <super-navbar>
         <super-navbar-title>
-            Ear
+            General Danger Problems
         </super-navbar-title>
     </super-navbar>
     <div ng-controller="caseController">
@@ -48,17 +48,17 @@
         .module('example')
         .controller('caseController', function ($scope, $filter)
                     {
-                    $scope.score = localStorage.getItem('g1score');
+                    $scope.score = localStorage.getItem('g2score');
                     $scope.score = parseInt($scope.score);
 
-                    $scope.answers = [{label:"1.    Tender swelling behind the ear", id:"0"},
-                                      {label:"2.    Chronic ear infection ",id:"1"},
-                                      {label:"3.    Suspected hearing loss", id:"2",},
-                                      {label:"4.    Pain or discharge persists", id:"3"}];
+                    $scope.answers = [{label:"1.    Vomiting", id:"0"},
+                                      {label:"2.    Unable to drink or breastfeed",id:"1"},
+                                      {label:"3.    Convulsions", id:"2",},
+                                      {label:"4.    Lehtary/Unconsciousness", id:"3"}];
           
                     $scope.showAnswers = false;
                     
-                    $scope.question = "What symptoms is the child experiencing in their ear that requires follow up in 5 days? ";
+                    $scope.question = "What general danger sign requires a test for low blood sugar?";
                     
                     $scope.submitText = "Submit";
                     
@@ -81,7 +81,7 @@
                     $scope.onSubmit = function()
                     {
                     if($scope.submitText == "Results"){
-                        window.location.href = "g1-results.html";
+                        window.location.href = "g2-results.html";
                     }
                     else{
                         var is_correct = $scope.isCorrect();
@@ -93,7 +93,7 @@
                             $scope.showCorrect = true;
                             $scope.showIncorrect = false;
                             $scope.score = $scope.score + 1;
-                            localStorage.setItem('g1score',$scope.score);
+                            localStorage.setItem('g2score',$scope.score);
                         }
                         else{
                             //alert($scope.userAnswer);  
@@ -101,7 +101,7 @@
                             $scope.answers_enabled = false;
                             $scope.showCorrect = false;
                             $scope.showIncorrect = true;
-                            localStorage.setItem('g1score',$scope.score);
+                            localStorage.setItem('g2score',$scope.score);
                         }
 
                     }
@@ -123,7 +123,7 @@
     clearInterval(countdownTimer);
     document.getElementById('countdown').innerHTML = "Time out!";
     alert("Time is out, this part is finished.");
-    window.location.href = "g1-results.html";
+    window.location.href = "g2-results.html";
 
    } else {
     seconds--;
