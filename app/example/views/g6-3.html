@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    </head>
+    <super-navbar>
+        <super-navbar-title>
+            Meningitis
+        </super-navbar-title>
+    </super-navbar>
+    <div ng-controller="caseController">
+        
+        <h3> {{question}} </h3>
+        
+         <div class="list">
+            <div  ng-repeat="a in answers">
+            <label class="item item-radio item-text-wrap">
+                <input type="radio" name="group" ng-model="$parent.userAnswer" ng-value="{{a.id}}" ng-disabled="!answers_enabled"/>
+                <div class="item-content">
+                {{a.label}}
+                </div>
+                <i class="radio-icon super-checkmark"></i>
+            </label>
+            </div>
+  
+        <div class='content'>
+          <div class='visible'>
+            <p>
+              Your score is: {{score}},
+              Timer: <span id="countdown" class="timer" style="color:purple;"></span>
+            </p>
+
+          </div>
+        </div>
+
+        <div >
+            <p ng-show="showCorrect"> <font color="green">{{correct_feedback}}</font> </p>
+            <p ng-show="showIncorrect"> <font color="red">{{incorrect_feedback}}</font> </p>
+            
+        </div>
+
+        <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()"> {{submitText}}</a>
+                <!-- <a class="button button-block button-dark icon-left super-arrow-left-b" href="g1.html">Back to Game</a> -->
+  
+        
+    </div>
+    
+    <script>
+
+        angular
+        .module('example')
+        .controller('caseController', function ($scope, $filter)
+                    {
+                    $scope.score = localStorage.getItem('g6score');
+
+                    $scope.answers = [{label:"1.    Zinc", id:"0"},
+                                      {label:"2.    Ceftriaxone IM",id:"1"},
+                                      {label:"3.    Paracetamol", id:"2",},
+                                      {label:"4.    Vitamin A", id:"3"}];
+
+                    
+                    $scope.showAnswers = false;
+                    
+                    $scope.question = "What treatment should be given when a child has a fever higher than 38 C?";
+                    
+                    $scope.submitText = "Submit";
+                    
+                    $scope.answers_enabled = true;
+                    
+                    $scope.showCorrect = false;
+                    $scope.showIncorrect = false;
+                    
+                    $scope.correct_feedback ="Correct!";
+                    $scope.incorrect_feedback ="Incorrect. ";
+
+                    //$scope.userAnswer = '';
+                    $scope.correctId = '2';
+                    
+                    
+                    $scope.isCorrect = function(){
+                        return $scope.userAnswer == $scope.correctId;
+                    };
+                    
+                    $scope.onSubmit = function()
+                    {
+                    if($scope.submitText == "Next Question -->"){
+                        window.location.href = "g6-4.html";
+                    }
+                    else{
+                        var is_correct = $scope.isCorrect();
+                        
+                        if(is_correct){
+                            //alert("CORRECT");
+                            $scope.submitText = "Next Question -->";
+                            $scope.answers_enabled = false;
+                            $scope.showCorrect = true;
+                            $scope.showIncorrect = false;
+                            $scope.score = '' + (Number($scope.score) + 1);
+                            localStorage.setItem('g6score',$scope.score);
+                        }
+                        else{
+                            //alert($scope.userAnswer);  
+                            $scope.submitText = "Next Question -->";
+                            $scope.answers_enabled = false;
+                            $scope.showCorrect = false;
+                            $scope.showIncorrect = true;
+                            localStorage.setItem('g6score',$scope.score);
+                        }
+
+                    }
+                    }
+
+                    });
+        </script>
+
+        <script>
+   var seconds = 30;
+   function secondPassed() {
+   var minutes = Math.round((seconds - 30)/60);
+   var remainingSeconds = seconds % 60;
+   if (remainingSeconds < 10) {
+      remainingSeconds = "0" + remainingSeconds; 
+   }
+   document.getElementById('countdown').innerHTML = remainingSeconds;
+   if (seconds == 0) {
+    clearInterval(countdownTimer);
+    document.getElementById('countdown').innerHTML = "Time out!";
+    alert("Time is out, will go to the next question.");
+    window.location.href = "g6-4.html";
+
+   } else {
+    seconds--;
+   }
+   }
+   var countdownTimer = setInterval('secondPassed()', 1000);
+</script>
+    
+</html>
+
+
