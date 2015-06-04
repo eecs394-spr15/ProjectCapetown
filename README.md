@@ -28,11 +28,11 @@ The purpose of our IMCI Nurse Training Application is to help Nurses in Capetown
  ### Download and Installation
  
  #### Install Steroids and Dependencies
- *[Create an AppGypver account](http://www.appgyver.com/steroids_sign_up), then head on over to the [Install Wizard](https://academy.appgyver.com/installwizard) page and follow the instructions there.
+ [Create an AppGypver account](http://www.appgyver.com/steroids_sign_up), then head on over to the [Install Wizard](https://academy.appgyver.com/installwizard) page and follow the instructions there.
   
  #### Download Source Code
- *Option 1: Clone the github repo: Run this command in your terminal/cmd: `git clone https://github.com/eecs394-spr15/ProjectCapetown.git` 
- *Option 2: Get source code from the github: `git clone https://github.com/eecs394-spr15/ProjectCapetown.git`
+ *  Option 1: Clone the github repo: Run this command in your terminal/cmd: `git clone https://github.com/eecs394-spr15/ProjectCapetown.git` 
+ *  Option 2: Get source code from the github: `git clone https://github.com/eecs394-spr15/ProjectCapetown.git`
  
  For either option:
   *  Using the command `cd` to navigate to the application directory 'ProjectCapetown'.
