@@ -5,7 +5,7 @@
 </head>
 <super-navbar>
     <super-navbar-title>
-        Case 11.1
+        Case 4.1
     </super-navbar-title>
 </super-navbar>
 
@@ -55,9 +55,7 @@ angular
 
     $scope.showAnswers = false;
 
-    $scope.question = "A father brings his daughter into the clinic who has a wheeze. With this initial information, what are your next steps? 
-Check all that apply.
-";
+    $scope.question = "A father brings his daughter into the clinic who has a wheeze. With this initial information, what are your next steps? Check all that apply.";
 
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
@@ -88,7 +86,7 @@ Check all that apply.
 
     $scope.onSubmit = function()
     {
-      if($scope.submitText == "Next -->"){
+      if($scope.submitText == "Next Question -->"){
         localStorage.setItem('case4q1', true);
         window.location.href = "case-study-4-2.html";
       }
@@ -105,7 +103,7 @@ Check all that apply.
 
         if(is_correct)
         {
-          $scope.submitText = "Next -->";
+          $scope.submitText = "Next Question -->";
           $scope.answers_enabled = false;
           //alert("CORRECT");
           $scope.showCorrect = true;
