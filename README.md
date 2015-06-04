@@ -44,8 +44,8 @@ The purpose of our IMCI Nurse Training Application is to help Nurses in Capetown
 * [Deploying to cloud](http://docs.appgyver.com/tooling/build-service/build-settings/deploying-to-cloud/)
 * [Build settings for Android](http://docs.appgyver.com/tooling/build-service/build-settings/build-settings-for-android/)
 * [Build settings for iOS](http://docs.appgyver.com/tooling/build-service/build-settings/build-settings-for-ios/)
-* [Android build types](http://docs.appgyver.com/tooling/build-service/build-settings/android-build-types/)
 * [iOS build types](http://docs.appgyver.com/tooling/build-service/build-settings/ios-build-types/)
+* [Android build types](http://docs.appgyver.com/tooling/build-service/build-settings/android-build-types/)
 
  
  ## Going Forward
@@ -55,6 +55,6 @@ The purpose of our IMCI Nurse Training Application is to help Nurses in Capetown
 * Currently, in order to edit content in Intro, Case Studies, or Game, our clients (Katherine and Linda) must change content directly in the html files.  This is not convenient, and requires comprehensive instructions.  We will be dilivering the app with such instructions included.     
  
  ## Limitations of the app
--* This application was built to run on android tablets to train nurses in Cape Town. One of the major restrictions was not using WIFI. Therefore, we have saved all of the contents inside our application. It is much harder for the application managers to change contents of this application since they would have to reprogramm every tablet (no updates via WIFI).
+This application was built to run on android tablets to train nurses in Cape Town. One of the major restrictions was not using WIFI. Therefore, we have saved all of the contents inside our application. It is much harder for the application managers to change contents of this application since they would have to reprogramm every tablet (no updates via WIFI).
  
  
