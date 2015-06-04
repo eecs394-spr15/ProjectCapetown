@@ -5,7 +5,7 @@
 </head>
 <super-navbar>
     <super-navbar-title>
-        Case 11.3
+        Case 8.3
     </super-navbar-title>
 </super-navbar>
 <div ng-controller="caseController">
@@ -43,16 +43,18 @@ angular
   .module('example')
   .controller('caseController', function ($scope, $filter)
   {
-        $scope.case5q3 = localStorage.getItem('case5q3');
-    localStorage.setItem('case5q3', "working");
-    $scope.answers = [{label:"1.  Classify Pneumonia? ", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"The evidence points to another classification."},
-                      {label:"2.  Check to see if the child has stridor? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"This question is unnecessary as you have sufficient evidence to make a classification."},
-                      {label:"3.  Classify as Severe Pneumonia? ", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"4.  Give initial treatment? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must make a classification before you treat the child."}];
+        $scope.case8q3 = localStorage.getItem('case8q3');
+    localStorage.setItem('case8q3', "working");
+    $scope.answers = [{label:"1.  Give salbutamol via spacer for 5 days.", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},
+                      {label:"2.  Refer non-urgently for assessment.", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                      {label:"3.  Follow up in two days.", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"Wrong"},
+                      {label:"4.  Give oral prednisone for 7 days.", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                      {label:"5.  Give salbutamol and prednisone if referring for a severe classification.", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""}
+                      ];
 
     $scope.showAnswers = false;
 
-    $scope.question = "You find out that a skin pinch goes back normally.  The child is thirsty/drinking eagerly.  Child is not restless or irritable.  Does not have sunken eyes.  Bases on this information, what are the next steps?  Check all that apply.";
+    $scope.question = "The child has a recurrent wheeze.  How do you treat this child? Check all that apply. ";
               
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
@@ -85,8 +87,8 @@ angular
     {
 
       if($scope.submitText == "Next -->"){
-        localStorage.setItem('case5q3', true);
-        window.location.href = "case-study-5-4.html";
+        localStorage.setItem('case8q3', true);
+        window.location.href = "case-study-9-1.html";
       }
 
         for(i = 0; i < $scope.answers.length; i++)
