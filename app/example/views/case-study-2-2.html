@@ -46,11 +46,11 @@ angular
         $scope.case2q2 = localStorage.getItem('case2q2');
     localStorage.setItem('case2q2', "working");
     $scope.answers = [{label:"1.  Check to see if the chest is indrawing?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},
-                      {label:"2.  Check to see if the child is restless or irritable? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"Diarrhoea symptoms are covered in the diarrhoea module."},
+                      {label:"2.  Check to see if the child is restless or irritable?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"Diarrhoea symptoms are covered in the diarrhoea module."},
                       {label:"3.  Ask if the child has ever wheezed before? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You have other questions that you must ask first. This question may not be necessary."},
-                      {label:"4.  Determine if the child is older than 1 year? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"The age of the child is not important in the current circumstances."}];
+                      {label:"4.  Determine if the child is older than 1 year?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"The age of the child is not important in the current circumstances."}];
     $scope.showAnswers = false;
-    $scope.question = "Upon inspection, you find that there are none. Based on this information, what are your next steps? Check all that apply.";
+    $scope.question = "Upon inspection, you find that there are no general danger signs. Based on this information, what are your next steps? Check all that apply.";
      
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
@@ -58,7 +58,7 @@ angular
     $scope.showCorrect = false;
     $scope.showIncorrect1 = false;
     $scope.showIncorrect2 = false;
-    $scope.correct_feedback ="Correct! The next steps are: Check to see if chest indrawing is present.";
+    $scope.correct_feedback ="Correct! The next step is: Check to see if chest indrawing is present.";
     $scope.incorrect_feedback1 ="At least one of your answers is incorrect. Please review the choices and choose again.";
     $scope.isCorrect = function()
     {

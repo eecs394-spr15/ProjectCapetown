@@ -5,7 +5,7 @@
 </head>
 <super-navbar>
     <super-navbar-title>
-        Case 5.2
+        Case 7.2
     </super-navbar-title>
 </super-navbar>
 <div ng-controller="caseController">
@@ -43,14 +43,17 @@ angular
   .controller('caseController', function ($scope, $filter)
   {
 
-        $scope.case5q2 = localStorage.getItem('case5q2');
-    localStorage.setItem('case5q2', "working");
-    $scope.answers = [{label:"1.  Classify Severe Pneumonia? ", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"You do not have sufficient evidence to make this classification."},
-                      {label:"2.  Check to see if the child’s chest is indrawing? ", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"You only have enough information to rule out Severe Dehydration as a diagnosis."},
-                      {label:"3.  Check to see if the child has stridor? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must gather more information before this question is relevant."},
-                      {label:"4.  None of the above? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"You must investigate further as you have made no classification."}];
+        $scope.case7q2 = localStorage.getItem('case7q2');
+    localStorage.setItem('case7q2', "working");
+    $scope.answers = [{label:"1.	Ask if the child has had diarrhea for longer than 14 days?", val:false, correct_val:true,correct:false, correct_str:"",incorrect_str:""},
+                      {label:"2.	Check if the child has fast breathing?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:"Not relevant given what we know about the child currently."},
+                      {label:"3.	Check if the child is lethargic?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"Should have been determined in the first round of questions."},
+                      {label:"4.	Ask if the child has been losing weight?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""}];
+              {label:"5.	Ask if there has been blood in the child’s stool?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""}];
+              
     $scope.showAnswers = false;
-    $scope.question = "Upon inspection, you find that there are none. Based on this information, what are your next steps? Check all that apply.";
+              
+              $scope.question = "This 3-year-old child is drinking poorly, has sunken eyes, and the skin pinch goes back slowly.  Based on this information, what are your next steps?  Check all that apply.";
      
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
@@ -58,9 +61,7 @@ angular
     $scope.showCorrect = false;
     $scope.showIncorrect1 = false;
     $scope.showIncorrect2 = false;
-    $scope.correct_feedback ="Correct! The next steps are:
-Check to see if there are any general danger signs.
-";
+    $scope.correct_feedback ="Correct! The next steps are:  Ask if the child has had diarrhoea for >14 days?  Ask if the child has been losing weight?  Ask if there has been blood in the child's stool?";
     $scope.incorrect_feedback1 ="There are more correct answers. Please review the choices and choose again. ";
     $scope.incorrect_feedback2 ="At least one of your answers is incorrect. Please review the choices and choose again.";
     $scope.isCorrect = function()
@@ -75,9 +76,9 @@ Check to see if there are any general danger signs.
     };
     $scope.onSubmit = function()
     {
-      if($scope.submitText == "Next -->"){
-        localStorage.setItem('case5q2', true);
-        window.location.href = "case-study-5-3.html";
+      if($scope.submitText == "Next Question -->"){
+        localStorage.setItem('case7q2', true);
+        window.location.href = "case-study-7-3.html";
       }
         for(i = 0; i < $scope.answers.length; i++)
         {
@@ -88,7 +89,7 @@ Check to see if there are any general danger signs.
         //$(".answer").show();
         if(is_correct)
         {
-          $scope.submitText = "Next -->";
+          $scope.submitText = "Next Question -->";
           $scope.answers_enabled = false;
           //alert("CORRECT");
           $scope.showCorrect = true;
