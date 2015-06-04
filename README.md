@@ -22,19 +22,26 @@ The purpose of our IMCI Nurse Training Application is to help Nurses in Capetown
   *  Diarrhoea
   *  Meningitis
 
- ## Download and Installation
--1. Get source code from the github. Run this command in your terminal/cmd: `git clone https://github.com/eecs394-spr15/ProjectCapetown.git` 
-+1. Get source code from the github: `git clone https://github.com/eecs394-spr15/ProjectCapetown.git`
- 2. Install the Steroids tooling. Head on over to the [Install Wizard](https://academy.appgyver.com/installwizard) page and follow the instructions there.
--3. Using the command `cd` to navigate to the application directory 'ProjectCapetown'.
--4. Run `steroids update` if it is your first time.
--5. Run `steroids connect`.    
--6. Then the Steroids CLI will open up the Connect Screen in a new browser window. To run your app on a real device, all you have to do is open the AppGyver Scanner you installed previously and scan the displayed QR code. The Scanner app will then start your app.
-+3. Using the command `cd` to the dirctory ProjectCapetown, then enter the following command: `steroids connect`
-+4. Then the Steroids CLI will open up the Connect Screen in a new browser window. To run your app on a real device, all you have to do is open the AppGyver Scanner you installed previously and scan the displayed QR code. The Scanner app will then start your app.
+ ## Continuing Development
+  This app is build with AngularJS on top of the AppGyver steroids framework. 
+  
+ ### Download and Installation
+ 
+ #### Install Steroids and Dependencies
+ *[Create an AppGypver account](http://www.appgyver.com/steroids_sign_up), then head on over to the [Install Wizard](https://academy.appgyver.com/installwizard) page and follow the instructions there.
+  
+ #### Download Source Code
+ *Option 1: Clone the github repo: Run this command in your terminal/cmd: `git clone https://github.com/eecs394-spr15/ProjectCapetown.git` 
+ *Option 2: Get source code from the github: `git clone https://github.com/eecs394-spr15/ProjectCapetown.git`
+ 
+ For either option:
+  *  Using the command `cd` to navigate to the application directory 'ProjectCapetown'.
+  *  Run `steroids update` if it is your first time.
+  *  Run `steroids connect`. The Steroids CLI will open up the Connect Screen in a new browser window.
+   *  To run your app on a real device, all you have to do is open the AppGyver Scanner you installed previously and scan the displayed QR code. The Scanner app will then start your app.
  
  ## Build and Deploy
-* [Deploying to clould](http://docs.appgyver.com/tooling/build-service/build-settings/deploying-to-cloud/)
+* [Deploying to cloud](http://docs.appgyver.com/tooling/build-service/build-settings/deploying-to-cloud/)
 * [iOS build types](http://docs.appgyver.com/tooling/build-service/build-settings/ios-build-types/)
  
  ## Going Forward
