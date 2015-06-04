@@ -5,7 +5,7 @@
 </head>
 <super-navbar>
     <super-navbar-title>
-        Case 5.1
+        Case 8.1
     </super-navbar-title>
 </super-navbar>
 
@@ -45,17 +45,18 @@ angular
   .controller('caseController', function ($scope, $filter)
   {
 
-    $scope.case5q1 = localStorage.getItem('case5q1');
-    localStorage.setItem('case5q1', "working");
+    $scope.case8q1 = localStorage.getItem('case8q1');
+    localStorage.setItem('case8q1', "working");
 
-    $scope.answers = [{label:"1.  Check to see if the child’s chest is indrawing? ", val:false, correct_val:false, correct:false, correct_str:"",incorrect_str:"You must first check to see if there are any general danger signs."},
-                      {label:"2.  Ask how old the child is? ", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"This information is not necessary right now"},
-                      {label:"3.  Check for any General Danger Sign? ", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
-                      {label:"4.  Check to see if the skin pinch goes back slowly (<2 seconds)?", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"That is addressed in the diarrhoea module."}];
+    $scope.answers = [{label:"1.  Ask if the child had a wheeze before this illness. ", val:false, correct_val:true, correct:false, correct_str:"",incorrect_str:""},
+                      {label:"2.  Ask when the child frequently coughs. ", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                      {label:"3.  Find out how long the child has been coughing.", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
+                      {label:"4.  Ask how much fluid the father has been giving the son.", val:false, correct_val:false, correct:false, correct_str:"", incorrect_str:"Not currently relevant information given the symptom presented."},  
+                      {label:"5.  Ask if the child is on treatment for asthma at present.", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""}];
 
     $scope.showAnswers = false;
 
-    $scope.question = "A mother brings her 2 year old son into the clinic who has been coughing for a week. With this initial information, what are your next steps? Check all that apply.";
+    $scope.question = "A father brings his son to the clinic that has a wheeze. The child is not presenting any danger signs.  With this initial knowledge, what are your first steps? Check all that apply. ";
 
     $scope.submitText = "Submit";
     //$scope.selection = ['a1', 'a4'];
@@ -87,8 +88,8 @@ angular
     $scope.onSubmit = function()
     {
       if($scope.submitText == "Next -->"){
-        localStorage.setItem('case5q2', true);
-        window.location.href = "case-study-5-2.html";
+        localStorage.setItem('case8q2', true);
+        window.location.href = "case-study-8-2.html";
       }
         for(i = 0; i < $scope.answers.length; i++)
         {
