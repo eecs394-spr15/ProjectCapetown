@@ -5,7 +5,7 @@
     </head>
     <super-navbar>
         <super-navbar-title>
-            General Danger Signs
+            Pneumonia
         </super-navbar-title>
     </super-navbar>
     <div ng-controller="caseController">
@@ -51,15 +51,18 @@
         .module('example')
         .controller('caseController', function ($scope, $filter)
                     {
-                    $scope.score = localStorage.getItem('g2score');
+                    localStorage.setItem('g3score', 0);
+                    $scope.score = localStorage.getItem('g3score');
 
-                    $scope.answers = [{label:"1.    Yes", id:"0"},
-                                      {label:"2.	No",id:"1"}];
+                    $scope.answers = [{label:"1.	40 or more breaths per minute", id:"0"},
+                                      {label:"2.	50 or more breaths per minute",id:"1"},
+                                      {label:"3.    60 or more breaths per minute", id:"2",},
+                                      {label:"4.	70 or more breaths per minute", id:"3"}];
 
                     
                     $scope.showAnswers = false;
                     
-                    $scope.question = "Does the presence of any general danger sign warrant urgent attention?";
+                    $scope.question = "What qualifies as fast breathing for a child between 2 months and 12 months old?";
                     
                     $scope.submitText = "Submit";
                     
@@ -72,7 +75,7 @@
                     $scope.incorrect_feedback ="Incorrect. ";
 
                     //$scope.userAnswer = '';
-                    $scope.correctId = '0';
+                    $scope.correctId = '1';
                     
                     
                     $scope.isCorrect = function(){
@@ -82,7 +85,7 @@
                     $scope.onSubmit = function()
                     {
                     if($scope.submitText == "Next Question -->"){
-                        window.location.href = "g2-4.html";
+                        window.location.href = "g3-2.html";
                     }
                     else{
                         var is_correct = $scope.isCorrect();
@@ -94,7 +97,7 @@
                             $scope.showCorrect = true;
                             $scope.showIncorrect = false;
                             $scope.score = '' + (Number($scope.score) + 1);
-                            localStorage.setItem('g2score',$scope.score);
+                            localStorage.setItem('g3score',$scope.score);
                         }
                         else{
                             //alert($scope.userAnswer);  
@@ -102,7 +105,7 @@
                             $scope.answers_enabled = false;
                             $scope.showCorrect = false;
                             $scope.showIncorrect = true;
-                            localStorage.setItem('g2score',$scope.score);
+                            localStorage.setItem('g3score',$scope.score);
                         }
 
                     }
@@ -124,7 +127,7 @@
     clearInterval(countdownTimer);
     document.getElementById('countdown').innerHTML = "Time out!";
     alert("Time is out, will go to the next question.");
-    window.location.href = "g2-4.html";
+    window.location.href = "g3-2.html";
 
    } else {
     seconds--;

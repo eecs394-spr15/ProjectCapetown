@@ -80,7 +80,7 @@
                     
                     $scope.onSubmit = function()
                     {
-                    if($scope.submitText == "Finish"){
+                    if($scope.submitText == "Results"){
                         window.location.href = "g1-results.html";
                     }
                     else{
@@ -88,7 +88,7 @@
                         
                         if(is_correct){
                             //alert("CORRECT");
-                            $scope.submitText = "Next Question -->";
+                            $scope.submitText = "Results";
                             $scope.answers_enabled = false;
                             $scope.showCorrect = true;
                             $scope.showIncorrect = false;
@@ -97,7 +97,7 @@
                         }
                         else{
                             //alert($scope.userAnswer);  
-                            $scope.submitText = "Next Question -->";
+                            $scope.submitText = "Results";
                             $scope.answers_enabled = false;
                             $scope.showCorrect = false;
                             $scope.showIncorrect = true;
