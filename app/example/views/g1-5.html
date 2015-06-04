@@ -36,7 +36,7 @@
             
         </div>
 
-        <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()"> {{submitText}}</a>
+        <a id= "submit" class="button button-block button-calm icon-left super-document" ng-click="onSubmit()" onclick="Submit()" > {{submitText}}</a>
                 <!-- <a class="button button-block button-dark icon-left super-arrow-left-b" href="g1.html">Back to Game</a> -->
   
         
@@ -92,7 +92,7 @@
                             $scope.answers_enabled = false;
                             $scope.showCorrect = true;
                             $scope.showIncorrect = false;
-                            $scope.score = $scope.score + 1;
+                            $scope.score = '' + (Number($scope.score) +  Number(document.getElementById('countdown').innerHTML));
                             localStorage.setItem('g1score',$scope.score);
                         }
                         else{
@@ -101,36 +101,49 @@
                             $scope.answers_enabled = false;
                             $scope.showCorrect = false;
                             $scope.showIncorrect = true;
+                            $scope.score = '' + (Number($scope.score) - Number(document.getElementById('countdown').innerHTML));
                             localStorage.setItem('g1score',$scope.score);
                         }
+
 
                     }
                     }
 
                     });
         </script>
-         <script>
+                <script>
    var seconds = 30;
+   var stop = false;
+   if (!stop){
+    var countdownTimer = setInterval('secondPassed()', 1000);
+    }
+
+    function Submit(){
+    stop = true;
+   }
+
    function secondPassed() {
    var minutes = Math.round((seconds - 30)/60);
    var remainingSeconds = seconds % 60;
    if (remainingSeconds < 10) {
       remainingSeconds = "0" + remainingSeconds; 
    }
-   document.getElementById('countdown').innerHTML = remainingSeconds;
+   if (!stop){
+   document.getElementById('countdown').innerHTML = remainingSeconds;}
    if (seconds == 0) {
     clearInterval(countdownTimer);
     document.getElementById('countdown').innerHTML = "Time out!";
-    alert("Time is out, will go to the next question.");
+    //setTimeout(continueExecution, 1000)
+    //alert("Time is out, will go to the next question.");
     window.location.href = "g1-6.html";
 
-   } else {
-    seconds--;
+   } 
+    else{
+    seconds --;
    }
    }
-   var countdownTimer = setInterval('secondPassed()', 1000);
+
 </script>
-    
 </html>
 
 
