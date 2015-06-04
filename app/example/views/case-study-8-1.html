@@ -46,11 +46,7 @@ angular
   {
 
     $scope.case8q1 = localStorage.getItem('case8q1');
-<<<<<<< HEAD
     localStorage.setItem('case8q1', 0);
-=======
-    localStorage.setItem('case8q1', "working");
->>>>>>> 3b863563529e19508adb7a7bda2fb5030e3e188d
 
     $scope.answers = [{label:"1.  Ask if the child had a wheeze before this illness. ", val:false, correct_val:true, correct:false, correct_str:"",incorrect_str:""},
                       {label:"2.  Ask when the child frequently coughs. ", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
@@ -92,11 +88,7 @@ angular
     $scope.onSubmit = function()
     {
       if($scope.submitText == "Next -->"){
-<<<<<<< HEAD
         localStorage.setItem('case8q1', 1);
-=======
-        localStorage.setItem('case8q2', true);
->>>>>>> 3b863563529e19508adb7a7bda2fb5030e3e188d
         window.location.href = "case-study-8-2.html";
       }
         for(i = 0; i < $scope.answers.length; i++)
