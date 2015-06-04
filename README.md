@@ -11,7 +11,7 @@ The purpose of our IMCI Nurse Training Application is to help Nurses in Capetown
   *  IMCI benefits
   *  Principles of the integrated clinical case management guidelines
   *  Steps in integrated case management
-*  13 Interactive case studies with personal feedback to each response
+* 13 Interactive case studies with personal feedback to each response
 * Interactive multiple choice game.  Timed and scored.  Play on 8 topics including:
   *  Ear Problems
   *  Measles
