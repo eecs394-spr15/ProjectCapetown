@@ -88,7 +88,7 @@ Check all that apply.
     $scope.onSubmit = function()
     {
 
-      if($scope.submitText == "Next -->"){
+      if($scope.submitText == "Next Question -->"){
         localStorage.setItem('case4q4', true);
         window.location.href = "case-study-4-5.html";
       }
@@ -106,7 +106,7 @@ Check all that apply.
 
         if(is_correct)
         {
-          $scope.submitText = "Next -->";
+          $scope.submitText = "Next Question -->";
           $scope.answers_enabled = false;
 
           //alert("CORRECT");

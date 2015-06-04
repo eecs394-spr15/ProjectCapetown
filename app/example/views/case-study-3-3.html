@@ -43,7 +43,7 @@ angular
   .module('example')
   .controller('caseController', function ($scope, $filter)
   {
-        $scope.case11q3 = localStorage.getItem('case3q3');
+        $scope.case3q3 = localStorage.getItem('case3q3');
     localStorage.setItem('case3q3', "working");
     $scope.answers = [{label:"1.  Classify as severe persistent diarrhoea? ", val:false, correct_val:false,correct:false, correct_str:"",incorrect_str:"The child has not had diarrhoea for longer than 14 days, nor has there been blood in the stool."},
                       {label:"2.  Refer the child urgently, and give initial treatment?", val:false, correct_val:true, correct:false, correct_str:"", incorrect_str:""},
@@ -102,7 +102,7 @@ angular
 
         if(is_correct)
         {
-          $scope.submitText = "Next -->";
+          $scope.submitText = "Next Case -->";
           $scope.answers_enabled = false;
 
           //alert("CORRECT");

@@ -5,7 +5,7 @@
 </head>
 <super-navbar>
     <super-navbar-title>
-        Case 11.3
+        Case 4.3
     </super-navbar-title>
 </super-navbar>
 <div ng-controller="caseController">
@@ -90,7 +90,7 @@ You find that the answers to all these questions is no.
     $scope.onSubmit = function()
     {
 
-      if($scope.submitText == "Next -->"){
+      if($scope.submitText == "Next Question -->"){
         localStorage.setItem('case4q3', true);
         window.location.href = "case-study-4-4.html";
       }
@@ -108,7 +108,7 @@ You find that the answers to all these questions is no.
 
         if(is_correct)
         {
-          $scope.submitText = "Next -->";
+          $scope.submitText = "Next Question -->";
           $scope.answers_enabled = false;
 
           //alert("CORRECT");
