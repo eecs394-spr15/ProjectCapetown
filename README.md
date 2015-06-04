@@ -25,12 +25,12 @@ The purpose of our IMCI Nurse Training Application is to help Nurses in Capetown
 ## Continuing Development
   This app is build with AngularJS on top of the AppGyver steroids framework. 
   
- ### Download and Installation
+### Download and Installation
  
- #### Install Steroids and Dependencies
+#### Install Steroids and Dependencies
  [Create an AppGypver account](http://www.appgyver.com/steroids_sign_up), then head on over to the [Install Wizard](https://academy.appgyver.com/installwizard) page and follow the instructions there.
   
- #### Download Source Code
+#### Download Source Code
  *  Option 1: Clone the github repo: Run this command in your terminal/cmd: 
  ```
  git clone https://github.com/eecs394-spr15/ProjectCapetown.git
