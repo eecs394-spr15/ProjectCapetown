@@ -81,6 +81,7 @@ angular
   .module('example',[])
   .controller("loginUserController", ['$scope', function ($scope) {
     $scope.login = { Username: "", Password: ""};
+    $scope.test = '1';
 //    $scope.continue = function($scope) {
 //        supersonic.ui.initialView.dismiss();
 //    }
