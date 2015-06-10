@@ -7,12 +7,12 @@ describe('loginUserController', function(){
 
 	beforeEach(function() {  
  		// reset values
- 		localStorage.setItem('testname', 'testpassword');
+ 		localStorage.removeItem('test');
      }); 
 
 	afterEach(function() {  
  		// reset values
- 		localStorage.removeItem('testname');
+ 		localStorage.removeItem('test');
      });  
 
 	var $controller;
@@ -25,54 +25,50 @@ describe('loginUserController', function(){
 
 
 
-    it('User can login with his/her username and password', function() {
+    it('Should register a new user with username and password', function() {
       var $scope = {};
       var controller = $controller('loginUserController', { $scope: $scope });
-      $scope.user = {Username: "testname", Password: "testpassword"};
+      $scope.user = {Username: "test", Password: "test"};
       spyOn($scope, "nextpage"); // supersonic.ui.initialView.dismiss() will cause error;
-      $scope.loginUser();
+      $scope.addUser();
       expect($scope.alertText).toBe("");
+      expect(localStorage.getItem('test')).toBe("test");
       expect($scope.nextpage).toHaveBeenCalled();
     });
 
-	  it('User can login with wrong user name and get an alert', function() {
+	  it('Should not register a new user without a username', function() {
       var $scope = {};
       var controller = $controller('loginUserController', { $scope: $scope });
-      $scope.user = {Username: "wrongname", Password: "testpassword"};
+      $scope.user = {Username: "", Password: "test"};
       spyOn($scope, "nextpage"); // supersonic.ui.initialView.dismiss() will cause error;
-      $scope.loginUser();
-      expect($scope.alertText).toBe("User name not found");
-      expect($scope.nextpage).not.toHaveBeenCalled();
-    });
-
-    it('User can login with wrong password and get an alert', function() {
-      var $scope = {};
-      var controller = $controller('loginUserController', { $scope: $scope });
-      $scope.user = {Username: "testname", Password: "wrongpassword"};
-      spyOn($scope, "nextpage"); // supersonic.ui.initialView.dismiss() will cause error;
-      $scope.loginUser();
-      expect($scope.alertText).toBe("Password not match");
-      expect($scope.nextpage).not.toHaveBeenCalled();
-    });
-
-	  it('If user does not input a username, will get an alert', function() {
-      var $scope = {};
-      var controller = $controller('loginUserController', { $scope: $scope });
-      $scope.user = {Username: "", Password: "wrongpassword"};
-      spyOn($scope, "nextpage"); // supersonic.ui.initialView.dismiss() will cause error;
-      $scope.loginUser();
+      $scope.addUser();
       expect($scope.alertText).toBe("Please fill out the form");
+      expect(localStorage.getItem('test')).toBe(null);
       expect($scope.nextpage).not.toHaveBeenCalled();
     });
 
-        it('If user does not input a password, will get an alert', function() {
+	  it('Should not register a new user without password', function() {
       var $scope = {};
       var controller = $controller('loginUserController', { $scope: $scope });
-      $scope.user = {Username: "testname", Password: ""};
+      $scope.user = {Username: "", Password: "test"};
       spyOn($scope, "nextpage"); // supersonic.ui.initialView.dismiss() will cause error;
-      $scope.loginUser();
+      $scope.addUser();
       expect($scope.alertText).toBe("Please fill out the form");
+      expect(localStorage.getItem('test')).toBe(null);
       expect($scope.nextpage).not.toHaveBeenCalled();
+    });
+
+	  it('Should not register a new user when a username is used, and get an alert', function() {
+      var $scope = {};
+      var controller = $controller('loginUserController', { $scope: $scope });
+      $scope.user = {Username: "test", Password: "test"};
+      spyOn($scope, "nextpage"); // supersonic.ui.initialView.dismiss() will cause error;
+      $scope.addUser();
+      $scope.user = {Username: "test", Password: "11"};
+      $scope.addUser();
+      expect($scope.alertText).toBe("User name has been used, please try another");
+      expect(localStorage.getItem('test')).not.toBe(null);
+      expect($scope.nextpage.calls.count()).toEqual(1);
     });
 
 
