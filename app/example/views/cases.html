@@ -7,12 +7,12 @@
           </super-navbar-title>
       </super-navbar>
       
+    <script src="res/js/jquery-1.11.2.min.js"></script>
     <link rel="stylesheet" href="res/css/bootstrap.min.css">
     <link rel="stylesheet" href="res/css/bootstrap-theme.min.css">
     <link rel='stylesheet' href='res/css/style.css'>
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
     <script type="text/javascript" src="cordova.js"></script>
-    <script src="res/js/jquery-1.11.2.min.js"></script>
     <script src="res/js/bootstrap.min.js"></script>
     <script type='text/javascript' src='res/js/prototype.js'></script>
     <script type='text/javascript' src='res/js/test.js'></script>
@@ -81,7 +81,7 @@
     <br><br>
 
 
-    <a class="button button-block button-calm icon-left super-document-text" onclick="case1Tracker()">
+    <a id="case1_btn" class="button button-block button-calm icon-left super-document-text" onclick="case1Tracker()">
         <div class="btn-progress-div">
             <div class="btn-progress-txt">Case 1</div>
             <div class="progress btn-progress">
@@ -489,6 +489,11 @@
         document.getElementById("total_span").innerHTML = casesComplete + " / " + numCases;
         $("#total_prog").css('width', percent + '%').attr("aria-valuenow", progress);
         $("#total_prog").attr("aria-valuemax", numCases);
+    }
+
+    function getTotalProgress()
+    {
+        return casesComplete;
     }
 
 
