@@ -1,0 +1,1 @@
+exports.myTestApp = "./application.ipa";
